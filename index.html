@@ -15,17 +15,67 @@
   <!-- custom css -->
   <link rel="stylesheet" href="assets/style/styles.css">
 
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
+
+  <!-- flavicon -->
+  <link rel="icon" type="images/x-icon" href="./assets/img/stock/favicon-32x32.png">
 </head>
 
 <body>
-  
-  <section class="container-fluid" style="background-color: blue; height: 100vh;">
-    <div class="row center">
-      <div class="col-sm-6">
-        <h2>Test1</h2>
-      </div>
-      <div div class="col-sm-6">
-        <h2>Test2</h2>
+  <!-- Header -->
+  <div class="jumbotron jumbotron-fluid" id="Home">
+    <div class="container-fluid c-container">
+      <h1 class="display-4">Welcome to Anagram-City!</h1>
+      <p class="lead">NOT ACTUAL TITLE PLEASE COME UP WITH BETTER NAME</p>
+    </div>
+  </div>  
+
+  <!-- navbar -->
+  <!-- mostly place holders -->
+  <ul class="nav justify-content-center fixed-bottom hero-nav">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="#Home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">How to play</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">GitHub</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Contact Us</a>
+    </li>
+    <!-- TODO Remove disabled link -->
+    <li class="nav-item">
+      <a class="nav-link disabled">Disabled</a>
+    </li>
+  </ul>
+
+  <!-- Form Section -->
+  <section class="container-fluid homepage">
+    <div class="row h-100 login-screen text-center">
+      <div class="col my-auto">
+          <form id="loginDetails">
+            <legend>Login</legend>
+
+            <div class="form-group col-auto">
+              <input type="text" class="form-control" id="uName" placeholder="Username">
+            </div><br>
+
+            <div class="form-group">
+              <input type="password" class="form-control" id="pwd" placeholder="Password">
+            </div><br>
+            
+            <div class="checkbox">
+              <label><input type="checkbox">Remember Me</label>
+            </div><br>
+
+            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
+
+            <!-- currently does the same thing as submit -->
+            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button>
+          </form>
       </div>
     </div>
   </section>
