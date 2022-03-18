@@ -4,11 +4,6 @@
 
 body {
   background-color: rgba(13, 17, 23, 1);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 1em;
 }
 
 h1, h2, h3, h4, h5, h6, legend {
@@ -23,7 +18,6 @@ label {
   display: grid;
   justify-content: center;
   align-content: center;
-  flex-grow: 1;
   grid-template-columns: repeat(4, 4em);
   grid-template-rows: repeat(3, 4em);
   gap: .30em;
@@ -53,17 +47,15 @@ label {
 
 .main-tile {
   background-color: aquamarine;
-  size: 100%;
-
-}
-
-.row{
-  min-height: 100vh;
 }
 
 .stat-interface {
   background-color: rgba(13, 17, 23, 1);
-  min-height: 50%;
-  margin-top: 25vh;
-  
+}
+
+.game-box {
+  max-width: 1024px;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
