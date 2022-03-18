@@ -1,4 +1,6 @@
 // This is for testing purposes do not launch
+
+// onclick callback
 function formSubmit() {
     let form = document.forms["loginDetails"];
 
@@ -7,3 +9,9 @@ function formSubmit() {
 
     alert("Thank you for submitting this form:\nName: " + name + "\nPassword: " + pass + "\n");
 }
+
+// Put event listeners in here
+$(window).on('load', () => {
+    // DO THINGS
+    
+});
