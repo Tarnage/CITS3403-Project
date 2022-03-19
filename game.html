@@ -25,13 +25,16 @@
   <div class="container-flex" >
     <div class="game-box">  
       <div class="row">
-        <div class="col-4">
+        <div class="col-md-4">
           <div class="stat-interface">
             <h3>Progress</h3>
             <div class="progress">
               <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- TODO: add a progess track -->
+              <p >1/10</p>
             </div>
-            <h6>4 WORDS</h6>
+            <h6>4 WORDS</h6><span style="text-align: right;">1/10</span>
+            <!-- TODO: add found words into p tags -->
             <p></p><br>
             <div class="progress">
               <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -55,25 +58,42 @@
             <p></p><br>
           </div>
         </div>
-        <div class="col-8">
+        <div class="col-md-8" style="padding: 5%;">
+          <div>
+            <h1>Title</h1>
+          </div>
           <div class="guess-interface">
             <!-- TODO: DOM the tile-states so it activates on click -->
-            <button class="tiles">D</button>
-            <button class="tiles">E</button>
-            <button class="tiles">B</button>
-            <button class="tiles">U</button>
-            <button class="tiles">G</button>
-            <button class="tiles">E</button>
-            <button class="tiles">R</button>
-            <button class="tiles">R</button>
-            <!-- TODO: HIDE THIS BUTTON -->
-            <button class="tiles"></button>
-            <button class="tiles main-tile">G</button>
+            <!-- TODO: make box transparent -->
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
+            <div class="tiles"></div>
           </div>
         </div>
       </div>
       
     </div>
+
+    <div class="container keyboard-container">
+      <div class="keyboard">
+        <button class="keys">D</button>
+        <button class="keys">E</button>
+        <button class="keys">B</button>
+        <button class="keys">U</button>
+        <button class="keys">G</button>
+        <button class="keys">E</button>
+        <button class="keys">R</button>
+        <button class="keys">S</button>
+        <button class="keys main-tile">G</button>
+      </div>
+
+    </div>  
   </div>
 
 

@@ -18,11 +18,12 @@ label {
   display: grid;
   justify-content: center;
   align-content: center;
-  grid-template-columns: repeat(4, 4em);
-  grid-template-rows: repeat(3, 4em);
+  grid-template-columns: repeat(9, 4em);
+  grid-template-rows: repeat(1, 4em);
   gap: .30em;
 }
 
+/* TODO: Might not need tiles at all can use DOM and a p tag */
 .tiles {
   background-color: #c9d1d9;
   border-radius: 10%;
@@ -51,11 +52,42 @@ label {
 
 .stat-interface {
   background-color: rgba(13, 17, 23, 1);
+  margin: 10%;
 }
 
 .game-box {
-  max-width: 1024px;
+  max-width: auto;
   margin: auto;
   margin-top: 10%;
   margin-bottom: 10%;
+  
 }
+
+
+/* Keyboard and keys design adapted from - https://codepen.io/kulpreets/pen/MKgqqB */
+.keyboard {
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  font-weight: bolder;
+  font-size: 2em;
+  box-shadow: 0px 40px 45px rgba(0, 0, 0, .4);
+}
+
+.keyboard-container {
+  align-items: center;
+  max-width: fit-content;
+}
+
+.keys {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, .7);
+  color: #71D4FE;
+  padding: 15px;
+  background: #2F3336;
+  border-radius: 12px;
+  text-shadow: 0px 0px 40px #71D4FE, 0px 0px 80px #71D4FE;
+  text-align: center;
+  width: 75px;
+  height: auto;
+} 
