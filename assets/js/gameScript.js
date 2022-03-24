@@ -1,11 +1,11 @@
 const targetWord = {
     "target":   ["debuggers"],
 
-    "eight" :   ["buggered"],
+    "eight":    ["buggered"],
 
-    "seven" :   ["grudges"],
+    "seven":    ["grudges"],
 
-    "six"   :   ["begged",
+    "six":      ["begged",
                  "bedrug",
                  "begged",
                  "budger",
@@ -16,7 +16,7 @@ const targetWord = {
                  "debugs",
                  "edgers"],
 
-    "five"  :   ["dregs",
+    "five":     ["dregs",
                  "drugs",
                  "edger",
                  "greed",
@@ -27,7 +27,7 @@ const targetWord = {
                  "egger",
                  "surge"],
 
-    "four"  :   ["begs",
+    "four":     ["begs",
                  "berg",
                  "bugs",
                  "burg",

@@ -14,6 +14,10 @@ label {
   color: #c9d1d9;
 }
 
+.d-height {
+  max-height: 100vh;
+}
+
 .guess-interface {
   display: grid;
   justify-content: center;
@@ -56,11 +60,7 @@ label {
 }
 
 .game-box {
-  max-width: auto;
-  margin: auto;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  
+  align-items: center;
 }
 
 

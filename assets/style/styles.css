@@ -15,12 +15,16 @@ label {
 }
 
 .homepage { 
+  height: inherit;
+}
+
+.d-height {
   height: 100vh;
 }
 
 form {
   border: 2px solid #58a6ff;
-  padding: 20px;
+  padding: 5%;
   border-style: outset;
   border-radius: 20px;
   margin-left: auto;
@@ -38,4 +42,6 @@ form {
   color: rgb(139, 143, 102);
 }
 
-
+.login-screen {
+  height: inherit;
+}

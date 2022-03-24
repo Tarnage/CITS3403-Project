@@ -23,64 +23,87 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <div class="jumbotron jumbotron-fluid" id="Home">
-    <div class="container-fluid c-container">
-      <h1 class="display-4">Welcome to Anagram-City!</h1>
-      <p class="lead">NOT ACTUAL TITLE PLEASE COME UP WITH BETTER NAME</p>
-    </div>
-  </div>  
+  <div class="container d-height">
 
-  <!-- navbar -->
-  <!-- mostly place holders -->
-  <ul class="nav justify-content-center fixed-bottom hero-nav">
-    <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="#Home">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link">How to play</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link">GitHub</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link">Contact Us</a>
-    </li>
-    <!-- TODO Remove disabled link -->
-    <li class="nav-item">
-      <a class="nav-link disabled">Disabled</a>
-    </li>
-  </ul>
+    <!-- Header -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-fluid c-container">
+        <h1 class="display-4">Welcome to Anagram-City!</h1>
+        <p class="lead">NOT ACTUAL TITLE PLEASE COME UP WITH BETTER NAME</p>
+      </div>
+    </div>  
 
-  <!-- Form Section -->
-  <section class="container-fluid homepage">
-    <div class="row h-100 login-screen text-center">
-      <div class="col my-auto">
-        <h3>Login</h3>
-          <form id="loginDetails">
+    <!-- navbar -->
+    <!-- mostly place holders -->
+    <ul class="nav justify-content-center fixed-bottom hero-nav">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="#Home">Home</a>
+      </li>
+      <!-- TODO: chacnge move icon when hovering over link -->
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"> How to play</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">GitHub</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Contact Us</a>
+      </li>
+      <!-- TODO Remove disabled link -->
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
 
-            <div class="form-group col-auto">
-              <input type="text" class="form-control" id="uName" placeholder="Username">
-            </div><br>
+    <!-- Form Section -->
+    <section class="container-fluid homepage ">
+      <div class="row login-screen text-center align-items-center">
+        <div class="col">
+          <h3>Login</h3>
+            <form id="loginDetails">
 
-            <div class="form-group">
-              <input type="password" class="form-control" id="pwd" placeholder="Password">
-            </div><br>
-            
-            <div class="checkbox">
-              <label><input type="checkbox">Remember Me</label>
-            </div><br>
+              <div class="form-group">
+                <input type="text" class="form-control" id="uName" placeholder="Username">
+              </div><br>
 
-            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
+              <div class="form-group">
+                <input type="password" class="form-control" id="pwd" placeholder="Password">
+              </div><br>
+              
+              <div class="checkbox">
+                <label><input type="checkbox">Remember Me</label>
+              </div><br>
 
-            <!-- currently does the same thing as submit -->
-            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button>
-          </form>
+              <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
+
+              <!-- currently does the same thing as submit -->
+              <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
+
+              <button type="submit" class="btn btn-lg btn-info" onclick="location.href='./game.html'">Quick Play</button>
+            </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="how-to-play-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">How to play</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            How to play instructions!!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- TODO:Modal for How to play -->
-  
+  </div>
+
 </body>
 </html>
