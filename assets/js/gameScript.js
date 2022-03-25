@@ -1,9 +1,11 @@
 'use strict'
+//-------------------------------------------------------------------GLOBALS-----------------------------------------------------
 
 // TODO randomly pick a word and fill in the 'key' class
-
 const targetWord = {
     "target":   ["debuggers"],
+
+    "t_letter": ["g"],
 
     "eight":    ["buggered"],
 
@@ -44,26 +46,49 @@ const targetWord = {
                  "rugs",
                  "urge"]
 
-}
+};
 
-// Global to track current tags that hold randomised chars
-// current_letters is initizalised on window load.
-// TODO: could use a stack instead. eg. everytime a letter is pressed the tag is pushed onto the stack.
-var current_letters;
+// TODO READ in json files
+// var testData;
+
+// fetch("./testWords.json")
+// .then(response => {
+//    return response.json();
+// })
+// .then(jsondata => testData = jsondata);
+
+// console.log("TESTING " + testData);
+
+
+// Stack to keep track of used letters
+// Holds the location of the document children
+var used_letters = [];
+
+// Stack current word
+var guess_stack = [];
+
+// holds current guess div
+// <div id="current-guess" class="current-guess" data-text="GUESS WINDOW" contenteditable="false">
+// initilized window on load
+var guess_window;
+
+//----------------------------------------------------------------FUNCTIONS------------------------------------------------------
 
 /**
  * Virtual Keyboard functionality actives on click
- * 
  * TODO: deal with physical keybord presses
  * @param {tag/node} e 
  */
 function input(e) {
-    let char = e.innerText;
-    if (char.toLowerCase() === "delete"){
-        pop_current_guess();
+    let char = e.innerText.toLowerCase();
+    if (char === "delete"){
+        // Theres are letters to delete
+        if(used_letters.length != 0) {
+            pop_current_guess();
+        }
     } 
-    else if ( char.toLowerCase() === "return") {
-        // TODO check if guess is valid
+    else if ( char === "return") {
+        check_guess();
     }
     else {
         disable_button(e);
@@ -80,58 +105,133 @@ function disable_button(e) {
         e.removeAttribute("enabled");
     }
     e.setAttribute("disabled", "");
+    used_letters.push(e);
 }
 
 /**
  * Enables button when letter leaves the current guess
- * @param {letter} e 
+ * 
  */
-function enable_button(e) {
-
-    for(const x in current_letters) {
-        let letter = current_letters[x].innerText.toLowerCase();
-        if ( (letter === e.toLowerCase()) && current_letters[x].hasAttribute("disabled") ) {
-            current_letters[x].removeAttribute("disabled");
-            current_letters[x].setAttribute("enabled", "");
-            break;
-        }
+function enable_button() {
+    let top = used_letters.pop();
+    if ( top.hasAttribute("disabled")) {
+        top.removeAttribute("disabled");
+        top.setAttribute("enabled", "");
     }
 }
 
 /**
- * Adds letters to the current guess string
+ * Adds letters to the current guess stack
  * 
  * @param {string} letter 
  */
 function current_guess(letter) {
-    let guess = document.getElementById("current-guess");
-    let current = guess.innerText;
-    current += letter;
-    guess.innerText = current;
+    guess_stack.push(letter);
+    guess_window.innerText = guess_stack.join("");
 }
 
 /**
- * Removes last letter of guess
- * 
- * 
+ * Removes last letter of the current guess word
  */
 function pop_current_guess() {
-    let guess = document.getElementById("current-guess");
-    let current = guess.innerHTML;
-
-    // letter that was popped
-    let popped = current.slice(-1);
-
-    guess.innerText = current.slice(0, -1);
-
+    guess_stack.pop();
+    guess_window.innerText = guess_stack.join("");
     // renable button corresponding to letter
-    enable_button(popped);
+    enable_button();
 }
+
+function check_guess() {
+    let word = guess_stack.join("");
+    let length = word.length;
+    let found = false;
+
+    // min word length 4 and 
+    if (length < 4) {
+        alert("Minimum word length is 4");
+        return;
+    }
+    else if ( !word.includes(targetWord["t_letter"][0]) ) {
+        let s = targetWord["t_letter"][0].toUpperCase();
+        alert(`Guess must contain the letter ${s}`);
+        return;
+    }
+
+    switch (length) {
+        case 4:
+            if(targetWord["four"].includes(word)) 
+                found = true;
+            break;
+
+        case 5:
+            if(targetWord["five"].includes(word)) 
+                found = true;
+            break;
+
+        case 6:
+            if(targetWord["six"].includes(word)) 
+                found = true;
+            break;
+
+        case 7:
+            if(targetWord["seven"].includes(word))
+                found = true;
+            break;
+
+        case 8:
+            if(targetWord["eight"].includes(word))
+                found = true;
+            break;
+    
+        case 9:
+            if(targetWord["target"].includes(word)) 
+                found = true;
+            break;
+
+        default:
+            // DO NOTHING
+            break;
+    }
+
+    // resets guess window if your word is valid
+    if(found)
+        reset_guess();
+
+    // alerts user if word is in pool
+    alert_found(word.toUpperCase(), found);
+}
+
+/**
+ * clears the guess window
+ */
+function reset_guess() {
+    while ( used_letters.length > 0 ) {
+        pop_current_guess();
+    }
+}
+
+/**
+ * USED FOR TESTING
+ * alerts if word is in pool
+ * @param {string} word 
+ * @param {boolean} found 
+ */
+function alert_found(word, found) {
+
+    if (found) {
+        alert(word + " is in the list");
+    } else {
+        alert(word + " is NOT the list");
+    }
+}
+
+
+
+//----------------------------------------jQUERY-------------------------------------------------
 
 $(window).on("load", () => {
 
-    current_letters = document.getElementsByClassName("keys");
-
+    //current_letters = document.getElementsByClassName("keys");
+    guess_window = document.getElementById("current-guess");
     // for(const x in current_letters){
     //     console.log(current_letters[x]);
     // }
