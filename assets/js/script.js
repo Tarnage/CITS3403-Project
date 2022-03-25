@@ -1,3 +1,4 @@
+'use strict'
 // This is for testing purposes do not launch
 
 // onclick callback
