@@ -58,16 +58,21 @@ var current_letters;
  * @param {tag/node} e 
  */
 function input(e) {
-    let char = e.innerText;
-    if (char.toLowerCase() === "delete"){
-        pop_current_guess();
-    } 
-    else if ( char.toLowerCase() === "return") {
-        // TODO check if guess is valid
-    }
-    else {
-        disable_button(e);
-        current_guess(char);
+    let char = e.innerText.toLowerCase();
+
+    switch (char) {
+        case "delete":
+            pop_current_guess();
+            break;
+
+        case "return":
+            // TODO check if guess is valid
+            break;
+
+        default:
+            disable_button(e);
+            current_guess(char);
+            break;
     }
 }
 
