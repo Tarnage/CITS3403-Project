@@ -2,7 +2,7 @@
 //------------------------------------------------------------GLOBALS AND STATISTICS-----------------------------------------------------
 
 // TODO randomly pick a word and fill in the 'key' class
-const word_dict = {
+const WORD_DICT = {
     "root_word"    :["debuggers"],
 
     "root_letter"  :["g"],
@@ -49,7 +49,7 @@ const word_dict = {
 };
 
 // Used in a similar manner to traditional enums
-const dict_keys = {
+const DICT_KEYS = {
     0:      null,
     1:      null,
     2:      "root_word",
@@ -59,7 +59,7 @@ const dict_keys = {
     6:      "six",
     7:      "seven",
     8:      "eight",
-    9:      "nine"
+    9:      "root_word"
 };
 
 // TODO READ in json files
@@ -97,6 +97,36 @@ var found_words = {
 };
 
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
+// TODO: progress bar
+// TODO: stats tracker - percentage overall, and percentage of each catergory 
+// TODO: show words you have found
+// TODO: hints, we can look in WORD_DICTs and randomly pick a word as a hint
+// TODO: add nav bar
+
+
+/**
+ * Initilize the html with letters randomly
+ * NOTE the root-letter is not random
+ * @param {array} letters
+ * @param {element} main_letter 
+ */
+function init_letters(letters, main_letter) {
+    let root_word = WORD_DICT[DICT_KEYS[2]][0];
+    let root_letter = WORD_DICT[DICT_KEYS[3]][0];
+    
+    // remove the root_letter from root word
+    root_word = root_word.replace(root_letter, "");
+
+    // shuffle letters
+    let shuffled = root_word.split('').sort(() => {return 0.5-Math.random()});
+
+    // assign letters to element buttons
+    main_letter.innerText = root_letter;
+    for (let i = 0; i < letters.length; i++) {
+        let char = shuffled.pop();
+        letters[i].innerText = char;
+    }
+}
 
 /**
  * Virtual Keyboard functionality actives on click
@@ -173,15 +203,15 @@ function check_guess() {
     let word        = guess_stack.join("");
     let length      = word.length;
     let found       = false;
-    let current_key = dict_keys[length];
+    let current_key = DICT_KEYS[length];
 
     // min word length 4 and must contain the root letter checks
     if (length < 4) {
         alert("Minimum word length is 4");
         return;
     }
-    else if ( !word.includes(word_dict["root_letter"][0]) ) {
-        let s = word_dict["root_letter"][0].toUpperCase();
+    else if ( !word.includes(WORD_DICT["root_letter"][0]) ) {
+        let s = WORD_DICT["root_letter"][0].toUpperCase();
         alert(`Guess must contain the letter ${s}`);
         return;
     }
@@ -189,7 +219,7 @@ function check_guess() {
     // TODO: could use an array of enums 
     switch (length) {
         case 4:
-            if(word_dict[current_key].includes(word)) {
+            if(WORD_DICT[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -200,7 +230,7 @@ function check_guess() {
             break;
 
         case 5:
-            if(word_dict[current_key].includes(word)) {
+            if(WORD_DICT[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -211,7 +241,7 @@ function check_guess() {
             break;
 
         case 6:
-            if(word_dict[current_key].includes(word)) {
+            if(WORD_DICT[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -222,7 +252,7 @@ function check_guess() {
             break;
 
         case 7:
-            if(word_dict[current_key].includes(word)) {
+            if(WORD_DICT[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -233,7 +263,7 @@ function check_guess() {
             break;
 
         case 8:
-            if(word_dict[current_key].includes(word)) {
+            if(WORD_DICT[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -244,7 +274,7 @@ function check_guess() {
             break;
     
         case 9:
-            if(word_dict[current_key].includes(word)) {
+            if(WORD_DICT[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -299,12 +329,12 @@ function alert_found(word, found) {
  */
 function add_to_found_dict(key, word) {
     // find the index of the word
-    let index = word_dict[key].indexOf(word);
+    let index = WORD_DICT[key].indexOf(word);
     // remove word from the word dictionary
-    let sliced = word_dict[key].slice(index, index+1);
+    let sliced = WORD_DICT[key].slice(index, index+1);
     // convert the array returned by slice into a string
     sliced = sliced.toString();
-    word_dict[key].splice(index, 1);
+    WORD_DICT[key].splice(index, 1);
     // add word to the list of found words
     found_words[key].push(sliced);
 }
@@ -319,5 +349,11 @@ $(window).on("load", () => {
     // for(const x in current_letters){
     //     console.log(current_letters[x]);
     // }
+
+    // get elements to fill with letters
+    var keyboard = document.getElementsByClassName("letter");
+    var root_key = document.getElementById("root-letter");
+
+    init_letters(keyboard, root_key);
 
 });
