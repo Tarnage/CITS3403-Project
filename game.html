@@ -76,8 +76,6 @@
             <h1>CURRENT GUESS</h1>
           </div>
           <div class="guess-interface">
-            <!-- TODO: DOM the tile-states so it activates on click -->
-            <!-- TODO: make box transparent -->
             <div class="current-guess" id="current-guess" contentEditable="false" data-text="GUESS WINDOW"></div>
           </div>
         </div>
@@ -87,7 +85,7 @@
       <div class="row">
         <div class="container keyboard-container">
           <div class="keyboard">
-            <button class="keys main-tile" onclick="input(this)">G</button>
+            <button class="keys main-tile" id="root-letter" onclick="input(this)"></button>
           </div>
         </div>  
       </div>
@@ -95,14 +93,14 @@
       <div class="row">
         <div class="container keyboard-container">
           <div class="keyboard">
-            <button class="keys" onclick="input(this)">D</button>
-            <button class="keys" onclick="input(this)">E</button>
-            <button class="keys" onclick="input(this)">B</button>
-            <button class="keys" onclick="input(this)">U</button>
-            <button class="keys" onclick="input(this)">G</button>
-            <button class="keys" onclick="input(this)">E</button>
-            <button class="keys" onclick="input(this)">R</button>
-            <button class="keys" onclick="input(this)">S</button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
             <button class="keys keys-special" onclick="input(this)">Delete</button>
             <button class="keys keys-special" onclick="input(this)">Return</button>
           </div>
