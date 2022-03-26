@@ -1,51 +1,65 @@
 'use strict'
-//-------------------------------------------------------------------GLOBALS-----------------------------------------------------
+//------------------------------------------------------------GLOBALS AND STATISTICS-----------------------------------------------------
 
 // TODO randomly pick a word and fill in the 'key' class
-const targetWord = {
-    "target":   ["debuggers"],
+const word_dict = {
+    "root_word"    :["debuggers"],
 
-    "t_letter": ["g"],
+    "root_letter"  :["g"],
 
-    "eight":    ["buggered"],
+    "eight"        :["buggered"],
 
-    "seven":    ["grudges"],
+    "seven"        :["grudges"],
 
-    "six":      ["begged",
-                 "bedrug",
-                 "begged",
-                 "budger",
-                 "budges",
-                 "bugged",
-                 "bugger",
-                 "burgee",
-                 "debugs",
-                 "edgers"],
+    "six"          :["begged",
+                    "bedrug",
+                    "begged",
+                    "budger",
+                    "budges",
+                    "bugged",
+                    "bugger",
+                    "burgee",
+                    "debugs",
+                    "edgers"],
 
-    "five":     ["dregs",
-                 "drugs",
-                 "edger",
-                 "greed",
-                 "grubs",
-                 "serge",
-                 "grese",
-                 "budge",
-                 "egger",
-                 "surge"],
+    "five"         :["dregs",
+                    "drugs",
+                    "edger",
+                    "greed",
+                    "grubs",
+                    "serge",
+                    "grese",
+                    "budge",
+                    "egger",
+                    "surge"],
 
-    "four":     ["begs",
-                 "berg",
-                 "bugs",
-                 "burg",
-                 "degs",
-                 "degu",
-                 "dugs",
-                 "eggs",
-                 "geed",
-                 "grub",
-                 "rugs",
-                 "urge"]
+    "four"         :["begs",
+                    "berg",
+                    "bugs",
+                    "burg",
+                    "degs",
+                    "degu",
+                    "dugs",
+                    "eggs",
+                    "geed",
+                    "grub",
+                    "rugs",
+                    "urge"]
 
+};
+
+// Used in a similar manner to traditional enums
+const dict_keys = {
+    0:      null,
+    1:      null,
+    2:      "root_word",
+    3:      "root_letter",
+    4:      "four",
+    5:      "five",
+    6:      "six",
+    7:      "seven",
+    8:      "eight",
+    9:      "nine"
 };
 
 // TODO READ in json files
@@ -71,6 +85,16 @@ var guess_stack = [];
 // <div id="current-guess" class="current-guess" data-text="GUESS WINDOW" contenteditable="false">
 // initilized window on load
 var guess_window;
+
+// Holds all the words the user has guessed correctly
+var found_words = {
+    "root_word" : [],
+    "eight"     : [],
+    "seven"     : [],
+    "six"       : [],
+    "five"      : [],
+    "four"      : []
+};
 
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
 
@@ -127,7 +151,8 @@ function enable_button() {
  */
 function current_guess(letter) {
     guess_stack.push(letter);
-    guess_window.innerText = guess_stack.join("");
+    // Updates HTML with new letter
+    guess_window.innerText += letter;
 }
 
 /**
@@ -140,51 +165,93 @@ function pop_current_guess() {
     enable_button();
 }
 
+/**
+ * Validates users word
+ * @returns null or notdefined? when guess is not correct length or does not inculde root letter
+ */
 function check_guess() {
-    let word = guess_stack.join("");
-    let length = word.length;
-    let found = false;
+    let word        = guess_stack.join("");
+    let length      = word.length;
+    let found       = false;
+    let current_key = dict_keys[length];
 
-    // min word length 4 and 
+    // min word length 4 and must contain the root letter checks
     if (length < 4) {
         alert("Minimum word length is 4");
         return;
     }
-    else if ( !word.includes(targetWord["t_letter"][0]) ) {
-        let s = targetWord["t_letter"][0].toUpperCase();
+    else if ( !word.includes(word_dict["root_letter"][0]) ) {
+        let s = word_dict["root_letter"][0].toUpperCase();
         alert(`Guess must contain the letter ${s}`);
         return;
     }
 
+    // TODO: could use an array of enums 
     switch (length) {
         case 4:
-            if(targetWord["four"].includes(word)) 
+            if(word_dict[current_key].includes(word)) {
                 found = true;
+                add_to_found_dict(current_key, word);
+            }
+            else if(found_words[current_key].includes(word)) {
+                alert(word.toUpperCase() + " already found");
+                return;
+            }
             break;
 
         case 5:
-            if(targetWord["five"].includes(word)) 
+            if(word_dict[current_key].includes(word)) {
                 found = true;
+                add_to_found_dict(current_key, word);
+            }
+            else if(found_words[current_key].includes(word)) {
+                alert(word.toUpperCase() + " already found");
+                return;
+            }
             break;
 
         case 6:
-            if(targetWord["six"].includes(word)) 
+            if(word_dict[current_key].includes(word)) {
                 found = true;
+                add_to_found_dict(current_key, word);
+            }
+            else if(found_words[current_key].includes(word)) {
+                alert(word.toUpperCase() + " already found");
+                return;
+            }
             break;
 
         case 7:
-            if(targetWord["seven"].includes(word))
+            if(word_dict[current_key].includes(word)) {
                 found = true;
+                add_to_found_dict(current_key, word);
+            }
+            else if(found_words[current_key].includes(word)) {
+                alert(word.toUpperCase() + " already found");
+                return;
+            }
             break;
 
         case 8:
-            if(targetWord["eight"].includes(word))
+            if(word_dict[current_key].includes(word)) {
                 found = true;
+                add_to_found_dict(current_key, word);
+            }
+            else if(found_words[current_key].includes(word)) {
+                alert(word.toUpperCase() + " already found");
+                return;
+            }
             break;
     
         case 9:
-            if(targetWord["target"].includes(word)) 
+            if(word_dict[current_key].includes(word)) {
                 found = true;
+                add_to_found_dict(current_key, word);
+            }
+            else if(found_words[current_key].includes(word)) {
+                alert(word.toUpperCase() + " already found");
+                return;
+            }
             break;
 
         default:
@@ -224,6 +291,23 @@ function alert_found(word, found) {
     }
 }
 
+/**
+ * Removes word from the word dictionary and 
+ * adds it to the users current found words dictionary
+ * @param {string} key 
+ * @param {string} word 
+ */
+function add_to_found_dict(key, word) {
+    // find the index of the word
+    let index = word_dict[key].indexOf(word);
+    // remove word from the word dictionary
+    let sliced = word_dict[key].slice(index, index+1);
+    // convert the array returned by slice into a string
+    sliced = sliced.toString();
+    word_dict[key].splice(index, 1);
+    // add word to the list of found words
+    found_words[key].push(sliced);
+}
 
 
 //----------------------------------------jQUERY-------------------------------------------------
