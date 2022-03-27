@@ -24,6 +24,27 @@
   
 </head>
 <body>
+      <!-- navbar -->
+    <!-- mostly place holders -->
+    <ul class="nav justify-content-center fixed-bottom hero-nav">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+      </li>
+      <!-- TODO: chacnge move icon when hovering over link -->
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"> How to play</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">GitHub</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Contact Us</a>
+      </li>
+      <!-- TODO Remove disabled link -->
+      <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+      </li>
+    </ul>
 
   <div class="container" >
     <div class="game-box">  
@@ -109,6 +130,24 @@
     </div>
   </div>
 
+  <!-- Modal -->
+  <!-- Same modal exsists in index -->
+  <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">How to play</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          How to play instructions!!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
