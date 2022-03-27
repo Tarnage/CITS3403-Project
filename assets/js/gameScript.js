@@ -157,18 +157,20 @@ function initLetters(letters, mainLetter) {
  */
 function input(e) {
     let char = e.innerText.toLowerCase();
-    if (char === "delete"){
-        // Theres are letters to delete
-        if(usedLetters.length != 0) {
-            popCurrentGuess();
-        }
-    } 
-    else if ( char === "enter") {
-        checkGuess();
-    }
-    else {
-        disableButton(e);
-        currentGuess(char);
+    switch (char) {
+        case "delete":
+            pop_current_guess();
+            break;
+
+        case "return":
+            // TODO check if guess is valid
+            break;
+
+        default:
+            disable_button(e);
+            current_guess(char);
+            break;
+
     }
 }
 
