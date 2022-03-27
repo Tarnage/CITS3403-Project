@@ -1,8 +1,22 @@
 'use strict'
 //------------------------------------------------------------GLOBALS AND STATISTICS-----------------------------------------------------
 
+// Used in a similar manner to traditional enums
+const DICT_KEYS = {
+    0:      null,
+    1:      null,
+    2:      "root_word",
+    3:      "root_letter",
+    4:      "four",
+    5:      "five",
+    6:      "six",
+    7:      "seven",
+    8:      "eight",
+    9:      "root_word"
+};
+
 // TODO randomly pick a word and fill in the 'key' class
-const WORD_DICT = {
+const word_dict = {
     "root_word"    :["debuggers"],
 
     "root_letter"  :["g"],
@@ -48,20 +62,6 @@ const WORD_DICT = {
 
 };
 
-// Used in a similar manner to traditional enums
-const DICT_KEYS = {
-    0:      null,
-    1:      null,
-    2:      "root_word",
-    3:      "root_letter",
-    4:      "four",
-    5:      "five",
-    6:      "six",
-    7:      "seven",
-    8:      "eight",
-    9:      "root_word"
-};
-
 // TODO READ in json files
 // var testData;
 
@@ -73,13 +73,12 @@ const DICT_KEYS = {
 
 // console.log("TESTING " + testData);
 
-
 // Stack to keep track of used letters
 // Holds the location of the document children
-var used_letters = [];
+var used_letters;
 
 // Stack current word
-var guess_stack = [];
+var guess_stack;
 
 // holds current guess div
 // <div id="current-guess" class="current-guess" data-text="GUESS WINDOW" contenteditable="false">
@@ -87,32 +86,48 @@ var guess_stack = [];
 var guess_window;
 
 // Holds all the words the user has guessed correctly
-var found_words = {
-    "root_word" : [],
-    "eight"     : [],
-    "seven"     : [],
-    "six"       : [],
-    "five"      : [],
-    "four"      : []
-};
+var found_words;
 
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
 // TODO: progress bar
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
 // TODO: show words you have found
-// TODO: hints, we can look in WORD_DICTs and randomly pick a word as a hint
+// TODO: hints, we can look in word_dicts and randomly pick a word as a hint
 // TODO: add nav bar
-
+// TODO: add loading screen
 
 /**
- * Initilize the html with letters randomly
+ * Initialize game or reset progress
+ */
+function init() {
+    used_letters    = [];
+    guess_stack     = [];
+    var guess_window;
+    found_words     =  {
+        "root_word" : [],
+        "eight"     : [],
+        "seven"     : [],
+        "six"       : [],
+        "five"      : [],
+        "four"      : []
+    };
+
+    // Initializes letters in the game interface
+    // get elements to fill with letters
+    var keyboard = document.getElementsByClassName("letter");
+    var root_key = document.getElementById("root-letter");
+    init_letters(keyboard, root_key);
+}
+
+/**
+ * Initializes the game interface with letters - randomly
  * NOTE the root-letter is not random
  * @param {array} letters
  * @param {element} main_letter 
  */
 function init_letters(letters, main_letter) {
-    let root_word = WORD_DICT[DICT_KEYS[2]][0];
-    let root_letter = WORD_DICT[DICT_KEYS[3]][0];
+    let root_word = word_dict[DICT_KEYS[2]][0];
+    let root_letter = word_dict[DICT_KEYS[3]][0];
     
     // remove the root_letter from root word
     root_word = root_word.replace(root_letter, "");
@@ -141,7 +156,7 @@ function input(e) {
             pop_current_guess();
         }
     } 
-    else if ( char === "return") {
+    else if ( char === "enter") {
         check_guess();
     }
     else {
@@ -210,8 +225,8 @@ function check_guess() {
         alert("Minimum word length is 4");
         return;
     }
-    else if ( !word.includes(WORD_DICT["root_letter"][0]) ) {
-        let s = WORD_DICT["root_letter"][0].toUpperCase();
+    else if ( !word.includes(word_dict["root_letter"][0]) ) {
+        let s = word_dict["root_letter"][0].toUpperCase();
         alert(`Guess must contain the letter ${s}`);
         return;
     }
@@ -219,7 +234,7 @@ function check_guess() {
     // TODO: could use an array of enums 
     switch (length) {
         case 4:
-            if(WORD_DICT[current_key].includes(word)) {
+            if(word_dict[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -230,7 +245,7 @@ function check_guess() {
             break;
 
         case 5:
-            if(WORD_DICT[current_key].includes(word)) {
+            if(word_dict[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -241,7 +256,7 @@ function check_guess() {
             break;
 
         case 6:
-            if(WORD_DICT[current_key].includes(word)) {
+            if(word_dict[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -252,7 +267,7 @@ function check_guess() {
             break;
 
         case 7:
-            if(WORD_DICT[current_key].includes(word)) {
+            if(word_dict[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -263,7 +278,7 @@ function check_guess() {
             break;
 
         case 8:
-            if(WORD_DICT[current_key].includes(word)) {
+            if(word_dict[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -274,7 +289,7 @@ function check_guess() {
             break;
     
         case 9:
-            if(WORD_DICT[current_key].includes(word)) {
+            if(word_dict[current_key].includes(word)) {
                 found = true;
                 add_to_found_dict(current_key, word);
             }
@@ -329,12 +344,12 @@ function alert_found(word, found) {
  */
 function add_to_found_dict(key, word) {
     // find the index of the word
-    let index = WORD_DICT[key].indexOf(word);
+    let index = word_dict[key].indexOf(word);
     // remove word from the word dictionary
-    let sliced = WORD_DICT[key].slice(index, index+1);
+    let sliced = word_dict[key].slice(index, index+1);
     // convert the array returned by slice into a string
     sliced = sliced.toString();
-    WORD_DICT[key].splice(index, 1);
+    word_dict[key].splice(index, 1);
     // add word to the list of found words
     found_words[key].push(sliced);
 }
@@ -350,10 +365,6 @@ $(window).on("load", () => {
     //     console.log(current_letters[x]);
     // }
 
-    // get elements to fill with letters
-    var keyboard = document.getElementsByClassName("letter");
-    var root_key = document.getElementById("root-letter");
-
-    init_letters(keyboard, root_key);
+    init();
 
 });
