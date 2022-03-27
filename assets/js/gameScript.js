@@ -88,6 +88,10 @@ var guess_window;
 // Holds all the words the user has guessed correctly
 var found_words;
 
+// holds the button letter elements 
+var keyboard;
+var root_key;
+
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
 // TODO: progress bar
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
@@ -98,10 +102,12 @@ var found_words;
 
 /**
  * Initialize game or reset progress
+ * TODO: randomly choose root word from a db
  */
 function init() {
     used_letters    = [];
     guess_stack     = [];
+    guess_window    = undefined; // unset variable
     var guess_window;
     found_words     =  {
         "root_word" : [],
@@ -114,8 +120,6 @@ function init() {
 
     // Initializes letters in the game interface
     // get elements to fill with letters
-    var keyboard = document.getElementsByClassName("letter");
-    var root_key = document.getElementById("root-letter");
     init_letters(keyboard, root_key);
 }
 
@@ -323,7 +327,7 @@ function reset_guess() {
 
 /**
  * USED FOR TESTING
- * alerts if word is in pool
+ * alerts iff word is in pool
  * @param {string} word 
  * @param {boolean} found 
  */
@@ -365,6 +369,9 @@ $(window).on("load", () => {
     //     console.log(current_letters[x]);
     // }
 
-    init();
+    // find the button letter elements
+    keyboard = document.getElementsByClassName("letter");
+    root_key = document.getElementById("root-letter");
 
+    init();
 });
