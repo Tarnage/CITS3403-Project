@@ -42,14 +42,14 @@ var keyboard;
 var rootKey;
 
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
-// TODO: progress bar
+// TODO: reset progress bar
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
-// TODO: show words you have found
 // TODO: hints, we can look in wordDicts and randomly pick a word as a hint
-// TODO: add nav bar
+// TODO: add meaningful nav bar links
 // TODO: add loading screen
 // TODO: reset still has bugs
 // TODO READ in json files
+// TODO: local storage / cookies
 
 /**
  * Initialize game or reset progress
@@ -61,16 +61,20 @@ function init(reset) {
         // clears guess window
         guessWindow.innerText = "";
         // enables the buttons
-        while (usedLetters.length >= 0) {
+        while (usedLetters.length > 0) {
             enableButton();
+        }
+        // clear the guessStack
+        while (guessStack.length > 0) {
+            guessStack.pop();
         }
 
     } else {
         // must init the list
         usedLetters = [];
+        guessStack     = [];
     }
 
-    guessStack     = [];
     foundWords     =  {
         "root_word" : [],
         "eight"     : [],
@@ -227,6 +231,7 @@ function popCurrentGuess() {
  */
 function checkGuess() {
     let word        = guessStack.join("");
+    console.log(word);
     let length      = word.length;
     let found       = false;
     let currentKey = DICT_KEYS[length];
