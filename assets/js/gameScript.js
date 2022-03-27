@@ -16,51 +16,7 @@ const DICT_KEYS = {
 };
 
 // TODO randomly pick a word and fill in the 'key' class
-const wordDict = {
-    "root_word"    :["debuggers"],
-
-    "root_letter"  :["g"],
-
-    "eight"        :["buggered"],
-
-    "seven"        :["grudges"],
-
-    "six"          :["begged",
-                    "bedrug",
-                    "begged",
-                    "budger",
-                    "budges",
-                    "bugged",
-                    "bugger",
-                    "burgee",
-                    "debugs",
-                    "edgers"],
-
-    "five"         :["dregs",
-                    "drugs",
-                    "edger",
-                    "greed",
-                    "grubs",
-                    "serge",
-                    "grese",
-                    "budge",
-                    "egger",
-                    "surge"],
-
-    "four"         :["begs",
-                    "berg",
-                    "bugs",
-                    "burg",
-                    "degs",
-                    "degu",
-                    "dugs",
-                    "eggs",
-                    "geed",
-                    "grub",
-                    "rugs",
-                    "urge"]
-
-};
+var wordDict;
 
 // TODO READ in json files
 // var testData;
@@ -99,16 +55,28 @@ var rootKey;
 // TODO: hints, we can look in wordDicts and randomly pick a word as a hint
 // TODO: add nav bar
 // TODO: add loading screen
+// TODO: reset still has bugs
 
 /**
  * Initialize game or reset progress
  * TODO: randomly choose root word from a db
+ * @param {boolean} reset
  */
-function init() {
-    usedLetters    = [];
+function init(reset) {
+    if (reset) {
+        // clears guess window
+        guessWindow.innerText = "";
+        // enables the buttons
+        while (usedLetters.length >= 0) {
+            enableButton();
+        }
+
+    } else {
+        // must init the list
+        usedLetters = [];
+    }
+
     guessStack     = [];
-    guessWindow    = undefined; // unset variable
-    var guessWindow;
     foundWords     =  {
         "root_word" : [],
         "eight"     : [],
@@ -116,6 +84,51 @@ function init() {
         "six"       : [],
         "five"      : [],
         "four"      : []
+    };
+    wordDict = {
+        "root_word"    :["debuggers"],
+    
+        "root_letter"  :["g"],
+    
+        "eight"        :["buggered"],
+    
+        "seven"        :["grudges"],
+    
+        "six"          :["begged",
+                        "bedrug",
+                        "begged",
+                        "budger",
+                        "budges",
+                        "bugged",
+                        "bugger",
+                        "burgee",
+                        "debugs",
+                        "edgers"],
+    
+        "five"         :["dregs",
+                        "drugs",
+                        "edger",
+                        "greed",
+                        "grubs",
+                        "serge",
+                        "grese",
+                        "budge",
+                        "egger",
+                        "surge"],
+    
+        "four"         :["begs",
+                        "berg",
+                        "bugs",
+                        "burg",
+                        "degs",
+                        "degu",
+                        "dugs",
+                        "eggs",
+                        "geed",
+                        "grub",
+                        "rugs",
+                        "urge"]
+    
     };
 
     // Initializes letters in the game interface
@@ -358,11 +371,38 @@ function add_to_found_dict(key, word) {
     foundWords[key].push(sliced);
 }
 
+//----------------------------------------Local Storage-------------------------------------------------
+
+//TODO: 
 /**
- * Load local storage / cookies
+ * Save to local storage / cookies
  */
 function populateStorage() {
-    
+    console.log("CHECK");
+    localStorage.setItem('wordDict',  JSON.stringify(wordDict));
+    localStorage.setItem('usedLetters', JSON.stringify(usedLetters));
+    localStorage.setItem('foundWords', JSON.stringify(foundWords));
+    localStorage.setItem('guessStack', JSON.stringify(guessStack));
+    // localStorage.setItem('guessWindow', guessWindow);
+    // localStorage.setItem('keyboard', keyboard);
+    // localStorage.setItem('rootKey', rootKey);
+
+    setStorage();
+}
+
+/**
+ * Load from local storage
+ */
+function setStorage() {
+    console.log("SETSTORAGE");
+    wordDict    = JSON.parse(localStorage.getItem('wordDict'));
+    usedLetters = JSON.parse(localStorage.getItem('usedLetters'));
+    foundWords  = JSON.parse(localStorage.getItem('foundWords'));
+    guessStack  = JSON.parse(localStorage.getItem('guessStack'));
+    // guessWindow = localStorage.getItem('guessWindow');
+    // keyboard    = localStorage.getItem('keyboard');
+    // rootKey     = localStorage.getItem('rootKey');
+    console.log(foundWords);
 }
 //----------------------------------------jQUERY-------------------------------------------------
 
@@ -378,5 +418,14 @@ $(window).on("load", () => {
     keyboard = document.getElementsByClassName("letter");
     rootKey = document.getElementById("root-letter");
 
-    init();
+    // clears cookies
+    localStorage.clear();
+
+    init(false);
+    // if (!localStorage.getItem("foundWords")) {
+    //     populateStorage();
+    // } else {
+
+    //     setStorage();
+    // }
 });
