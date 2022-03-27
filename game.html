@@ -1,3 +1,5 @@
+<!-- TODO: make nav bar turn into a hamburger for smaller screens -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,30 +26,29 @@
   
 </head>
 <body>
-      <!-- navbar -->
-    <!-- mostly place holders -->
-    <ul class="nav justify-content-center fixed-bottom hero-nav">
-      <li class="nav-item">
-        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
-      </li>
-      <!-- TODO: chacnge move icon when hovering over link -->
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"> How to play</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">GitHub</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Contact Us</a>
-      </li>
-      <!-- TODO Remove disabled link -->
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
-      </li>
-    </ul>
-
   <div class="container" >
-    <div class="game-box">  
+    <div class="game-box">
+
+      <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+          <div class="col-lg-1">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-lg-11" style="height:40px">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <ul>
+                  <li data-bs-toggle="modal" data-bs-target="#new-game-modal">New Game</li>
+                  <li><a href="#news">News</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
       <div class="row">
         <div class="col-lg-5">
           <div class="stat-interface">
@@ -101,8 +102,7 @@
           </div>
         </div>
       </div>
-            
-      <!-- TODO: think about using a different class for the words involved in guess -->
+
       <div class="row">
         <div class="container keyboard-container">
           <div class="keyboard">
@@ -131,23 +131,23 @@
   </div>
 
   <!-- Modal -->
-  <!-- Same modal exsists in index -->
-  <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">
+  <!-- Same modal exsists in game.html -->
+  <div class="modal fade" id="new-game-modal" tabindex="-1"  aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">How to play</h5>
+          <h5 class="modal-title">Caution</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          How to play instructions!!
+          Your current progress will be loss
         </div>
         <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="init()">Reset</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-
 </body>
 </html>
