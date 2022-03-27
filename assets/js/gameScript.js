@@ -15,19 +15,8 @@ const DICT_KEYS = {
     9:      "root_word"
 };
 
-// TODO randomly pick a word and fill in the 'key' class
+// current anagaram dicitonary
 var wordDict;
-
-// TODO READ in json files
-// var testData;
-
-// fetch("./testWords.json")
-// .then(response => {
-//    return response.json();
-// })
-// .then(jsondata => testData = jsondata);
-
-// console.log("TESTING " + testData);
 
 // Stack to keep track of used letters
 // Holds the location of the document children
@@ -56,6 +45,7 @@ var rootKey;
 // TODO: add nav bar
 // TODO: add loading screen
 // TODO: reset still has bugs
+// TODO READ in json files
 
 /**
  * Initialize game or reset progress
@@ -322,9 +312,11 @@ function checkGuess() {
     }
 
     // resets guess window if your word is valid
-    if(found)
-        reset_guess();
-
+    if(found){
+        resetGuess();
+        updateStats(currentKey);
+    }
+        
     // alerts user if word is in pool
     alert_found(word.toUpperCase(), found);
 }
@@ -332,7 +324,7 @@ function checkGuess() {
 /**
  * clears the guess window
  */
-function reset_guess() {
+function resetGuess() {
     while ( usedLetters.length > 0 ) {
         popCurrentGuess();
     }
@@ -369,6 +361,20 @@ function add_to_found_dict(key, word) {
     wordDict[key].splice(index, 1);
     // add word to the list of found words
     foundWords[key].push(sliced);
+}
+
+/**
+ * Updates stats
+ * TODO: add more stats
+ */
+function updateStats(key) {
+    let progBar = document.getElementById(`bar-${key}`);
+    let percentage = Math.round((100 / (foundWords[key].length + wordDict[key].length)) * foundWords[key].length);
+    progBar.setAttribute("style", `width: ${percentage}%;`);
+    progBar.setAttribute("aria-valuenow", `${percentage};`);
+    progBar.nextElementSibling.innerText = `${percentage}% complete`;
+    let progWords = document.getElementById(`bar-${key}-words`);
+    progWords.innerText = foundWords[key].join(", ");
 }
 
 //----------------------------------------Local Storage-------------------------------------------------

@@ -14,6 +14,10 @@ label {
   color: #c9d1d9;
 }
 
+.progress-words {
+  color: #58a6ff;
+}
+
 .guess-interface {
   display: grid;
   justify-content: center;
