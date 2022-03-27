@@ -40,6 +40,7 @@ form {
 .nav-link:hover {
   font-size: 150%;
   color: rgb(139, 143, 102);
+  cursor: pointer;
 }
 
 .login-screen {

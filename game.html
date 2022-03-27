@@ -1,3 +1,5 @@
+<!-- TODO: make nav bar turn into a hamburger for smaller screens -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,57 +21,84 @@
   <script src="assets/js/gameScript.js"></script>
   <!-- flavicon -->
   <link rel="icon" type="images/x-icon" href="./assets/img/stock/favicon-32x32.png">
+  <!-- json file -->
+  <!-- <script type="text/javascript" src="assets/js/testWords.json"></script> -->
+  
 </head>
 <body>
-
   <div class="container" >
-    <div class="game-box">  
+    <div class="game-box">
+
+      <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+          <div class="col-lg-1">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-lg-11" style="height:40px">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <ul>
+                  <li data-bs-toggle="modal" data-bs-target="#new-game-modal">New Game</li>
+                  <li><a href="#news">News</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
       <div class="row">
         <div class="col-lg-5">
           <div class="stat-interface">
             <h3>Progress</h3>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar progress-bar-striped" id="bar-four" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
               <!-- TODO: add a progess track -->
-              <small class="justify-content-center d-flex position-absolute" style="color: black;">10% complete</small>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
             </div>
             <h6>4 WORDS</h6>
             <!-- TODO: add found words into p tags -->
-            <p></p><br>
+            <p class="progress-words" id="bar-four-words"></p>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-              <small class="justify-content-center d-flex position-absolute" style="color: black;">25% complete</small>
+              <div class="progress-bar progress-bar-striped bg-success" id="bar-five" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
             </div>
             <h6>5 WORDS</h6>
-            <p></p><br>
+            <p class="progress-words" id="bar-five-words"></p>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              <small class="justify-content-center d-flex position-absolute" style="color: black;">50% complete</small>
+              <div class="progress-bar progress-bar-striped bg-info" id="bar-six" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
             </div>
             <h6>6 WORDS</h6>
-            <p></p><br>
+            <p class="progress-words" id="bar-six-words"></p>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              <small class="justify-content-center d-flex position-absolute" style="color: black;">75% complete</small>
+              <div class="progress-bar progress-bar-striped bg-warning" id="bar-seven" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
             </div>
             <h6>7 WORDS</h6>
-            <p></p><br>
+            <p class="progress-words" id="bar-seven-words"></p>
             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              <small class="justify-content-center d-flex position-absolute" style="color: black;">10% complete</small>
+              <div class="progress-bar progress-bar-striped bg-danger" id="bar-eight" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
             </div>
             <h6>8 WORDS</h6>
-            <p></p><br>
+            <p class="progress-words" id="bar-eight-words"></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-danger" id="bar-root_word" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>9 WORD</h6>
+            <p class="progress-words" id="bar-root_word-words"></p>
           </div>
         </div>
         <div class="col-lg-7" style="padding: 5%;">
           <div>
-            <h1>CURRENT GUESS</h1>
+            <h1>CURRENT_GUESS</h1>
           </div>
           <div class="guess-interface">
-            <!-- TODO: DOM the tile-states so it activates on click -->
-            <!-- TODO: make box transparent -->
-            <div class="current-guess" id="current-guess" contentEditable="false" data-text="GUESS WINDOW"></div>
+            <div class="current-guess" id="current-guess" contentEditable="false" data-text="GUESS_WINDOW"></div>
           </div>
         </div>
       </div>
@@ -77,7 +106,7 @@
       <div class="row">
         <div class="container keyboard-container">
           <div class="keyboard">
-            <button class="keys main-tile" onclick="input(this)">G</button>
+            <button class="keys main-tile" id="root-letter" onclick="input(this)"></button>
           </div>
         </div>  
       </div>
@@ -85,22 +114,40 @@
       <div class="row">
         <div class="container keyboard-container">
           <div class="keyboard">
-            <button class="keys" onclick="input(this)">D</button>
-            <button class="keys" onclick="input(this)">E</button>
-            <button class="keys" onclick="input(this)">B</button>
-            <button class="keys" onclick="input(this)">U</button>
-            <button class="keys" onclick="input(this)">G</button>
-            <button class="keys" onclick="input(this)">E</button>
-            <button class="keys" onclick="input(this)">R</button>
-            <button class="keys" onclick="input(this)">S</button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
             <button class="keys keys-special" onclick="input(this)">Delete</button>
-            <button class="keys keys-special" onclick="input(this)">Return</button>
+            <button class="keys keys-special" onclick="input(this)">Enter</button>
           </div>
         </div>  
       </div>
     </div>
   </div>
 
-
+  <!-- Modal -->
+  <!-- Same modal exsists in game.html -->
+  <div class="modal fade" id="new-game-modal" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Caution</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your current progress will be loss
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="init(true)">Reset</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
