@@ -221,6 +221,15 @@ function popCurrentGuess() {
 }
 
 /**
+ * clears the guess window
+ */
+ function resetGuess() {
+    while ( usedLetters.length > 0 ) {
+        popCurrentGuess();
+    }
+}
+
+/**
  * Validates users word
  * @returns null or notdefined? when guess is not correct length or does not inculde root letter
  */
@@ -243,27 +252,23 @@ function checkGuess() {
     }
 
     found = wordDict[currentKey].includes(word);
-    // resets guess window if your word is valid
+
     if(found) {
-        add_to_found_dict(currentKey, word);
+        // add word to list of user found word
+        addToFoundWords(currentKey, word);
+        // resets the guess window and stack
         resetGuess();
+        // updates progress bar and writes the words to the screen
         updateStats(currentKey);
+        // TODO: remove for production release
         alert_found(word.toUpperCase(), found);
     } 
-    else if(foundWords[currentKey].includes(word)) {
+    else if( foundWords[currentKey].includes(word) ) {
         alert(word.toUpperCase() + " already found");
     } else {
+        // TODO: change to a nicer interface modal or window that fades 
         // alerts user if word is in pool
         alert_found(word.toUpperCase(), found);
-    }
-}
-
-/**
- * clears the guess window
- */
-function resetGuess() {
-    while ( usedLetters.length > 0 ) {
-        popCurrentGuess();
     }
 }
 
@@ -288,7 +293,7 @@ function alert_found(word, found) {
  * @param {string} key 
  * @param {string} word 
  */
-function add_to_found_dict(key, word) {
+function addToFoundWords(key, word) {
     // find the index of the word
     let index = wordDict[key].indexOf(word);
     // remove word from the word dictionary
@@ -303,15 +308,17 @@ function add_to_found_dict(key, word) {
 /**
  * Updates stats
  * TODO: add more stats
+ * 
+ * @param {string} value
  */
-function updateStats(key) {
-    let progBar = document.getElementById(`bar-${key}`);
-    let percentage = Math.round((100 / (foundWords[key].length + wordDict[key].length)) * foundWords[key].length);
+function updateStats(value) {
+    let progBar = document.getElementById(`bar-${value}`);
+    let percentage = Math.round((100 / (foundWords[key].length + wordDict[value].length)) * foundWords[value].length);
     progBar.setAttribute("style", `width: ${percentage}%;`);
     progBar.setAttribute("aria-valuenow", `${percentage};`);
     progBar.nextElementSibling.innerText = `${percentage}% complete`;
-    let progWords = document.getElementById(`bar-${key}-words`);
-    progWords.innerText = foundWords[key].join(", ");
+    let progWords = document.getElementById(`bar-${value}-words`);
+    progWords.innerText = foundWords[value].join(", ");
 }
 
 //----------------------------------------Local Storage-------------------------------------------------
@@ -351,11 +358,7 @@ function setStorage() {
 
 $(window).on("load", () => {
 
-    //current_letters = document.getElementsByClassName("keys");
     guessWindow = document.getElementById("current-guess");
-    // for(const x in current_letters){
-    //     console.log(current_letters[x]);
-    // }
 
     // find the button letter elements
     keyboard = document.getElementsByClassName("letter");
