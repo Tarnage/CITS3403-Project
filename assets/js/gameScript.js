@@ -48,31 +48,26 @@ var rootKey;
 // TODO: add meaningful nav bar links
 // TODO: add loading screen
 // TODO: reset still has bugs
-// TODO READ in json files
+// TODO: READ in json files
 // TODO: local storage / cookies
 
 /**
- * Initialize game or reset progress
+ * Initialize game or resets progress
  * TODO: randomly choose root word from a db
  * @param {boolean} reset
  */
 function init(reset) {
     if (reset) {
-        // clears guess window
-        guessWindow.innerText = "";
-        // enables the buttons
+        // clears guess window and stack
+        resetGuess();
+        // enables any disabled buttons
         while (usedLetters.length > 0) {
             enableButton();
         }
-        // clear the guessStack
-        while (guessStack.length > 0) {
-            guessStack.pop();
-        }
-
     } else {
         // must init the list
         usedLetters = [];
-        guessStack     = [];
+        guessStack  = [];
     }
 
     foundWords     =  {
@@ -247,87 +242,20 @@ function checkGuess() {
         return;
     }
 
-    // TODO: could use an array of enums 
-    switch (length) {
-        case 4:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 5:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 6:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 7:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 8:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-    
-        case 9:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        default:
-            // DO NOTHING
-            break;
-    }
-
+    found = wordDict[currentKey].includes(word);
     // resets guess window if your word is valid
-    if(found){
+    if(found) {
+        add_to_found_dict(currentKey, word);
         resetGuess();
         updateStats(currentKey);
+        alert_found(word.toUpperCase(), found);
+    } 
+    else if(foundWords[currentKey].includes(word)) {
+        alert(word.toUpperCase() + " already found");
+    } else {
+        // alerts user if word is in pool
+        alert_found(word.toUpperCase(), found);
     }
-        
-    // alerts user if word is in pool
-    alert_found(word.toUpperCase(), found);
 }
 
 /**
