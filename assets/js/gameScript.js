@@ -313,7 +313,7 @@ function addToFoundWords(key, word) {
  */
 function updateStats(value) {
     let progBar = document.getElementById(`bar-${value}`);
-    let percentage = Math.round((100 / (foundWords[key].length + wordDict[value].length)) * foundWords[value].length);
+    let percentage = Math.round((100 / (foundWords[value].length + wordDict[value].length)) * foundWords[value].length);
     progBar.setAttribute("style", `width: ${percentage}%;`);
     progBar.setAttribute("aria-valuenow", `${percentage};`);
     progBar.nextElementSibling.innerText = `${percentage}% complete`;
