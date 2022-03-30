@@ -374,7 +374,7 @@ $(window).on("load", () => {
     // }
 
     // adds the onclick function for all keys
-    $(".keys").on("click", function() {
+    $(".keys").click(function(){
         input(this);
     });
 });
