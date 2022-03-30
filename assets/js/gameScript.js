@@ -235,9 +235,7 @@ function popCurrentGuess() {
  */
 function checkGuess() {
     let word        = guessStack.join("");
-    console.log(word);
     let length      = word.length;
-    let found       = false;
     let currentKey = DICT_KEYS[length];
 
     // min word length 4 and must contain the root letter checks
@@ -251,24 +249,23 @@ function checkGuess() {
         return;
     }
 
-    found = wordDict[currentKey].includes(word);
-
-    if(found) {
-        // add word to list of user found word
+    // Checks if word is valid / found in the pool of words
+    if ( wordDict[currentKey].includes(word) ) {
+        // add word to list of words currently found by the user
         addToFoundWords(currentKey, word);
-        // resets the guess window and stack
+        // resets the guess window and guess stack
         resetGuess();
         // updates progress bar and writes the words to the screen
         updateStats(currentKey);
         // TODO: remove for production release
-        alert_found(word.toUpperCase(), found);
+        alert(word + " is in the list");
     } 
     else if( foundWords[currentKey].includes(word) ) {
         alert(word.toUpperCase() + " already found");
     } else {
         // TODO: change to a nicer interface modal or window that fades 
         // alerts user if word is in pool
-        alert_found(word.toUpperCase(), found);
+        alert(word + " is NOT the list");
     }
 }
 
