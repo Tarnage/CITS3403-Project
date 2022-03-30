@@ -353,6 +353,7 @@ function setStorage() {
 }
 //----------------------------------------jQUERY-------------------------------------------------
 
+
 $(window).on("load", () => {
 
     guessWindow = document.getElementById("current-guess");
@@ -371,4 +372,10 @@ $(window).on("load", () => {
 
     //     setStorage();
     // }
+
+    // adds the onclick function for all keys
+    $(".keys").on("click", function() {
+        input(this);
+    });
 });
+
