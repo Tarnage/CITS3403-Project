@@ -1,0 +1,153 @@
+<!-- TODO: make nav bar turn into a hamburger for smaller screens -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anagram-City</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- AJAX -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="assets/style/gameSytle.css">
+  <!-- JavaScript -->
+  <script src="assets/js/gameScript.js"></script>
+  <!-- flavicon -->
+  <link rel="icon" type="images/x-icon" href="./assets/img/stock/favicon-32x32.png">
+  <!-- json file -->
+  <!-- <script type="text/javascript" src="assets/js/testWords.json"></script> -->
+  
+</head>
+<body>
+  <div class="container" >
+    <div class="game-box">
+
+      <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+          <div class="col-lg-1">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-lg-11" style="height:40px">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <ul>
+                  <li data-bs-toggle="modal" data-bs-target="#new-game-modal">New Game</li>
+                  <li><a href="#news">How to Play</a></li>
+                  <li><a href="#contact">GitHub</a></li>
+                  <li><a href="#about">Contact Us</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="stat-interface">
+            <h3>Progress</h3>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" id="bar-four" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <!-- TODO: add a progress track -->
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>4 LETTERS</h6>
+            <!-- TODO: add found words into p tags, and specify total number of words to guess for each amount of letters -->
+            <p class="progress-words" id="bar-four-words"></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" id="bar-five" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>5 LETTERS</h6>
+            <p class="progress-words" id="bar-five-words"></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-info" id="bar-six" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>6 LETTERS</h6>
+            <p class="progress-words" id="bar-six-words"></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-warning" id="bar-seven" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>7 LETTERS</h6>
+            <p class="progress-words" id="bar-seven-words"></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-danger" id="bar-eight" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>8 LETTERS</h6>
+            <p class="progress-words" id="bar-eight-words"></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-danger" id="bar-root_word" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              <small class="justify-content-center d-flex position-absolute" style="color: black;">0% complete</small>
+            </div>
+            <h6>9 LETTERS</h6>
+            <p class="progress-words" id="bar-root_word-words"></p>
+          </div>
+        </div>
+        <div class="col-lg-7" style="padding: 5%;">
+          <div>
+            <h1>CURRENT_GUESS</h1>
+          </div>
+          <div class="guess-interface">
+            <div class="current-guess" id="current-guess" contentEditable="false" data-text="GUESS_WINDOW"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container keyboard-container">
+          <div class="keyboard">
+            <button class="keys main-tile" id="root-letter" onclick="input(this)"></button>
+          </div>
+        </div>  
+      </div>
+
+      <div class="row">
+        <div class="container keyboard-container">
+          <div class="keyboard">
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys letter" onclick="input(this)"></button>
+            <button class="keys keys-special" onclick="input(this)">Delete</button>
+            <button class="keys keys-special" onclick="input(this)">Enter</button>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <!-- Same modal exsists in game.html -->
+  <div class="modal fade" id="new-game-modal" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Caution</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your current progress will be loss
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="init(true)">Reset</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
