@@ -1,4 +1,4 @@
-/* Background color     - rgba(13, 17, 23, 1) */ 
+/* Background color     - rgba(13, 17, 23, 1) */
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
@@ -14,7 +14,7 @@ label {
   color: #c9d1d9;
 }
 
-.homepage { 
+.homepage {
   height: inherit;
 }
 
@@ -36,11 +36,17 @@ form {
   text-align: center;
 }
 
+/* Navbar */
+.nav-item {
+  color: #58a6ff;
+}
+
 /* TODO: Change color  */
 .nav-link:hover {
   font-size: 150%;
-  color: rgb(139, 143, 102);
+  color: #c3f1f7;
   cursor: pointer;
+  animation: glow-2 1s ease-in-out infinite alternate;
 }
 
 .login-screen {
