@@ -37,40 +37,40 @@ var guessWindow;
 // Holds all the words the user has guessed correctly
 var foundWords;
 
-// holds the button letter elements 
-var keyboard;
-var rootKey;
-
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
-// TODO: progress bar
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
-// TODO: show words you have found
 // TODO: hints, we can look in wordDicts and randomly pick a word as a hint
-// TODO: add nav bar
+// TODO: add meaningful nav bar links
 // TODO: add loading screen
 // TODO: reset still has bugs
-// TODO READ in json files
+// TODO: READ in json files
+// TODO: local storage / cookies
 
 /**
- * Initialize game or reset progress
+ * Initialize game or resets progress
  * TODO: randomly choose root word from a db
+ * TODO: think of better way to reset game
  * @param {boolean} reset
  */
 function init(reset) {
     if (reset) {
-        // clears guess window
-        guessWindow.innerText = "";
-        // enables the buttons
-        while (usedLetters.length >= 0) {
+        // clears guess window and stack
+        resetGuess();
+
+        // enables any disabled buttons
+        while (usedLetters.length > 0) {
             enableButton();
         }
+
+        // reset stats
+        resetStats();
 
     } else {
         // must init the list
         usedLetters = [];
+        guessStack  = [];
     }
 
-    guessStack     = [];
     foundWords     =  {
         "root_word" : [],
         "eight"     : [],
@@ -127,31 +127,44 @@ function init(reset) {
 
     // Initializes letters in the game interface
     // get elements to fill with letters
-    initLetters(keyboard, rootKey);
+    initLetters();
+    initGuessWindow();
 }
 
 /**
  * Initializes the game interface with letters - randomly
  * NOTE the root-letter is not random
- * @param {array} letters
- * @param {element} mainLetter 
  */
-function initLetters(letters, mainLetter) {
-    let rootWord = wordDict[DICT_KEYS[2]][0];
-    let rootLetter = wordDict[DICT_KEYS[3]][0];
+function initLetters() {
+
+    // find the button letter elements
+    let keyboard    = document.getElementsByClassName("letter");
+    let rootKey     = document.getElementById("root-letter");
+
+    let rootWord    = wordDict[ DICT_KEYS[2] ][0];
+    let rootLetter  = wordDict[ DICT_KEYS[3] ][0];
     
     // remove the rootLetter from root word
-    rootWord = rootWord.replace(rootLetter, "");
+    rootWord        = rootWord.replace(rootLetter, "");
 
     // shuffle letters
-    let shuffled = rootWord.split('').sort(() => {return 0.5-Math.random()});
+    let shuffled    = rootWord.split('').sort(() => {
+            return 0.5-Math.random()
+        });
 
     // assign letters to element buttons
-    mainLetter.innerText = rootLetter;
-    for (let i = 0; i < letters.length; i++) {
+    rootKey.innerText = rootLetter;
+    for (let i = 0; i < keyboard.length; i++) {
         let char = shuffled.pop();
-        letters[i].innerText = char;
+        keyboard[i].innerText = char;
     }
+}
+
+/**
+ * Initialize guess window
+ */
+function initGuessWindow() {
+    guessWindow = document.getElementById("current-guess");
 }
 
 /**
@@ -166,12 +179,18 @@ function input(e) {
         if(usedLetters.length != 0) {
             popCurrentGuess();
         }
+        else {
+            // nothing to delete
+        }
     } 
-    else if ( char === "enter") {
+    else if (char === "enter") {
         checkGuess();
     }
+    // else user is building a word
     else {
         disableButton(e);
+
+        // add letter to current guess
         currentGuess(char);
     }
 }
@@ -181,10 +200,15 @@ function input(e) {
  * @param {button} e 
  */
 function disableButton(e) {
+    // remove enabled attribute to add disabled attribute
     if( e.hasAttribute("enabled") ) {
         e.removeAttribute("enabled");
     }
+
+    // add disabled attribute
     e.setAttribute("disabled", "");
+
+    // add disabled element to the stack of used letters
     usedLetters.push(e);
 }
 
@@ -193,9 +217,15 @@ function disableButton(e) {
  * 
  */
 function enableButton() {
+    // usedLetters is a stack that tracks disabled elements
+    // sorted in the order first to last
     let top = usedLetters.pop();
+
     if ( top.hasAttribute("disabled")) {
+        // remove disabled attribute before adding a new attribute
         top.removeAttribute("disabled");
+
+        // add enable attribute
         top.setAttribute("enabled", "");
     }
 }
@@ -206,7 +236,9 @@ function enableButton() {
  * @param {string} letter 
  */
 function currentGuess(letter) {
+    //add letter to guessStack
     guessStack.push(letter);
+
     // Updates HTML with new letter
     guessWindow.innerText += letter;
 }
@@ -215,10 +247,23 @@ function currentGuess(letter) {
  * Removes last letter of the current guess word
  */
 function popCurrentGuess() {
+    // essientially a backspace
     guessStack.pop();
+
+    // updates the word in the HTML
     guessWindow.innerText = guessStack.join("");
+
     // renable button corresponding to letter
     enableButton();
+}
+
+/**
+ * clears the guess window
+ */
+ function resetGuess() {
+    while ( usedLetters.length > 0 ) {
+        popCurrentGuess();
+    }
 }
 
 /**
@@ -228,8 +273,7 @@ function popCurrentGuess() {
 function checkGuess() {
     let word        = guessStack.join("");
     let length      = word.length;
-    let found       = false;
-    let currentKey = DICT_KEYS[length];
+    let currentKey  = DICT_KEYS[length];
 
     // min word length 4 and must contain the root letter checks
     if (length < 4) {
@@ -242,95 +286,29 @@ function checkGuess() {
         return;
     }
 
-    // TODO: could use an array of enums 
-    switch (length) {
-        case 4:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
+    // Checks if word is valid / found in the pool of words
+    if ( wordDict[currentKey].includes(word) ) {
+        // add word to list of words currently found by the user
+        addToFoundWords(currentKey, word);
 
-        case 5:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 6:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 7:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        case 8:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-    
-        case 9:
-            if(wordDict[currentKey].includes(word)) {
-                found = true;
-                add_to_found_dict(currentKey, word);
-            }
-            else if(foundWords[currentKey].includes(word)) {
-                alert(word.toUpperCase() + " already found");
-                return;
-            }
-            break;
-
-        default:
-            // DO NOTHING
-            break;
-    }
-
-    // resets guess window if your word is valid
-    if(found){
+        // resets the guess window and guess stack
         resetGuess();
-        updateStats(currentKey);
-    }
-        
-    // alerts user if word is in pool
-    alert_found(word.toUpperCase(), found);
-}
 
-/**
- * clears the guess window
- */
-function resetGuess() {
-    while ( usedLetters.length > 0 ) {
-        popCurrentGuess();
+        // updates progress bar and writes the words to the screen
+        updateStats(currentKey);
+
+        // TODO: remove for production release
+        alert(word + " is in the list");
+    } 
+    // else check if we already found the word
+    else if( foundWords[currentKey].includes(word) ) {
+        alert(word.toUpperCase() + " already found");
+    } 
+    // else not a word
+    else {
+        // TODO: change to a nicer interface modal or window that fades 
+        // alerts user if word is in pool
+        alert(word + " is NOT the list");
     }
 }
 
@@ -355,14 +333,17 @@ function alert_found(word, found) {
  * @param {string} key 
  * @param {string} word 
  */
-function add_to_found_dict(key, word) {
+function addToFoundWords(key, word) {
     // find the index of the word
     let index = wordDict[key].indexOf(word);
+
     // remove word from the word dictionary
     let sliced = wordDict[key].slice(index, index+1);
+
     // convert the array returned by slice into a string
     sliced = sliced.toString();
     wordDict[key].splice(index, 1);
+
     // add word to the list of found words
     foundWords[key].push(sliced);
 }
@@ -370,15 +351,44 @@ function add_to_found_dict(key, word) {
 /**
  * Updates stats
  * TODO: add more stats
+ * 
+ * @param {string} value length of the word being queried
  */
-function updateStats(key) {
-    let progBar = document.getElementById(`bar-${key}`);
-    let percentage = Math.round((100 / (foundWords[key].length + wordDict[key].length)) * foundWords[key].length);
+function updateStats(value) {
+    // Current count of words found by user ()
+    let foundCount      = foundWords[value].length;
+    // Remainding words to find
+    let notFoundCount   = wordDict[value].length;
+    
+    // Get the progress bar elements to minipulate
+    let progBar         = document.getElementById(`bar-${value}`);
+    let progWords       = document.getElementById(`bar-${value}-words`);
+    let percentage      = Math.round( (100 / (foundCount + notFoundCount)) * foundCount );
+    
+    // set/display the progress bar
     progBar.setAttribute("style", `width: ${percentage}%;`);
     progBar.setAttribute("aria-valuenow", `${percentage};`);
+
+    // set/dispaly the word found by the user
     progBar.nextElementSibling.innerText = `${percentage}% complete`;
-    let progWords = document.getElementById(`bar-${key}-words`);
-    progWords.innerText = foundWords[key].join(", ");
+    progWords.innerText = foundWords[value].join(", ");
+}
+
+function resetStats() {
+    let progBar     = document.getElementsByClassName("progress-bar");
+    let progWords   = document.getElementsByClassName("progress-words");
+
+    // length of progBar and progWords should be the same.
+    // TODO: add check
+    for (let i = 0; i < progBar.length; i++) {
+        // reset progress bars
+        progBar[i].setAttribute("style", "width: 0%");
+        progBar[i].setAttribute("aria-valuenow", "0");
+        progBar[i].nextElementSibling.innerText = "0% complete";
+
+        // remove found words from html
+        progWords[i].innerHTML = "";
+    }
 }
 
 //----------------------------------------Local Storage-------------------------------------------------
@@ -414,19 +424,11 @@ function setStorage() {
     // rootKey     = localStorage.getItem('rootKey');
     console.log(foundWords);
 }
+
 //----------------------------------------jQUERY-------------------------------------------------
 
+
 $(window).on("load", () => {
-
-    //current_letters = document.getElementsByClassName("keys");
-    guessWindow = document.getElementById("current-guess");
-    // for(const x in current_letters){
-    //     console.log(current_letters[x]);
-    // }
-
-    // find the button letter elements
-    keyboard = document.getElementsByClassName("letter");
-    rootKey = document.getElementById("root-letter");
 
     // clears cookies
     localStorage.clear();
@@ -438,4 +440,10 @@ $(window).on("load", () => {
 
     //     setStorage();
     // }
+
+    // adds the onclick function for all keys
+    $(".keys").click(function(){
+        input(this);
+    });
 });
+
