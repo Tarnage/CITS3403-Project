@@ -38,7 +38,6 @@ var guessWindow;
 var foundWords;
 
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
-// TODO: reset progress bar
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
 // TODO: hints, we can look in wordDicts and randomly pick a word as a hint
 // TODO: add meaningful nav bar links
@@ -57,10 +56,15 @@ function init(reset) {
     if (reset) {
         // clears guess window and stack
         resetGuess();
+
         // enables any disabled buttons
         while (usedLetters.length > 0) {
             enableButton();
         }
+
+        // reset stats
+        resetStats();
+
     } else {
         // must init the list
         usedLetters = [];
@@ -179,7 +183,7 @@ function input(e) {
             // nothing to delete
         }
     } 
-    else if ( char === "enter") {
+    else if (char === "enter") {
         checkGuess();
     }
     // else user is building a word
@@ -368,6 +372,23 @@ function updateStats(value) {
     // set/dispaly the word found by the user
     progBar.nextElementSibling.innerText = `${percentage}% complete`;
     progWords.innerText = foundWords[value].join(", ");
+}
+
+function resetStats() {
+    let progBar     = document.getElementsByClassName("progress-bar");
+    let progWords   = document.getElementsByClassName("progress-words");
+
+    // length of progBar and progWords should be the same.
+    // TODO: add check
+    for (let i = 0; i < progBar.length; i++) {
+        // reset progress bars
+        progBar[i].setAttribute("style", "width: 0%");
+        progBar[i].setAttribute("aria-valuenow", "0");
+        progBar[i].nextElementSibling.innerText = "0% complete";
+
+        // remove found words from html
+        progWords[i].innerHTML = "";
+    }
 }
 
 //----------------------------------------Local Storage-------------------------------------------------
