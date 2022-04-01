@@ -141,6 +141,7 @@ function initLetters() {
     let keyboard    = document.getElementsByClassName("letter");
     let rootKey     = document.getElementById("root-letter");
 
+    // get the "Secret word" and "required" letter
     let rootWord    = wordDict[ DICT_KEYS[2] ][0];
     let rootLetter  = wordDict[ DICT_KEYS[3] ][0];
     
@@ -154,9 +155,9 @@ function initLetters() {
 
     // assign letters to element buttons
     rootKey.innerText = rootLetter;
-    for (let i = 0; i < keyboard.length; i++) {
+    for (const key of keyboard) {
         let char = shuffled.pop();
-        keyboard[i].innerText = char;
+        key.innerText = char;
     }
 }
 
