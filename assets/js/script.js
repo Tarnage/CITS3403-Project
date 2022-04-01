@@ -1,3 +1,6 @@
+'use strict'
+// This is for testing purposes do not launch
+
 var emailArray = [];
 var passwordArray = [];
 
@@ -70,9 +73,7 @@ function logged_in_actions() {
         document.getElementById("logout").style.visibility = "hidden";
     }
 }
-=======
-'use strict'
-// This is for testing purposes do not launch
+
 
 // onclick callback
 function formSubmit() {
