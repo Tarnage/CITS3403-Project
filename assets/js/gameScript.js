@@ -37,10 +37,6 @@ var guessWindow;
 // Holds all the words the user has guessed correctly
 var foundWords;
 
-// holds the button letter elements 
-var keyboard;
-var rootKey;
-
 //----------------------------------------------------------------FUNCTIONS------------------------------------------------------
 // TODO: reset progress bar
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
@@ -54,6 +50,7 @@ var rootKey;
 /**
  * Initialize game or resets progress
  * TODO: randomly choose root word from a db
+ * TODO: think of better way to reset game
  * @param {boolean} reset
  */
 function init(reset) {
@@ -126,31 +123,44 @@ function init(reset) {
 
     // Initializes letters in the game interface
     // get elements to fill with letters
-    initLetters(keyboard, rootKey);
+    initLetters();
+    initGuessWindow();
 }
 
 /**
  * Initializes the game interface with letters - randomly
  * NOTE the root-letter is not random
- * @param {array} letters
- * @param {element} mainLetter 
  */
-function initLetters(letters, mainLetter) {
-    let rootWord = wordDict[DICT_KEYS[2]][0];
-    let rootLetter = wordDict[DICT_KEYS[3]][0];
+function initLetters() {
+
+    // find the button letter elements
+    let keyboard    = document.getElementsByClassName("letter");
+    let rootKey     = document.getElementById("root-letter");
+
+    let rootWord    = wordDict[ DICT_KEYS[2] ][0];
+    let rootLetter  = wordDict[ DICT_KEYS[3] ][0];
     
     // remove the rootLetter from root word
-    rootWord = rootWord.replace(rootLetter, "");
+    rootWord        = rootWord.replace(rootLetter, "");
 
     // shuffle letters
-    let shuffled = rootWord.split('').sort(() => {return 0.5-Math.random()});
+    let shuffled    = rootWord.split('').sort(() => {
+            return 0.5-Math.random()
+        });
 
     // assign letters to element buttons
-    mainLetter.innerText = rootLetter;
-    for (let i = 0; i < letters.length; i++) {
+    rootKey.innerText = rootLetter;
+    for (let i = 0; i < keyboard.length; i++) {
         let char = shuffled.pop();
-        letters[i].innerText = char;
+        keyboard[i].innerText = char;
     }
+}
+
+/**
+ * Initialize guess window
+ */
+function initGuessWindow() {
+    guessWindow = document.getElementById("current-guess");
 }
 
 /**
@@ -165,12 +175,18 @@ function input(e) {
         if(usedLetters.length != 0) {
             popCurrentGuess();
         }
+        else {
+            // nothing to delete
+        }
     } 
     else if ( char === "enter") {
         checkGuess();
     }
+    // else user is building a word
     else {
         disableButton(e);
+
+        // add letter to current guess
         currentGuess(char);
     }
 }
@@ -180,10 +196,15 @@ function input(e) {
  * @param {button} e 
  */
 function disableButton(e) {
+    // remove enabled attribute to add disabled attribute
     if( e.hasAttribute("enabled") ) {
         e.removeAttribute("enabled");
     }
+
+    // add disabled attribute
     e.setAttribute("disabled", "");
+
+    // add disabled element to the stack of used letters
     usedLetters.push(e);
 }
 
@@ -192,9 +213,15 @@ function disableButton(e) {
  * 
  */
 function enableButton() {
+    // usedLetters is a stack that tracks disabled elements
+    // sorted in the order first to last
     let top = usedLetters.pop();
+
     if ( top.hasAttribute("disabled")) {
+        // remove disabled attribute before adding a new attribute
         top.removeAttribute("disabled");
+
+        // add enable attribute
         top.setAttribute("enabled", "");
     }
 }
@@ -205,7 +232,9 @@ function enableButton() {
  * @param {string} letter 
  */
 function currentGuess(letter) {
+    //add letter to guessStack
     guessStack.push(letter);
+
     // Updates HTML with new letter
     guessWindow.innerText += letter;
 }
@@ -214,8 +243,12 @@ function currentGuess(letter) {
  * Removes last letter of the current guess word
  */
 function popCurrentGuess() {
+    // essientially a backspace
     guessStack.pop();
+
+    // updates the word in the HTML
     guessWindow.innerText = guessStack.join("");
+
     // renable button corresponding to letter
     enableButton();
 }
@@ -236,7 +269,7 @@ function popCurrentGuess() {
 function checkGuess() {
     let word        = guessStack.join("");
     let length      = word.length;
-    let currentKey = DICT_KEYS[length];
+    let currentKey  = DICT_KEYS[length];
 
     // min word length 4 and must contain the root letter checks
     if (length < 4) {
@@ -253,16 +286,22 @@ function checkGuess() {
     if ( wordDict[currentKey].includes(word) ) {
         // add word to list of words currently found by the user
         addToFoundWords(currentKey, word);
+
         // resets the guess window and guess stack
         resetGuess();
+
         // updates progress bar and writes the words to the screen
         updateStats(currentKey);
+
         // TODO: remove for production release
         alert(word + " is in the list");
     } 
+    // else check if we already found the word
     else if( foundWords[currentKey].includes(word) ) {
         alert(word.toUpperCase() + " already found");
-    } else {
+    } 
+    // else not a word
+    else {
         // TODO: change to a nicer interface modal or window that fades 
         // alerts user if word is in pool
         alert(word + " is NOT the list");
@@ -293,11 +332,14 @@ function alert_found(word, found) {
 function addToFoundWords(key, word) {
     // find the index of the word
     let index = wordDict[key].indexOf(word);
+
     // remove word from the word dictionary
     let sliced = wordDict[key].slice(index, index+1);
+
     // convert the array returned by slice into a string
     sliced = sliced.toString();
     wordDict[key].splice(index, 1);
+
     // add word to the list of found words
     foundWords[key].push(sliced);
 }
@@ -306,15 +348,25 @@ function addToFoundWords(key, word) {
  * Updates stats
  * TODO: add more stats
  * 
- * @param {string} value
+ * @param {string} value length of the word being queried
  */
 function updateStats(value) {
-    let progBar = document.getElementById(`bar-${value}`);
-    let percentage = Math.round((100 / (foundWords[value].length + wordDict[value].length)) * foundWords[value].length);
+    // Current count of words found by user ()
+    let foundCount      = foundWords[value].length;
+    // Remainding words to find
+    let notFoundCount   = wordDict[value].length;
+    
+    // Get the progress bar elements to minipulate
+    let progBar         = document.getElementById(`bar-${value}`);
+    let progWords       = document.getElementById(`bar-${value}-words`);
+    let percentage      = Math.round( (100 / (foundCount + notFoundCount)) * foundCount );
+    
+    // set/display the progress bar
     progBar.setAttribute("style", `width: ${percentage}%;`);
     progBar.setAttribute("aria-valuenow", `${percentage};`);
+
+    // set/dispaly the word found by the user
     progBar.nextElementSibling.innerText = `${percentage}% complete`;
-    let progWords = document.getElementById(`bar-${value}-words`);
     progWords.innerText = foundWords[value].join(", ");
 }
 
@@ -351,16 +403,11 @@ function setStorage() {
     // rootKey     = localStorage.getItem('rootKey');
     console.log(foundWords);
 }
+
 //----------------------------------------jQUERY-------------------------------------------------
 
 
 $(window).on("load", () => {
-
-    guessWindow = document.getElementById("current-guess");
-
-    // find the button letter elements
-    keyboard = document.getElementsByClassName("letter");
-    rootKey = document.getElementById("root-letter");
 
     // clears cookies
     localStorage.clear();
