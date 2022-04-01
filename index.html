@@ -52,7 +52,7 @@
         <a class="nav-link">GitHub</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Contact Us</a>
+        <a class="nav-link" aria-current="page" href="./contacts.html">Contact Us</a>
       </li>
       <!-- TODO Remove disabled link -->
       <li class="nav-item">
@@ -64,28 +64,27 @@
     <section class="container-fluid homepage ">
       <div class="row login-screen text-center align-items-center">
         <div class="col">
-          <h3>Login</h3>
-            <form id="loginDetails">
+          <form id="loginDetails">
+            <h3>Login</h3>
+            <div class="form-group">
+              <input type="text" class="form-control" id="uName" placeholder="Username">
+            </div><br>
 
-              <div class="form-group">
-                <input type="text" class="form-control" id="uName" placeholder="Username">
-              </div><br>
+            <div class="form-group">
+              <input type="password" class="form-control" id="pwd" placeholder="Password">
+            </div><br>
+            
+            <div class="checkbox">
+              <label><input type="checkbox">Remember Me</label>
+            </div><br>
 
-              <div class="form-group">
-                <input type="password" class="form-control" id="pwd" placeholder="Password">
-              </div><br>
-              
-              <div class="checkbox">
-                <label><input type="checkbox">Remember Me</label>
-              </div><br>
+            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
 
-              <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
+            <!-- currently does the same thing as submit -->
+            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
 
-              <!-- currently does the same thing as submit -->
-              <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
-
-              <button type="submit" class="btn btn-lg btn-info" formaction="./game.html">Quick Play</button>
-            </form>
+            <button type="submit" class="btn btn-lg btn-info" formaction="./game.html">Quick Play</button>
+          </form>
         </div>
       </div>
     </section>
