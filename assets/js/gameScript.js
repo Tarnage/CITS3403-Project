@@ -180,8 +180,11 @@ function initGuessWindow() {
     let progBar     = document.getElementsByClassName( "progress-bar" );
     let progWords   = document.getElementsByClassName( "progress-words" );
 
-    // length of progBar and progWords should be the same.
-    // TODO: add check
+    if ( progBar.length != progWords.length ) {
+        alert("Something went wrong resetting progress bars\n");
+        return;
+    }
+
     for (let i = 0; i < progBar.length; i++) {
         // reset progress bars
         progBar[i].setAttribute( "style",            "width: 0%" );
