@@ -169,11 +169,10 @@ function initGuessWindow() {
 }
 
 /**
- * Virtual Keyboard functionality actives on click
- * TODO: deal with physical keybord presses
- * @param {tag/node} e 
+ * Handles click presses on the virtual keyboard
+ * @param {HTML element} e 
  */
-function input( e ) {
+function handleClick( e ) {
     let char = e.innerText.toLowerCase();
 
     switch ( char ) {
@@ -187,14 +186,74 @@ function input( e ) {
             break;
     
         default:
-            // default user is building a word
-            disableButton( e );
-
-            // add letter to current guess
-            currentGuess( char );
+            buildWord(e, char);
             break;
     }
 }
+
+/**
+ * Handles keyboard input
+ * @param {keypress} e 
+ * @returns 
+ */
+function handleKeyPress( e ) {
+
+    if ( e.key === "Enter" ) {
+        checkGuess()
+        return
+      }
+    
+    if ( e.key === "Backspace" || e.key === "Delete" ) {
+        // only do precudure if there is something to delete
+        if( usedLetters.length != 0 ) popCurrentGuess();
+        return;
+    }
+    
+    // If key press is a letter check if letter is vaild
+    if ( e.key.match(/^[A-Za-z]$/) ) {
+        pressKey(e.key.toLowerCase());
+        return;
+    }
+}
+
+/**
+ * Helper function checks if key press is vaild and in play
+ * @param {string} key 
+ * @returns 
+ */
+function pressKey(key) {
+    // Get the HTML elements that are buttons
+    let letters     = document.getElementsByClassName("letter");
+    let rootKey     = document.getElementById("root-letter");
+
+    // check is button is root key
+    if ( key === rootKey.innerText.toLocaleLowerCase() 
+            && !rootKey.hasAttribute( "disabled" ) ) {
+        buildWord( rootKey, key );
+        return;
+    }
+
+    // iterate through all buttons
+    for ( const e of letters ) {
+        if (  key === e.innerText.toLowerCase() 
+                && !e.hasAttribute( "disabled" ) ) {
+            buildWord( e, key );
+            return;
+        }
+    }
+}
+
+/**
+ * Helper function
+ * disables button element and adds char to guesswindow
+ * @param {HTML element} ele 
+ * @param {string} char 
+ */
+function buildWord(ele, char) {
+    disableButton( ele );
+    currentGuess ( char );
+}
+
 
 /**
  * Disables button when letter is in the current guess
@@ -445,8 +504,11 @@ $(window).on("load", () => {
     // }
 
     // adds the onclick function for all keys
-    $( ".keys" ).click(function(){
-        input( this );
+    $( ".keys" ).click( function() {
+        handleClick( this );
     });
+
+    // add keyboard listner callback
+    document.addEventListener( "keydown", handleKeyPress );
 });
 
