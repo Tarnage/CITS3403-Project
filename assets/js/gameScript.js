@@ -224,6 +224,7 @@ function handleClick( e ) {
     }
 }
 
+
 /**
  * Handles keyboard input
  * @param {keypress} e 
@@ -249,6 +250,7 @@ function handleKeyPress( e ) {
             break;
     }
 }
+
 
 /**
  * Helper function checks if key press is vaild and in play
