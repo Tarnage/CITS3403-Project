@@ -5,6 +5,7 @@
 
 //------------------------------------------------------------GLOBALS AND STATISTICS-----------------------------------------------------
 
+
 // current user stats
 let userStats;
 
@@ -40,7 +41,10 @@ let guessWindow;
 // Holds all the words the user has guessed correctly
 let foundWords;
 
-//----------------------------------------------------------------FUNCTIONS------------------------------------------------------
+
+//----------------------------------------------------------------INIT FUNCTIONS------------------------------------------------------
+
+
 // TODO: stats tracker - percentage overall, and percentage of each catergory 
 // TODO: hints, we can look in wordDicts and randomly pick a word as a hint
 // TODO: add meaningful nav bar links
@@ -52,12 +56,10 @@ let foundWords;
 /**
  * Initialize game or resets progress
  * TODO: randomly choose root word from a db
- * TODO: think of better way to reset game
  * TODO: add more stats
  * @param {boolean} reset
  */
 function init(reset) {
-
     // reset stats
     if (reset) resetStats();
 
@@ -131,6 +133,7 @@ function init(reset) {
     initGuessWindow();
 }
 
+
 /**
  * Initializes the game interface with letters - randomly
  * NOTE the root-letter is not random
@@ -161,12 +164,38 @@ function initLetters() {
     }
 }
 
+
 /**
  * Initialize guess window
  */
 function initGuessWindow() {
     guessWindow = document.getElementById("current-guess");
 }
+
+
+/**
+ * Resets stats
+ */
+ function resetStats() {
+    let progBar     = document.getElementsByClassName( "progress-bar" );
+    let progWords   = document.getElementsByClassName( "progress-words" );
+
+    // length of progBar and progWords should be the same.
+    // TODO: add check
+    for (let i = 0; i < progBar.length; i++) {
+        // reset progress bars
+        progBar[i].setAttribute( "style",            "width: 0%" );
+        progBar[i].setAttribute( "aria-valuenow",    "0" );
+        progBar[i].nextElementSibling.innerText = "0% complete";
+
+        // remove found words from html
+        progWords[i].innerHTML = "";
+    }
+}
+
+
+//----------------------------------------------------------------FUNCTIONS------------------------------------------------------
+
 
 /**
  * Handles click presses on the virtual keyboard
@@ -198,7 +227,7 @@ function handleClick( e ) {
  */
 function handleKeyPress( e ) {
 
-    switch (e.key) {
+    switch ( e.key ) {
         case "Backspace": 
         case "Delete":
             if( usedLetters.length != 0 ) popCurrentGuess();
@@ -224,8 +253,8 @@ function handleKeyPress( e ) {
  */
 function pressKey(key) {
     // Get the HTML elements that are buttons
-    let letters     = document.getElementsByClassName("letter");
-    let rootKey     = document.getElementById("root-letter");
+    let letters     = document.getElementsByClassName( "letter" );
+    let rootKey     = document.getElementById( "root-letter" );
 
     // check is button is root key
     if ( key === rootKey.innerText.toLocaleLowerCase() 
@@ -242,17 +271,6 @@ function pressKey(key) {
             return;
         }
     }
-}
-
-/**
- * Helper function
- * disables button element and adds char to guesswindow
- * @param {HTML element} ele 
- * @param {string} char 
- */
-function buildWord(ele, char) {
-    disableButton( ele );
-    currentGuess ( char );
 }
 
 
@@ -273,6 +291,7 @@ function disableButton( e ) {
     peek.setAttribute( "disabled", "" );
 }
 
+
 /**
  * Enables button when letter leaves the current guess
  * 
@@ -289,6 +308,7 @@ function enableButton() {
     top.setAttribute( "enabled", "" );
 }
 
+
 /**
  * Adds letters to the current guess stack
  * 
@@ -301,6 +321,19 @@ function currentGuess( letter ) {
     // Updates HTML with new letter
     guessWindow.innerText += letter;
 }
+
+
+/**
+ * Helper function
+ * disables button element and adds char to guesswindow
+ * @param {HTML element} ele 
+ * @param {string} char 
+ */
+ function buildWord(ele, char) {
+    disableButton( ele );
+    currentGuess ( char );
+}
+
 
 /**
  * Removes last letter of the current guess word
@@ -316,6 +349,7 @@ function popCurrentGuess() {
     enableButton();
 }
 
+
 /**
  * clears the guess window
  */
@@ -324,6 +358,10 @@ function popCurrentGuess() {
         popCurrentGuess();
     }
 }
+
+
+//----------------------------------------------------------------VALIDATION FUNCTIONS------------------------------------------------------
+
 
 /**
  * Validates users word
@@ -434,25 +472,6 @@ function updateStats( value ) {
     progWords.innerText = foundWords[value].join( ", " );
 }
 
-/**
- * Resets stats
- */
-function resetStats() {
-    let progBar     = document.getElementsByClassName( "progress-bar" );
-    let progWords   = document.getElementsByClassName( "progress-words" );
-
-    // length of progBar and progWords should be the same.
-    // TODO: add check
-    for (let i = 0; i < progBar.length; i++) {
-        // reset progress bars
-        progBar[i].setAttribute( "style",            "width: 0%" );
-        progBar[i].setAttribute( "aria-valuenow",    "0" );
-        progBar[i].nextElementSibling.innerText = "0% complete";
-
-        // remove found words from html
-        progWords[i].innerHTML = "";
-    }
-}
 
 //----------------------------------------Local Storage-------------------------------------------------
 
