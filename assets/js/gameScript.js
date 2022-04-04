@@ -198,21 +198,22 @@ function handleClick( e ) {
  */
 function handleKeyPress( e ) {
 
-    if ( e.key === "Enter" ) {
-        checkGuess()
-        return
-      }
-    
-    if ( e.key === "Backspace" || e.key === "Delete" ) {
-        // only do precudure if there is something to delete
-        if( usedLetters.length != 0 ) popCurrentGuess();
-        return;
-    }
-    
-    // If key press is a letter check if letter is vaild
-    if ( e.key.match(/^[A-Za-z]$/) ) {
-        pressKey(e.key.toLowerCase());
-        return;
+    switch (e.key) {
+        case "Backspace": 
+        case "Delete":
+            if( usedLetters.length != 0 ) popCurrentGuess();
+            break;
+
+        case "Enter":
+            checkGuess();
+            break;
+
+        default:
+            // If key press is a letter check if letter is vaild
+            if ( e.key.match(/^[A-Za-z]$/) ) {
+            pressKey(e.key.toLowerCase());
+            }
+            break;
     }
 }
 
