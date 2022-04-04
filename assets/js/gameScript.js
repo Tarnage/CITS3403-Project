@@ -192,6 +192,7 @@ function initGuessWindow() {
         progBar[i].nextElementSibling.innerText = "0% complete";
 
         // remove found words from html
+        // TODO: make a seperate loop then we can remove line 183 - 186 check
         progWords[i].innerHTML = "";
     }
 }
