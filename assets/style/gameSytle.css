@@ -2,8 +2,25 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
+  /* * Glow Animations * */
+  @keyframes glow-2 {
+    from {
+      text-shadow: 0 0 4px rgba(39, 191, 245, 0.3),
+        0 0 6px rgba(39, 191, 245, 0.3), 0 0 8px rgba(39, 191, 245, 0.3),
+        0 0 10px rgba(39, 191, 245, 0.3), 0 0 12px rgba(39, 191, 245, 0.3),
+        0 0 14px rgba(39, 191, 245, 0.3), 0 0 16px rgba(39, 191, 245, 0.3);
+    }
+  
+    to {
+      text-shadow: 0 0 2px rgba(39, 191, 245, 0.3),
+        0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 157, 245, 0.67),
+        0 0 8px rgba(39, 157, 245, 0.67), 0 0 10px rgba(39, 157, 245, 0.67),
+        0 0 12px rgba(39, 157, 245, 0.67), 0 0 14px rgba(39, 157, 245, 0.67);
+    }
+  }
+
 body {
-  background-color: rgba(13, 17, 23, 1);
+  background-color: black;
 }
 
 h1, h2, h3, h4, h5, h6, legend {
@@ -21,7 +38,14 @@ label {
 .guess-interface {
   display: grid;
   justify-content: center;
+  padding-top: 10%;
   /* align-content: center; */
+}
+
+.container {
+  background-color: rgba(13, 17, 23, 1);
+  border-radius: 10px;
+  width: auto;
 }
 
 .stat-interface {
@@ -30,7 +54,8 @@ label {
 
 .game-box {
   align-items: center;
-  margin: 10%;
+  margin-top: 10%;
+  padding: 2%;
 }
 
 .current-guess {
@@ -83,7 +108,8 @@ label {
 }
 
 .keys[disabled] {
-  background-color: red;
+  background-color: #c3f1f7;
+  color: #2F3336;
 }
 
 .keys[enabled] {
@@ -110,5 +136,16 @@ li {
 }
 
 li:hover {
-  background-color: #111111;
+  font-size: 120%;
+  color: #c3f1f7;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
+.navbar-toggler-icon{
+  width: 1em !important;
+  height:1em !important;
+}
+
+.navbar-toggler:hover {
+  color: #c3f1f7;
 }
