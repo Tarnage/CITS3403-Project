@@ -1,24 +1,4 @@
 'use strict'
-
-// export const forTesting = {
-//     playerState,
-//     init,
-//     initLetters,
-//     resetStats,
-//     handleClick,
-//     handleKeyPress,
-//     pressKey,
-//     disableButton,
-//     enableButton,
-//     currentGuess,
-//     buildWord,
-//     popCurrentGuess,
-//     resetGuess,
-//     checkGuess,
-//     addToFoundWords,
-//     updateStats
-// }
-
 //------------------------------------------------------------------BUG LISTS------------------------------------------------------------
 // ADD FOUND BUGS HERE
 
@@ -40,7 +20,6 @@ const DICT_KEYS = {
     9:      "root_word"
 };
 
-// 
 const EMPTYFOUNDWORDS =  {
     "root_word" : [],
     "eight"     : [],
@@ -107,7 +86,7 @@ const EMPTYSTATS = {
 // Current player State
 let currentPlayer;
 
-export class playerState {
+class playerState {
     constructor(wordDict, foundWords, usedLetters, guessStack, userStats) {
         // current anagaram dicitonary
         this.wordDict = JSON.parse(JSON.stringify(wordDict));
