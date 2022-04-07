@@ -158,9 +158,11 @@ function initLetters() {
 
     // assign letters to element buttons
     rootKey.innerText = rootLetter;
+    rootKey.setAttribute("enabled", "");
     for ( const key of keyboard ) {
         let char = shuffled.pop();
         key.innerText = char;
+        key.setAttribute("enabled", "");
     }
 }
 
