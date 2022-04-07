@@ -1,4 +1,24 @@
 'use strict'
+
+// export const forTesting = {
+//     playerState,
+//     init,
+//     initLetters,
+//     resetStats,
+//     handleClick,
+//     handleKeyPress,
+//     pressKey,
+//     disableButton,
+//     enableButton,
+//     currentGuess,
+//     buildWord,
+//     popCurrentGuess,
+//     resetGuess,
+//     checkGuess,
+//     addToFoundWords,
+//     updateStats
+// }
+
 //------------------------------------------------------------------BUG LISTS------------------------------------------------------------
 // ADD FOUND BUGS HERE
 
@@ -84,9 +104,10 @@ const EMPTYSTATS = {
     "streak"        : 0
 };
 
+// Current player State
 let currentPlayer;
 
-class playerState {
+export class playerState {
     constructor(wordDict, foundWords, usedLetters, guessStack, userStats) {
         // current anagaram dicitonary
         this.wordDict = JSON.parse(JSON.stringify(wordDict));
@@ -131,6 +152,7 @@ function init(reset) {
 
     currentPlayer = new playerState(WORDDICT, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
     currentPlayer.getGuessWindow();
+    currentPlayer.guessWindow.innerText = "";
 
     initLetters(currentPlayer.wordDict);
 }
@@ -257,7 +279,7 @@ function handleKeyPress( e ) {
  * @param {string} key 
  * @returns 
  */
-function pressKey(key) {
+function pressKey( key ) {
     // Get the HTML elements that are buttons
     let letters     = document.getElementsByClassName( "letter" );
     let rootKey     = document.getElementById( "root-letter" );
@@ -537,4 +559,3 @@ $(window).on("load", () => {
     // add keyboard listner callback
     document.addEventListener( "keydown", handleKeyPress );
 });
-
