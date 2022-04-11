@@ -115,7 +115,6 @@ class playerState {
 // TODO: hints, we can look in wordDicts and randomly pick a word as a hint
 // TODO: add meaningful nav bar links
 // TODO: add loading screen
-// TODO: reset still has bugs
 // TODO: READ in json files
 // TODO: local storage / cookies
 
@@ -125,7 +124,7 @@ class playerState {
  * TODO: add more stats
  * @param {boolean} reset
  */
-function init(reset) {
+function init(reset=false) {
     // reset stats
     if (reset) resetStats();
 
@@ -134,6 +133,14 @@ function init(reset) {
     currentPlayer.guessWindow.innerText = "";
 
     initLetters(currentPlayer.wordDict);
+
+    // adds the onclick function for all keys
+    $( ".keys" ).click( function() {
+        handleClick( this );
+    });
+
+    // add keyboard listner callback
+    document.addEventListener( "keydown", handleKeyPress );
 }
 
 
@@ -517,24 +524,24 @@ function setStorage() {
 //----------------------------------------jQUERY-------------------------------------------------
 
 
-$(window).on("load", () => {
+// $(window).on("load", () => {
 
-    // clears cookies
-    localStorage.clear();
+//     // clears cookies
+//     localStorage.clear();
 
-    init(false);
-    // if (!localStorage.getItem("foundWords")) {
-    //     populateStorage();
-    // } else {
+//     init();
+//     // if (!localStorage.getItem("foundWords")) {
+//     //     populateStorage();
+//     // } else {
 
-    //     setStorage();
-    // }
+//     //     setStorage();
+//     // }
 
-    // adds the onclick function for all keys
-    $( ".keys" ).click( function() {
-        handleClick( this );
-    });
+//     // adds the onclick function for all keys
+//     $( ".keys" ).click( function() {
+//         handleClick( this );
+//     });
 
-    // add keyboard listner callback
-    document.addEventListener( "keydown", handleKeyPress );
-});
+//     // add keyboard listner callback
+//     document.addEventListener( "keydown", handleKeyPress );
+// });
