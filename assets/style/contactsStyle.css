@@ -1,103 +1,120 @@
+/* Background color     - rgba(13, 17, 23, 1) */
+/* Header color         - #58a6ff */
+/* Standard text color  - #c9d1d9 */
+
+/* * Glow Animations * */
+@keyframes glow-2 {
+  from {
+    text-shadow: 0 0 4px rgba(39, 191, 245, 0.3),
+      0 0 6px rgba(39, 191, 245, 0.3), 0 0 8px rgba(39, 191, 245, 0.3),
+      0 0 10px rgba(39, 191, 245, 0.3), 0 0 12px rgba(39, 191, 245, 0.3),
+      0 0 14px rgba(39, 191, 245, 0.3), 0 0 16px rgba(39, 191, 245, 0.3);
+  }
+
+  to {
+    text-shadow: 0 0 2px rgba(39, 191, 245, 0.3),
+      0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 157, 245, 0.67),
+      0 0 8px rgba(39, 157, 245, 0.67), 0 0 10px rgba(39, 157, 245, 0.67),
+      0 0 12px rgba(39, 157, 245, 0.67), 0 0 14px rgba(39, 157, 245, 0.67);
+  }
+}
+
+/* * Background Styling * */
+body {
+  /* Gif Image */
+  background-image: url(../img/stock/neon-drive.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Tint */
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: multiply;
+}
+
+/* * Text Styling * */
 /* Font */
 @font-face {
     font-family: "Games";
     src: url(../font/Games.ttf);
-  }
-  
-  /* * Glow Animations * */
-  @keyframes glow-2 {
-    from {
-      text-shadow: 0 0 4px rgba(39, 191, 245, 0.3),
-        0 0 6px rgba(39, 191, 245, 0.3), 0 0 8px rgba(39, 191, 245, 0.3),
-        0 0 10px rgba(39, 191, 245, 0.3), 0 0 12px rgba(39, 191, 245, 0.3),
-        0 0 14px rgba(39, 191, 245, 0.3), 0 0 16px rgba(39, 191, 245, 0.3);
-    }
-  
-    to {
-      text-shadow: 0 0 2px rgba(39, 191, 245, 0.3),
-        0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 157, 245, 0.67),
-        0 0 8px rgba(39, 157, 245, 0.67), 0 0 10px rgba(39, 157, 245, 0.67),
-        0 0 12px rgba(39, 157, 245, 0.67), 0 0 14px rgba(39, 157, 245, 0.67);
-    }
-  }
-  
-  body {
-    /* Gif Image */
-    background-image: url(../img/stock/neon-drive.gif);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  
-    /* Tint */
-    background-color: rgba(0, 0, 0, 0.8);
-    background-blend-mode: multiply;
-  }
-  
-  /* TODO: Change color  */
-  .nav-link:hover {
-    font-size: 150%;
-    color: #c3f1f7;
-    animation: glow-2 1s ease-in-out infinite alternate;
-  }
-  
-  /* Contact Us Form */
-  .contact-form {
-    /* Tint */
-    background-color: rgba(13, 17, 23, 1);
-  
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    border-radius: 15px;
-  
-    border: 2px solid #58a6ff;
-    border-style: outset;
-    border-radius: 20px;
-  }
-  
-  h3 {
-    animation: glow-2 1s ease-in-out infinite alternate;
-    font-family: "Games", sans-serif;
-  }
-  
-  .contact-image {
-    text-align: center;
-  }
-  
-  .contact-form form {
-    padding: 14%;
-    margin-bottom: 5%;
-  }
-  
-  .contact-form form .row {
-    margin-bottom: -7%;
-  }
-  
-  .contact-form h3 {
-    margin-bottom: 12%;
-    margin-top: -8%;
-    text-align: center;
-    color: #58a6ff;
-  }
-  
-  .contact-form .btn-info {
-    margin-top: 5%;
-    width: 50%;
-    border: none;
-    border-radius: 5px;
-    padding: 1.5%;
-    background: #58a6ff;
-    cursor: pointer;
-  }
-  
-  /* TODO Change color of hover to match index page */
-  .contact-form .btn-info:hover {
-    background-color: #c3f1f7;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
+}
+
+/* General */
+h1, h2, h3, h4, h5, h6, legend {
+  color: #58a6ff;
+}
+
+h3 {
+  animation: glow-2 1s ease-in-out infinite alternate;
+  font-family: "Games", sans-serif;
+}
+
+/* * Navbar * */
+.nav-item {
+  color: #58a6ff;
+}
+
+/* TODO: Change color  */
+.nav-link:hover {
+  font-size: 150%;
+  color: #c3f1f7;
+  cursor: pointer;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
+/* Contact Us Form */
+.contact-form {
+  /* Tint */
+  background-color: rgba(13, 17, 23, 1);
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  border-radius: 15px;
+
+  border: 2px solid #58a6ff;
+  border-style: outset;
+  border-radius: 20px;
+}
+
+.contact-image {
+  text-align: center;
+}
+
+.contact-form form {
+  padding: 14%;
+  margin-bottom: 5%;
+}
+
+.contact-form form .row {
+  margin-bottom: -7%;
+}
+
+.contact-form h3 {
+  margin-bottom: 12%;
+  margin-top: -8%;
+  text-align: center;
+  color: #58a6ff;
+}
+
+.contact-form .btn-info {
+  margin-top: 5%;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  background: #58a6ff;
+  cursor: pointer;
+}
+
+/* TODO Change color of hover to match index page */
+.contact-form .btn-info:hover {
+  background-color: #c3f1f7;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
   

@@ -1,8 +1,6 @@
-/* * Font * */
-@font-face {
-  font-family: "Games";
-  src: url(../font/Games.ttf);
-}
+/* Background color     - rgba(13, 17, 23, 1) */
+/* Header color         - #58a6ff */
+/* Standard text color  - #c9d1d9 */
 
 /* * Glow Animations * */
 @keyframes glow-1 {
@@ -31,6 +29,17 @@ body {
 }
 
 /* * Text Styling * */
+/* Font */
+@font-face {
+  font-family: "Games";
+  src: url(../font/Games.ttf);
+}
+
+/* General */
+h1, h2, h3, h4, h5, h6, legend {
+  color: #58a6ff;
+}
+
 /* Title */
 .display-4 {
   margin-top: 3%;
@@ -40,18 +49,59 @@ body {
 }
 
 .col h3 {
-  color: #58a6ff;
   font-family: "Games", sans-serif;
   margin: -10% auto 5%;
 }
 
-/* * Form Styling * */
-.col form {
-  background-color: rgba(13, 17, 23, 0.9);
-  margin-bottom: 10%;
+/* * Navbar * */
+.nav-item {
+  color: #58a6ff;
 }
 
+/* TODO: Change color  */
+.nav-link:hover {
+  font-size: 150%;
+  color: #c3f1f7;
+  cursor: pointer;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
+/* * Buttons * */
 .btn-info {
   border: none;
   background-color: #58a6ff;
+}
+
+label {
+  color: #c9d1d9;
+}
+
+/* - = - = - = - = - = - = - = - */
+.homepage {
+  height: inherit;
+}
+
+.d-height {
+  height: 100vh;
+}
+
+.c-container {
+  text-align: center;
+}
+
+.login-screen {
+  height: inherit;
+}
+
+/* * Form Styling * */
+form {
+  background-color: rgba(13, 17, 23, 0.9);
+  border: 2px solid #58a6ff;
+  padding: 5%;
+  border-style: outset;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+  width: 50%;
 }
