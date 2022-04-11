@@ -25,7 +25,7 @@
   <!-- <script type="text/javascript" src="assets/js/testWords.json"></script> -->
   
 </head>
-<body>
+<body onload="init()">
   <div class="container" >
     <div class="game-box">
 
@@ -36,13 +36,13 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-          <div class="col-lg-11" style="height:40px">
+          <div class="col-lg-11">
             <div class="collapse" id="navbarToggleExternalContent">
                 <ul>
                   <li data-bs-toggle="modal" data-bs-target="#new-game-modal">New Game</li>
-                  <li data-bs-toggle="modal" data-bs-target="#how-to-play-modal"> How to play</li>
-                  <li><a href="#GitHub">GitHub</a></li>
-                  <li><a href="#ContactUs">Contact Us</a></li>
+                  <li data-bs-toggle="modal" data-bs-target="#how-to-play-modal">How to Play</li>
+                  <li>About Us</li>
+                  <li>Leaderboards</li>
                 </ul>
             </div>
           </div>
@@ -93,9 +93,9 @@
             <p class="progress-words" id="bar-root_word-words"></p>
           </div>
         </div>
-        <div class="col-lg-7" style="padding: 5%;">
+        <div class="col-lg-7">
           <div>
-            <h1>CURRENT_GUESS</h1>
+            <h1>Anagram-City</h1>
           </div>
           <div class="guess-interface">
             <div class="current-guess" id="current-guess" contentEditable="false" data-text="GUESS_WINDOW"></div>
@@ -122,15 +122,14 @@
             <button class="keys letter"></button>
             <button class="keys letter"></button>
             <button class="keys letter"></button>
-            <button class="keys keys-special">Delete</button>
-            <button class="keys keys-special">Enter</button>
+            <button class="keys keys-special" enabled="">Delete</button>
+            <button class="keys keys-special" enabled="">Enter</button>
           </div>
         </div>  
       </div>
     </div>
   </div>
 
-  <!-- New Game Modal -->
   <div class="modal fade" id="new-game-modal" tabindex="-1"  aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -149,27 +148,23 @@
     </div>
   </div>
 
-    <!-- How to Play Modal -->
-    <!-- Same modal exists in game.html -->
-    <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">How to Play</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <ul>
-              <li>Your goal is to create as many words of 4 letters or more as possible, using each letter once only. </li>
-              <li>Every word must include the main letter. </li> 
-              <li>There will be one word that uses all 9 letters. </li>
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
+  <!-- Modal -->
+  <!-- Same modal exists in game.html -->
+  <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">How to play</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          The minimum word length is 4 letters. 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
 </body>
 </html>
