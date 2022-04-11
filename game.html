@@ -40,9 +40,9 @@
             <div class="collapse" id="navbarToggleExternalContent">
                 <ul>
                   <li data-bs-toggle="modal" data-bs-target="#new-game-modal">New Game</li>
-                  <li><a href="#news">How to Play</a></li>
-                  <li><a href="#contact">GitHub</a></li>
-                  <li><a href="#about">Contact Us</a></li>
+                  <li data-bs-toggle="modal" data-bs-target="#how-to-play-modal"> How to play</li>
+                  <li><a href="#GitHub">GitHub</a></li>
+                  <li><a href="#ContactUs">Contact Us</a></li>
                 </ul>
             </div>
           </div>
@@ -130,8 +130,7 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <!-- Same modal exsists in game.html -->
+  <!-- New Game Modal -->
   <div class="modal fade" id="new-game-modal" tabindex="-1"  aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -140,7 +139,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Your current progress will be loss
+          Your current progress will be lost
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="init(true)">Reset</button>
@@ -149,5 +148,28 @@
       </div>
     </div>
   </div>
+
+    <!-- How to Play Modal -->
+    <!-- Same modal exists in game.html -->
+    <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">How to Play</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Your goal is to create as many words of 4 letters or more as possible, using each letter once only. </li>
+              <li>Every word must include the main letter. </li> 
+              <li>There will be one word that uses all 9 letters. </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
