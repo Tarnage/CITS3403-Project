@@ -1,5 +1,5 @@
-/* Background color     - rgba(13, 17, 23, 1) */ 
-/* Header color         - #58a6ff */
+/* Background color   - rgba(13, 17, 23, 1) */ 
+/* Header color     - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
 body {
@@ -8,4 +8,30 @@ body {
 
 h1, h2, h3, h4, h5, h6, legend {
   color: #58a6ff;
+}
+
+.jumbotron {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.content {
+  position: relative;
+  width: 938px;
+  min-height: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.table-striped {
+  color:#58a6ff;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) > * {
+  color: aliceblue;
+}
+
+td:hover {
+  background-color: #58a6ff;
 }

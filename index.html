@@ -19,7 +19,7 @@
   <!-- AJAX -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- custom css -->
-  <link rel="stylesheet" href="assets/style/styles.css">
+  <link rel="stylesheet" href="assets/style/indexStyle.css">
   <!-- JavaScript -->
   <script src="assets/js/script.js"></script>
   <!-- flavicon -->
@@ -51,11 +51,7 @@
         <a class="nav-link">GitHub</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Contact Us</a>
-      </li>
-      <!-- TODO Remove disabled link -->
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" aria-current="page" href="./contacts.html">Contact Us</a>
       </li>
     </ul>
 
@@ -63,28 +59,27 @@
     <section class="container-fluid homepage ">
       <div class="row login-screen text-center align-items-center">
         <div class="col">
-          <h3>Login</h3>
-            <form id="loginDetails">
+          <form id="loginDetails">
+            <h3>Login</h3>
+            <div class="form-group">
+              <input type="text" class="form-control" id="uName" placeholder="Username">
+            </div><br>
 
-              <div class="form-group">
-                <input type="text" class="form-control" id="uName" placeholder="Username">
-              </div><br>
+            <div class="form-group">
+              <input type="password" class="form-control" id="pwd" placeholder="Password">
+            </div><br>
+            
+            <div class="checkbox">
+              <label><input type="checkbox">Remember Me</label>
+            </div><br>
 
-              <div class="form-group">
-                <input type="password" class="form-control" id="pwd" placeholder="Password">
-              </div><br>
-              
-              <div class="checkbox">
-                <label><input type="checkbox">Remember Me</label>
-              </div><br>
+            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
 
-              <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
+            <!-- currently does the same thing as submit -->
+            <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
 
-              <!-- currently does the same thing as submit -->
-              <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
-
-              <button type="submit" class="btn btn-lg btn-info" formaction="./game.html">Quick Play</button>
-            </form>
+            <button type="submit" class="btn btn-lg btn-info" formaction="./game.html">Quick Play</button>
+          </form>
         </div>
       </div>
     </section>
@@ -95,11 +90,16 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">How to play</h5>
+            <h5 class="modal-title">How to Play</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            The minimum word length is 4 letters. 
+            <ul>
+              <li>Your goal is to create as many words of 4 letters or more as possible, using each letter once only. </li>
+              <li>Every word must include the main letter. </li> 
+              <li>There will be one word that uses all 9 letters. </li>
+            </ul>
+             
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

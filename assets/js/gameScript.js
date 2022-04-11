@@ -252,7 +252,7 @@ function handleKeyPress( e ) {
 
         default:
             // If key press is a letter check if letter is vaild
-            if ( e.key.match(/^[a-z]$/i) ) {
+            if ( e.key.match(/^[A-Za-z]$/i) ) {
             pressKey(e.key.toLowerCase());
             }
             break;
