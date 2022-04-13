@@ -2,7 +2,8 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
-/* * Glow Animations * */
+/* * =============== Animations =============== * */
+/* ===== Glows ===== */
 /* Sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
 @keyframes glow-1 {
   from {
@@ -36,6 +37,31 @@
     0 0 6px rgba(39, 157, 245, 0.67), 0 0 8px rgba(39, 157, 245, 0.67), 
     0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
     0 0 14px rgba(39, 157, 245, 0.67);
+  }
+}
+
+/* ===== Slide In ===== */
+@keyframes titleSlideDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0%;
+    transform: translateY(5%);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
   }
 }
 
@@ -83,7 +109,10 @@ label {
 
 /* * =============== Page Format =============== * * /
 /* ===== Background Styling ===== */
-body {
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
   background: rgba(0, 0, 0, 0.8) url(../img/stock/neon-drive.gif) no-repeat center;
   background-blend-mode: multiply;
@@ -96,7 +125,9 @@ body {
   margin-top: 3%;
   color: rgba(39, 238, 245, 0.85);
   font-family: "Games", sans-serif;
-  animation: glow-1 1s ease-in-out infinite alternate;
+  animation: glow-1 1s ease-in-out infinite alternate, 1s ease-out titleSlideDown;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 /* "Login" */
@@ -108,6 +139,16 @@ body {
 /* * =============== Navbar =============== * */
 .nav-item {
   color: #58a6ff;
+  transition: all 0.2s;
+}
+
+.nav-item span {
+  transition: 0.2s;
+}
+
+/* ===== Hover ===== */
+.nav-item span:after {
+  transition: 0.2s;
 }
 
 .nav-link:hover {
@@ -117,12 +158,21 @@ body {
   animation: glow-2 1s ease-in-out infinite alternate;
 }
 
+.nav-item:hover span:after {
+  opacity: 1;
+}
+
 /* * =============== Form =============== * */
 form {
   background-color: rgba(13, 17, 23, 0.9);
   border: 2px outset #58a6ff;
   border-radius: 20px;
-  margin: 5% auto 20% auto;
+  margin: 10% auto 15% auto;
   padding: 5%;
   width: 50%;
+
+  /* ===== Animation ===== */
+  animation: 0.8s ease-out 0.8s slideInFromBottom;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }

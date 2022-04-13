@@ -2,7 +2,8 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
-/* * Glow Animations * */
+/* * =============== Animations =============== * */
+/* ===== Glows ===== */
 /* Originally sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
 @keyframes glow-2 {
   from {
@@ -19,6 +20,19 @@
     0 0 6px rgba(39, 157, 245, 0.67), 0 0 8px rgba(39, 157, 245, 0.67), 
     0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
     0 0 14px rgba(39, 157, 245, 0.67);
+  }
+}
+
+/* ===== Slide In ===== */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0%;
+    transform: translateY(5%);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
   }
 }
 
@@ -39,7 +53,10 @@ h1, h2, h3, h4, h5, h6, legend {
 
 /* * =============== Page Format =============== * */
 /* ===== Background Styling ===== */
-body {
+.main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   /* Gif Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
   background: rgba(0, 0, 0, 0.8) url(../img/stock/neon-drive.gif) no-repeat center;
   background-blend-mode: multiply;
@@ -49,8 +66,8 @@ body {
 /* ===== Text Styling ===== */
 /* Heading */
 h3 {
-  animation: glow-2 1s ease-in-out infinite alternate;
   font-family: "Games", sans-serif;
+  animation: glow-2 1s ease-in-out infinite alternate;
 }
 
 /* * =============== Navbar =============== * */
@@ -89,6 +106,11 @@ h3 {
   border-radius: 20px;
   margin: 5% auto 5% auto;
   width: 70%;
+
+  /* ===== Animation ===== */
+  animation: 0.6s ease-out slideInFromBottom;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .contact-form form {
