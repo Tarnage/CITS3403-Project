@@ -2,23 +2,39 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
-  /* * Glow Animations * */
-  @keyframes glow-2 {
-    from {
-      text-shadow: 0 0 4px rgba(39, 191, 245, 0.3),
-        0 0 6px rgba(39, 191, 245, 0.3), 0 0 8px rgba(39, 191, 245, 0.3),
-        0 0 10px rgba(39, 191, 245, 0.3), 0 0 12px rgba(39, 191, 245, 0.3),
-        0 0 14px rgba(39, 191, 245, 0.3), 0 0 16px rgba(39, 191, 245, 0.3);
-    }
-  
-    to {
-      text-shadow: 0 0 2px rgba(39, 191, 245, 0.3),
-        0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 157, 245, 0.67),
-        0 0 8px rgba(39, 157, 245, 0.67), 0 0 10px rgba(39, 157, 245, 0.67),
-        0 0 12px rgba(39, 157, 245, 0.67), 0 0 14px rgba(39, 157, 245, 0.67);
-    }
+/* * =============== Animations =============== * */
+/* ===== Glows ===== */
+/* Sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
+@keyframes glow-2 {
+  from {
+    text-shadow: 0 0 4px rgba(39, 191, 245, 0.3),
+      0 0 6px rgba(39, 191, 245, 0.3), 0 0 8px rgba(39, 191, 245, 0.3),
+      0 0 10px rgba(39, 191, 245, 0.3), 0 0 12px rgba(39, 191, 245, 0.3),
+      0 0 14px rgba(39, 191, 245, 0.3), 0 0 16px rgba(39, 191, 245, 0.3);
   }
 
+  to {
+    text-shadow: 0 0 2px rgba(39, 191, 245, 0.3),
+      0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 157, 245, 0.67),
+      0 0 8px rgba(39, 157, 245, 0.67), 0 0 10px rgba(39, 157, 245, 0.67),
+      0 0 12px rgba(39, 157, 245, 0.67), 0 0 14px rgba(39, 157, 245, 0.67);
+  }
+}
+
+/* ===== Slide In ===== */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0%;
+    transform: translateY(5%);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+/* * =============== General =============== * */
 body {
   background-color: black;
 }
@@ -31,26 +47,11 @@ label {
   color: #c9d1d9;
 }
 
-.progress-words {
-  color: #58a6ff;
-}
-
-.guess-interface {
-  display: grid;
-  justify-content: center;
-  padding-top: 10%;
-  /* align-content: center; */
-}
-
+/* ===== Containers ===== */
 .container {
   background-color: rgba(13, 17, 23, 1);
   width: auto;
   padding: 0%;
-}
-
-.stat-interface {
-  background-color: rgba(13, 17, 23, 1);
-  
 }
 
 .game-box {
@@ -60,6 +61,30 @@ label {
   padding-bottom: 4%;
   border: 4px solid #58a6ff;
   border-radius: 10px;
+}
+
+/* * =============== Stats =============== * */
+/* ===== Interface ===== */
+.stat-interface {
+  background-color: rgba(13, 17, 23, 1);
+}
+
+/* ===== Progress Bar ===== */
+.progress-words {
+  color: #58a6ff;
+
+  /* TODO animate bars in one by one */
+  animation: 1s ease-out slideInFromBottom;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* * =============== Guess Interface =============== * */
+.guess-interface {
+  display: grid;
+  justify-content: center;
+  padding-top: 10%;
+  /* align-content: center; */
 }
 
 .current-guess {
@@ -72,7 +97,7 @@ label {
   font-size: 50px;
 }
 
-
+/* * =============== Keyboard =============== * */
 /* Keyboard and keys design adapted from - https://codepen.io/kulpreets/pen/MKgqqB */
 .keyboard {
   width: fit-content;
@@ -130,6 +155,7 @@ label {
   opacity: 0.5;
 }
 
+/* * =============== Navbar =============== * */
 ul{
   list-style-type: none;
   margin: 0;
@@ -142,17 +168,27 @@ li {
   text-decoration: none;
   color:#58a6ff;
   cursor: pointer;
+  transition: all 0s;
+}
+
+li span {
+  transition: 0.2s;
+}
+
+.navbar-toggler-icon{
+  width: 1em !important;
+  height:1em !important;
+}
+
+/* ===== Hover ===== */
+li span:after {
+  transition: 0.2s;
 }
 
 li:hover {
   font-size: 120%;
   color: #c3f1f7;
   animation: glow-2 1s ease-in-out infinite alternate;
-}
-
-.navbar-toggler-icon{
-  width: 1em !important;
-  height:1em !important;
 }
 
 .navbar-toggler:hover {
