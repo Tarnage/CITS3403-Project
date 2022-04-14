@@ -73,7 +73,7 @@ h3 {
 /* * =============== Navbar =============== * */
 .nav-item {
   color: #58a6ff;
-  transition: all 0.2s;
+  transition: all 0s;
 }
 
 .nav-item span {

@@ -78,21 +78,14 @@ h1, h2, h3, h4, h5, h6, legend {
   height: inherit;
 }
 
+label {
+  color: #c9d1d9;
+}
+
 /* ===== Font ===== */
 @font-face {
   font-family: "Games";
   src: url(../font/Games.ttf);
-}
-
-/* ===== Buttons ===== */
-/* "Quick Play" */
-.btn-info {
-  border: none;
-  background-color: #58a6ff;
-}
-
-label {
-  color: #c9d1d9;
 }
 
 /* * =============== Page Format =============== * * /
@@ -110,7 +103,7 @@ label {
 /* ===== Text Styling ===== */
 /* Title */
 .display-4 {
-  margin-top: 6%;
+  margin-top: 3%;
   color: rgba(39, 238, 245, 0.85);
   font-family: "Games", sans-serif;
   animation: glow-1 1s ease-in-out infinite alternate, 1s ease-out titleSlideDown;
@@ -127,7 +120,7 @@ label {
 /* * =============== Navbar =============== * */
 .nav-item {
   color: #58a6ff;
-  transition: all 0.2s;
+  transition: all 0s;
 }
 
 .nav-item span {
@@ -155,9 +148,48 @@ form {
   background-color: rgba(13, 17, 23, 0.9);
   border: 2px outset #58a6ff;
   border-radius: 20px;
-  margin: 10% auto 15% auto;
+  margin: 4% auto auto auto;
   padding: 5%;
   width: 50%;
+}
+
+/* * =============== Send Button =============== * */
+/* Button transition animation sourced from w3schools "https://www.w3schools.com/css/css3_buttons.asp"*/
+.btn-info {
+  margin-bottom: -5%;
+  border: none;
+  border-radius: 5px;
+  background: #58a6ff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-info span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-info span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+/* ===== Hover ===== */
+.btn-info:hover {
+  background-color: #c3f1f7;
+  box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
+}
+
+.btn-info:hover span {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.btn-info:hover span:after {
+  opacity: 1;
 }
 
 /* * =============== Responsive =============== * */
