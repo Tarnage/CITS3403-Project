@@ -2,59 +2,89 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
-/* * Glow Animations * */
+/* * =============== Animations =============== * */
+/* ===== Glows ===== */
+/* Originally sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
 @keyframes glow-2 {
   from {
-    text-shadow: 0 0 4px rgba(39, 191, 245, 0.3),
-      0 0 6px rgba(39, 191, 245, 0.3), 0 0 8px rgba(39, 191, 245, 0.3),
-      0 0 10px rgba(39, 191, 245, 0.3), 0 0 12px rgba(39, 191, 245, 0.3),
-      0 0 14px rgba(39, 191, 245, 0.3), 0 0 16px rgba(39, 191, 245, 0.3);
+    text-shadow: 
+    0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 191, 245, 0.3), 
+    0 0 8px rgba(39, 191, 245, 0.3), 0 0 10px rgba(39, 191, 245, 0.3), 
+    0 0 12px rgba(39, 191, 245, 0.3), 0 0 14px rgba(39, 191, 245, 0.3), 
+    0 0 16px rgba(39, 191, 245, 0.3);
   }
 
   to {
-    text-shadow: 0 0 2px rgba(39, 191, 245, 0.3),
-      0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 157, 245, 0.67),
-      0 0 8px rgba(39, 157, 245, 0.67), 0 0 10px rgba(39, 157, 245, 0.67),
-      0 0 12px rgba(39, 157, 245, 0.67), 0 0 14px rgba(39, 157, 245, 0.67);
+    text-shadow: 
+    0 0 2px rgba(39, 191, 245, 0.3), 0 0 4px rgba(39, 191, 245, 0.3), 
+    0 0 6px rgba(39, 157, 245, 0.67), 0 0 8px rgba(39, 157, 245, 0.67), 
+    0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
+    0 0 14px rgba(39, 157, 245, 0.67);
   }
 }
 
-/* * Background Styling * */
-body {
-  /* Gif Image */
-  background-image: url(../img/stock/neon-drive.gif);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ===== Slide In ===== */
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0%;
+    transform: translateY(5%);
+  }
 
-  /* Tint */
-  background-color: rgba(0, 0, 0, 0.8);
-  background-blend-mode: multiply;
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
 
-/* * Text Styling * */
-/* Font */
-@font-face {
-    font-family: "Games";
-    src: url(../font/Games.ttf);
+/* * =============== General =============== * */
+* {
+  box-sizing: border-box;
 }
 
-/* General */
 h1, h2, h3, h4, h5, h6, legend {
   color: #58a6ff;
 }
 
-h3 {
-  animation: glow-2 1s ease-in-out infinite alternate;
-  font-family: "Games", sans-serif;
+/* ===== Font ===== */
+@font-face {
+  font-family: "Games";
+  src: url(../font/Games.ttf);
 }
 
-/* * Navbar * */
+/* * =============== Page Format =============== * */
+/* ===== Background Styling ===== */
+.main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* Gif Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
+  background: rgba(0, 0, 0, 0.8) url(../img/stock/neon-drive.gif) no-repeat center;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+/* ===== Text Styling ===== */
+/* Heading */
+h3 {
+  font-family: "Games", sans-serif;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
+/* * =============== Navbar =============== * */
 .nav-item {
   color: #58a6ff;
+  transition: all 0s;
 }
 
-/* TODO: Change color  */
+.nav-item span {
+  transition: 0.2s;
+}
+
+/* ===== Hover ===== */
+.nav-item span:after {
+  transition: 0.2s;
+}
+
 .nav-link:hover {
   font-size: 150%;
   color: #c3f1f7;
@@ -62,25 +92,25 @@ h3 {
   animation: glow-2 1s ease-in-out infinite alternate;
 }
 
-/* Contact Us Form */
+.nav-item:hover span:after {
+  opacity: 1;
+}
+
+/* * ========== Contact Us Form ========== * */
+/* Sourced from Bootsnipp "https://bootsnipp.com/snippets/7nmOW" */
 .contact-form {
   /* Tint */
   background-color: rgba(13, 17, 23, 1);
-
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-  border-radius: 15px;
-
-  border: 2px solid #58a6ff;
-  border-style: outset;
+  /* Format */
+  border: 2px outset #58a6ff;
   border-radius: 20px;
-}
+  margin: 8% auto 5% auto;
+  width: 70%;
 
-.contact-image {
-  text-align: center;
+  /* ===== Animation ===== */
+  animation: 0.6s ease-out slideInFromBottom;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .contact-form form {
@@ -88,18 +118,20 @@ h3 {
   margin-bottom: 5%;
 }
 
-.contact-form form .row {
-  margin-bottom: -7%;
+/* Spacing */
+.form-group {
+  margin-bottom: 6%;
 }
 
+/* Heading */
 .contact-form h3 {
-  margin-bottom: 12%;
-  margin-top: -8%;
+  margin: -8% auto 12%;
   text-align: center;
-  color: #58a6ff;
 }
 
-.contact-form .btn-info {
+/* * =============== Send Button =============== * */
+/* Button transition animation sourced from w3schools "https://www.w3schools.com/css/css3_buttons.asp"*/
+.btn-info {
   margin-top: 5%;
   width: 50%;
   border: none;
@@ -107,14 +139,44 @@ h3 {
   padding: 1.5%;
   background: #58a6ff;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
-/* TODO Change color of hover to match index page */
-.contact-form .btn-info:hover {
+.btn-info span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-info span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+
+/* ===== Hover ===== */
+.btn-info:hover {
   background-color: #c3f1f7;
+  box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
 }
 
-.form-group {
-  margin-bottom: 15px;
+.btn-info:hover span {
+  padding-right: 25px;
 }
-  
+
+.btn-info:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* * =============== Responsive =============== * */
+@media screen and (max-width: 600px) {
+  .contact-form {
+    margin-top: 15%;
+    width: 90%;
+    padding: 2%;
+  }
+}
