@@ -2,81 +2,66 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
-/* * Glow Animations * */
+/* * =============== Animations =============== * */
+/* ===== Glows ===== */
+/* Sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
 @keyframes glow-1 {
   from {
-    text-shadow: 0 0 10px #90d7e7, 0 0 20px #90d7e7, 0 0 30px #58a6ff,
-      0 0 40px #58a6ff, 0 0 50px #58a6ff, 0 0 60px #58a6ff, 0 0 70px #58a6ff;
+    text-shadow: 
+    0 0 10px #90d7e7, 0 0 20px #90d7e7, 
+    0 0 30px #58a6ff, 0 0 40px #58a6ff, 
+    0 0 50px #58a6ff, 0 0 60px #58a6ff, 
+    0 0 70px #58a6ff;
   }
 
   to {
-    text-shadow: 0 0 20px #90d7e7, 0 0 30px #90d7e7, 0 0 40px #90d7e7,
-      0 0 50px #90d7e7, 0 0 60px #90d7e7, 0 0 70px #90d7e7, 0 0 80px #90d7e7;
+    text-shadow: 
+    0 0 20px #90d7e7, 0 0 30px #90d7e7, 
+    0 0 40px #90d7e7, 0 0 50px #90d7e7, 
+    0 0 60px #90d7e7, 0 0 70px #90d7e7, 
+    0 0 80px #90d7e7;
+  }
+}
+@keyframes glow-2 {
+  from {
+    text-shadow: 
+    0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 191, 245, 0.3), 
+    0 0 8px rgba(39, 191, 245, 0.3), 0 0 10px rgba(39, 191, 245, 0.3), 
+    0 0 12px rgba(39, 191, 245, 0.3), 0 0 14px rgba(39, 191, 245, 0.3), 
+    0 0 16px rgba(39, 191, 245, 0.3);
+  }
+
+  to {
+    text-shadow: 
+    0 0 2px rgba(39, 191, 245, 0.3), 0 0 4px rgba(39, 191, 245, 0.3), 
+    0 0 6px rgba(39, 157, 245, 0.67), 0 0 8px rgba(39, 157, 245, 0.67), 
+    0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
+    0 0 14px rgba(39, 157, 245, 0.67);
   }
 }
 
-/* * Background Styling * */
-body {
-  /* GIF Image */
-  background-image: url(../img/stock/neon-drive.gif);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ===== Slide In ===== */
+@keyframes titleSlideDown {
+  0% {
+    opacity: 0%;
+    transform: translateY(-50%);
+  }
 
-  /* Tint */
-  background-color: rgba(0, 0, 0, 0.8);
-  background-blend-mode: multiply;
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
 
-/* * Text Styling * */
-/* Font */
-@font-face {
-  font-family: "Games";
-  src: url(../font/Games.ttf);
+/* * =============== General =============== * */
+* {
+  box-sizing: border-box;
 }
 
-/* General */
 h1, h2, h3, h4, h5, h6, legend {
   color: #58a6ff;
 }
 
-/* Title */
-.display-4 {
-  margin-top: 3%;
-  color: rgba(39, 238, 245, 0.85);
-  font-family: "Games", sans-serif;
-  animation: glow-1 1s ease-in-out infinite alternate;
-}
-
-.col h3 {
-  font-family: "Games", sans-serif;
-  margin: -10% auto 5%;
-}
-
-/* * Navbar * */
-.nav-item {
-  color: #58a6ff;
-}
-
-/* TODO: Change color  */
-.nav-link:hover {
-  font-size: 150%;
-  color: #c3f1f7;
-  cursor: pointer;
-  animation: glow-2 1s ease-in-out infinite alternate;
-}
-
-/* * Buttons * */
-.btn-info {
-  border: none;
-  background-color: #58a6ff;
-}
-
-label {
-  color: #c9d1d9;
-}
-
-/* - = - = - = - = - = - = - = - */
 .homepage {
   height: inherit;
 }
@@ -87,21 +72,150 @@ label {
 
 .c-container {
   text-align: center;
-}
+} 
 
 .login-screen {
   height: inherit;
 }
 
-/* * Form Styling * */
+label {
+  color: #c9d1d9;
+}
+
+/* ===== Font ===== */
+@font-face {
+  font-family: "Games";
+  src: url(../font/Games.ttf);
+}
+
+/* * =============== Page Format =============== * * /
+/* ===== Background Styling ===== */
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
+  background: rgba(0, 0, 0, 0.8) url(../img/stock/neon-drive.gif) no-repeat center;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+/* ===== Text Styling ===== */
+/* Title */
+.display-4 {
+  margin-top: 3%;
+  color: rgba(39, 238, 245, 0.85);
+  font-family: "Games", sans-serif;
+  animation: glow-1 1s ease-in-out infinite alternate, 1s ease-out titleSlideDown;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+/* "Login" */
+.col h3 {
+  font-family: "Games", sans-serif;
+  margin: -10% auto 5%;
+}
+
+/* * =============== Navbar =============== * */
+.nav-item {
+  color: #58a6ff;
+  transition: all 0s;
+}
+
+.nav-item span {
+  transition: 0.2s;
+}
+
+/* ===== Hover ===== */
+.nav-item span:after {
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  font-size: 150%;
+  color: #c3f1f7;
+  cursor: pointer;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
+.nav-item:hover span:after {
+  opacity: 1;
+}
+
+/* * =============== Form =============== * */
 form {
   background-color: rgba(13, 17, 23, 0.9);
-  border: 2px solid #58a6ff;
-  padding: 5%;
-  border-style: outset;
+  border: 2px outset #58a6ff;
   border-radius: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10%;
+  margin: 4% auto auto auto;
+  padding: 5%;
   width: 50%;
+}
+
+/* * =============== Send Button =============== * */
+/* Button transition animation sourced from w3schools "https://www.w3schools.com/css/css3_buttons.asp"*/
+.btn-info {
+  margin-bottom: -5%;
+  border: none;
+  border-radius: 5px;
+  background: #58a6ff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btn-info span {
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-info span:after {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+/* ===== Hover ===== */
+.btn-info:hover {
+  background-color: #c3f1f7;
+  box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
+}
+
+.btn-info:hover span {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.btn-info:hover span:after {
+  opacity: 1;
+}
+
+/* * =============== Responsive =============== * */
+@media screen and (max-width: 600px) {
+  .display-4 {
+    font-size: 3em;
+    margin-top: 10%;
+  }
+  
+  .col h3 {
+    font-family: "Games", sans-serif;
+    margin: 3% auto 5%;
+  }
+  
+  form {
+    margin: 15% auto 15% auto;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .display-4 {
+    font-size: 2.5em;
+  }
+  
+  form {
+    width: 100%;
+  }
 }
