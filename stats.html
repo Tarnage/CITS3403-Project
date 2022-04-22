@@ -32,7 +32,15 @@
 
   <div class="jumbotron text-center">
     <h1>World Leaderboard</h1>
+
   </div>
+
+  <!-- for showing the bar chart -->
+  <div id="chart-container" style="padding: 1.5rem 3.75rem; margin-right: auto;
+  margin-left: auto;">
+    <canvas id="myChart" height="200"></canvas>
+  </div>
+
 
   <div class="container-fluid content">
 
@@ -44,8 +52,39 @@
     <div id="datatable">
 
     </div>
-    
+
   </div>
 
+  <!-- js script for creating the bar chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    window.onload = function () {
+      var ctx = document.getElementById('myChart');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: users,
+          datasets: [{
+            label: 'score',
+            data: scores,
+            backgroundColor: 'rgba(88, 166, 255, 1)',
+            borderColor: 'rgba(88, 166, 255, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+  </script>
+
 </body>
+
 </html>
