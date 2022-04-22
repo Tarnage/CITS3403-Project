@@ -1,4 +1,9 @@
 "use strict";
+
+// TODO: FIX RANKINGS
+// TODO: FIX GRAPH AND MOVE TO SCRIPT FILE
+// TODO: SOMETHING ELSE???
+
 var users = [];
 var scores = [];
 const data2 = {
