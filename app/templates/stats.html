@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block customScripts %}
+  <!-- custom css -->
+  <link rel="stylesheet" 
+        href="./static/assets/style/stats.css" />
+  <!-- JavaScript -->
+  <script src="./static/assets/js/statScript.js"></script>
+  <!-- flavicon -->
+  <link rel="icon" 
+        type="images/x-icon" 
+        href="./static/assets/img/stock/favicon-32x32.png" />
+{% endblock %}
+
+{% block content %}
+  <div class="jumbotron text-center">
+    <h1>World Leaderboard</h1>
+  </div>
+
+  <div class="container-fluid content">
+
+    <div class="form-outline mb-4">
+      <input type="search" class="form-control" id="datatable-search-input" placeholder="Search">
+      <button class="btn btn-primary" id="search-btn" type="button">Submit</button>
+    </div>
+
+    <div id="datatable">
+
+    </div>
+    
+  </div>
+
+{% endblock %}
