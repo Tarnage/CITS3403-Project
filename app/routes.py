@@ -9,3 +9,11 @@ def index():
 @app.route('/contacts')
 def contacts():
     return render_template('contacts.html', title='Contacts Page')
+
+@app.route('/game')
+def game():
+    return render_template('game.html', title="Anagram-City", game=True)
+
+@app.route('/stats')
+def stats():
+    return render_template('stats.html', title="Leaderboards")
