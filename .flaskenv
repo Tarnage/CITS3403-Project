@@ -1,1 +1,1 @@
-FLASK_APP=anagramCitty.py
+FLASK_APP=anagramCity.py
