@@ -29,53 +29,6 @@ const EMPTYFOUNDWORDS =  {
     "four"      : []
 };
 
-const  WORDDICT = {
-    "root_word"    :["debuggers"],
-
-    "root_letter"  :["g"],
-
-    "eight"        :["buggered"],
-
-    "seven"        :["grudges"],
-
-    "six"          :["begged",
-                    "bedrug",
-                    "begged",
-                    "budger",
-                    "budges",
-                    "bugged",
-                    "bugger",
-                    "burgee",
-                    "debugs",
-                    "edgers"],
-
-    "five"         :["dregs",
-                    "drugs",
-                    "edger",
-                    "greed",
-                    "grubs",
-                    "serge",
-                    "grese",
-                    "budge",
-                    "egger",
-                    "surge"],
-
-    "four"         :["begs",
-                    "berg",
-                    "bugs",
-                    "burg",
-                    "degs",
-                    "degu",
-                    "dugs",
-                    "eggs",
-                    "geed",
-                    "grub",
-                    "rugs",
-                    "urge"]
-
-};
-
-
 const EMPTYSTATS = {
     "guesses"       : 0,    // NOT IMPLEMENTED
     "hintsUsed"     : 0,    // NOT IMPLEMENTED
@@ -121,12 +74,15 @@ function init(reset=false) {
     // NOT USED
     // if (reset) resetStats();
 
-    currentAnagram = ""
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "https://drtnf.net/wordle_time_left", false);
-
-
-    currentPlayer = new playerState(WORDDICT, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
+    var currentAnagram;
+    let xttp = new XMLHttpRequest();
+    xttp.onload = function() {
+        currentAnagram = JSON.parse(this.responseText);
+    }
+    // async set to false we have to wait for a response before continuing
+    xttp.open("GET", "{{ url_for('anagram') }}", false);
+    xttp.send();
+    currentPlayer = new playerState(currentAnagram, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
     currentPlayer.getGuessWindow();
     currentPlayer.guessWindow.innerText = "";
 
