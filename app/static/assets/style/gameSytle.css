@@ -64,24 +64,9 @@
   }
 }
 
-/* * =============== General =============== * */
 body {
   background-color: black;
   --slideInPB-time: 0.5s;
-}
-
-h1, h2, h3, h4, h5, h6, legend {
-  color: #58a6ff;
-}
-
-label {
-  color: #c9d1d9;
-}
-
-/* ===== Font ===== */
-@font-face {
-  font-family: "Games";
-  src: url(../font/Games.ttf);
 }
 
 /* * =============== Page Format =============== * */
@@ -128,6 +113,10 @@ body {
 /* ===== Progress Bars ===== */
 .progress {
   color: #58a6ff;
+}
+
+.progress-words {
+	color: rgba(39, 238, 245, 0.85);;
 }
 
 /* TODO Improve Coding of Animation */
@@ -244,44 +233,4 @@ body {
 [contentEditable=false]:empty:not(:focus):before{
   content:attr(data-text);
   opacity: 0.5;
-}
-
-/* * =============== Navbar =============== * */
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  float: left;
-  padding: 16px;
-  text-decoration: none;
-  color:#58a6ff;
-  cursor: pointer;
-  transition: all 0s;
-}
-
-li span {
-  transition: 0.2s;
-}
-
-.navbar-toggler-icon{
-  width: 1em !important;
-  height:1em !important;
-}
-
-/* ===== Hover ===== */
-li span:after {
-  transition: 0.2s;
-}
-
-li:hover {
-  font-size: 120%;
-  color: #c3f1f7;
-  animation: glow-2 1s ease-in-out infinite alternate;
-}
-
-.navbar-toggler:hover {
-  color: #c3f1f7;
 }

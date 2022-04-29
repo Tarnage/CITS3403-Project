@@ -6,10 +6,6 @@ body {
   background-color: rgba(13, 17, 23, 1);
 }
 
-h1, h2, h3, h4, h5, h6, legend {
-  color: #58a6ff;
-}
-
 .jumbotron {
   padding-top: 5%;
   padding-bottom: 5%;

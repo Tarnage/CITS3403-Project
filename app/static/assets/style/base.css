@@ -1,0 +1,44 @@
+/* * =============== General =============== * */
+
+h1, h2, h3, h4, h5, h6, legend {
+  color: #58a6ff;
+}
+
+label {
+  color: #c9d1d9;
+}
+
+/* ===== Font ===== */
+@font-face {
+  font-family: "Games";
+  src: url(../font/Games.ttf);
+}
+
+/* * =============== Navbar =============== * */
+.nav-item {
+  color: #58a6ff;
+  transition: all 0s;
+}
+
+.nav-item span {
+  transition: 0.2s;
+}
+
+/* ===== Hover ===== */
+.nav-item span:after {
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  font-size: 150%;
+  color: #c3f1f7;
+  cursor: pointer;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
+.nav-item:hover span:after {
+  opacity: 1;
+}
+
+/* * =============== Modal =============== * */
+/*TODO: ADD MODEL STYLES HERE*/

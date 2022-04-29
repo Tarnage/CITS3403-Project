@@ -36,21 +36,6 @@
   }
 }
 
-/* * =============== General =============== * */
-* {
-  box-sizing: border-box;
-}
-
-h1, h2, h3, h4, h5, h6, legend {
-  color: #58a6ff;
-}
-
-/* ===== Font ===== */
-@font-face {
-  font-family: "Games";
-  src: url(../font/Games.ttf);
-}
-
 /* * =============== Page Format =============== * */
 /* ===== Background Styling ===== */
 .main {
@@ -70,31 +55,6 @@ h3 {
   animation: glow-2 1s ease-in-out infinite alternate;
 }
 
-/* * =============== Navbar =============== * */
-.nav-item {
-  color: #58a6ff;
-  transition: all 0s;
-}
-
-.nav-item span {
-  transition: 0.2s;
-}
-
-/* ===== Hover ===== */
-.nav-item span:after {
-  transition: 0.2s;
-}
-
-.nav-link:hover {
-  font-size: 150%;
-  color: #c3f1f7;
-  cursor: pointer;
-  animation: glow-2 1s ease-in-out infinite alternate;
-}
-
-.nav-item:hover span:after {
-  opacity: 1;
-}
 
 /* * ========== Contact Us Form ========== * */
 /* Sourced from Bootsnipp "https://bootsnipp.com/snippets/7nmOW" */

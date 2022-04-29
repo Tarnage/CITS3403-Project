@@ -69,10 +69,6 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, legend {
-  color: #58a6ff;
-}
-
 .homepage {
   height: inherit;
 }
@@ -89,9 +85,6 @@ h1, h2, h3, h4, h5, h6, legend {
   height: inherit;
 }
 
-label {
-  color: #c9d1d9;
-}
 
 /* ===== Font ===== */
 @font-face {
