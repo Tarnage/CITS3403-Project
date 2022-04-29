@@ -1,6 +1,8 @@
 from flask import render_template
 from app import app
 
+import word_gen
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -17,3 +19,7 @@ def game():
 @app.route('/stats')
 def stats():
     return render_template('stats.html', title="Leaderboards")
+
+@app.route('/anagram', methods=['GET', 'POST'])
+def dailyWord():
+    return word_gen.main()

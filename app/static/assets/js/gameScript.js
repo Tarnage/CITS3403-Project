@@ -121,6 +121,11 @@ function init(reset=false) {
     // NOT USED
     // if (reset) resetStats();
 
+    currentAnagram = ""
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "https://drtnf.net/wordle_time_left", false);
+
+
     currentPlayer = new playerState(WORDDICT, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
     currentPlayer.getGuessWindow();
     currentPlayer.guessWindow.innerText = "";
@@ -318,8 +323,7 @@ function enableButton() {
 
 
 function setScore() {
-    $("#current-guess").setAttribute("data-text", currentPlayer.userStats["score"]);
-    console.log($("#current-guess"));
+    document.getElementById("current-guess").setAttribute("data-text", "Score:" + currentPlayer.userStats["score"]);    
 }
 
 /**
