@@ -1,1 +1,2 @@
 FLASK_APP=anagramCity.py
+FLASK_ENV=development
