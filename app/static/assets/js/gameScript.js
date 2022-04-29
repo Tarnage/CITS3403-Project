@@ -73,7 +73,7 @@ function init(reset=false) {
     // NOT USED
     // if (reset) resetStats();
 
-    var currentAnagram;
+    let currentAnagram;
     let xttp = new XMLHttpRequest();
     xttp.onload = function() {
         currentAnagram = JSON.parse(this.responseText);
