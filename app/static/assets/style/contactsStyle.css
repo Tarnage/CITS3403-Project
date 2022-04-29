@@ -2,27 +2,6 @@
 /* Header color         - #58a6ff */
 /* Standard text color  - #c9d1d9 */
 
-/* * =============== Animations =============== * */
-/* ===== Glows ===== */
-/* Originally sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
-@keyframes glow-2 {
-  from {
-    text-shadow: 
-    0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 191, 245, 0.3), 
-    0 0 8px rgba(39, 191, 245, 0.3), 0 0 10px rgba(39, 191, 245, 0.3), 
-    0 0 12px rgba(39, 191, 245, 0.3), 0 0 14px rgba(39, 191, 245, 0.3), 
-    0 0 16px rgba(39, 191, 245, 0.3);
-  }
-
-  to {
-    text-shadow: 
-    0 0 2px rgba(39, 191, 245, 0.3), 0 0 4px rgba(39, 191, 245, 0.3), 
-    0 0 6px rgba(39, 157, 245, 0.67), 0 0 8px rgba(39, 157, 245, 0.67), 
-    0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
-    0 0 14px rgba(39, 157, 245, 0.67);
-  }
-}
-
 /* ===== Slide In ===== */
 @keyframes slideInFromBottom {
   0% {
@@ -64,7 +43,7 @@ h3 {
   /* Format */
   border: 2px outset #58a6ff;
   border-radius: 20px;
-  margin: 5% auto 5% auto;
+  margin-top: 5%;
   width: 70%;
 
   /* ===== Animation ===== */

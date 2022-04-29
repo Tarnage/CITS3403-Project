@@ -3,42 +3,6 @@
 /* Standard text color  - #c9d1d9 */
 
 /* * =============== Animations =============== * */
-/* ===== Glows ===== */
-/* Sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
-@keyframes glow-1 {
-  from {
-    text-shadow: 
-    0 0 10px #90d7e7, 0 0 20px #90d7e7, 
-    0 0 30px #58a6ff, 0 0 40px #58a6ff, 
-    0 0 50px #58a6ff, 0 0 60px #58a6ff, 
-    0 0 70px #58a6ff;
-  }
-
-  to {
-    text-shadow: 
-    0 0 20px #90d7e7, 0 0 30px #90d7e7, 
-    0 0 40px #90d7e7, 0 0 50px #90d7e7, 
-    0 0 60px #90d7e7, 0 0 70px #90d7e7, 
-    0 0 80px #90d7e7;
-  }
-}
-@keyframes glow-2 {
-  from {
-    text-shadow: 
-    0 0 4px rgba(39, 191, 245, 0.3), 0 0 6px rgba(39, 191, 245, 0.3), 
-    0 0 8px rgba(39, 191, 245, 0.3), 0 0 10px rgba(39, 191, 245, 0.3), 
-    0 0 12px rgba(39, 191, 245, 0.3), 0 0 14px rgba(39, 191, 245, 0.3), 
-    0 0 16px rgba(39, 191, 245, 0.3);
-  }
-
-  to {
-    text-shadow: 
-    0 0 2px rgba(39, 191, 245, 0.3), 0 0 4px rgba(39, 191, 245, 0.3), 
-    0 0 6px rgba(39, 157, 245, 0.67), 0 0 8px rgba(39, 157, 245, 0.67), 
-    0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
-    0 0 14px rgba(39, 157, 245, 0.67);
-  }
-}
 
 /* ===== Fade In =====*/
 @keyframes fadeIn {
@@ -63,6 +27,7 @@
     transform: translateY(0);
   }
 }
+
 
 /* * =============== General =============== * */
 * {
