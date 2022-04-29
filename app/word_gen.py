@@ -1,10 +1,15 @@
 import random
 import json
+import os
 
-# TODO pick words that will score points eg 16 four letter words 10 five letter words etc.. not all words will score points
+'''
+Script to randomly generate anagrams from a txt file of words.
+
+'''
+
 
 VOWS        = "aeiou"
-WORDS       = "./anagram.txt"
+WORDS       = os.getcwd()+'/app/anagram.txt'
 MAX_LETTERS = 9
 KEYS        = { 4: "four",
                 5: "five",

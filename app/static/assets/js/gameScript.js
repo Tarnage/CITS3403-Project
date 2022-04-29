@@ -5,7 +5,6 @@
 
 //------------------------------------------------------------GLOBALS AND STATISTICS-----------------------------------------------------
 
-
 // Used in a similar manner to traditional enums
 const DICT_KEYS = {
     0:      null,
@@ -34,7 +33,7 @@ const EMPTYSTATS = {
     "hintsUsed"     : 0,    // NOT IMPLEMENTED
     "totalFound"    : 0,    // NOT IMPLEMENTED
     "avgWordLength" : 0,    // NOT IMPLEMENTED
-    "streak"        : 0,     // NOT IMPLEMENTED
+    "streak"        : 0,    // NOT IMPLEMENTED
     "score"         : 0
 };
 
@@ -80,8 +79,9 @@ function init(reset=false) {
         currentAnagram = JSON.parse(this.responseText);
     }
     // async set to false we have to wait for a response before continuing
-    xttp.open("GET", "{{ url_for('anagram') }}", false);
+    xttp.open("GET", "/anagram", false);
     xttp.send();
+
     currentPlayer = new playerState(currentAnagram, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
     currentPlayer.getGuessWindow();
     currentPlayer.guessWindow.innerText = "";
@@ -437,7 +437,7 @@ function updateProgress( value ) {
 
 //----------------------------------------Local Storage-------------------------------------------------
 
-//TODO: 
+//TODO: NOT IMPLEMENTED
 /**
  * Save to local storage / cookies
  */
