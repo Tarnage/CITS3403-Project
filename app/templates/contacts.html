@@ -3,38 +3,21 @@
 {% block customScripts %}
   <!-- Contact CSS -->
   <link rel="stylesheet" 
-        href="./static/assets/style/contactsStyle.css">
+        href="{{ url_for('static', filename='assets/style/contactsStyle.css') }}">
   <!-- JavaScript -->
   <!-- <script src="assets/js/script.js"></script> -->
   <!-- flavicon -->
   <link rel="icon" 
         type="images/x-icon" 
-        href="./static/assets/img/stock/favicon-32x32.png">
+        href="{{ url_for('static', filename='assets/img/stock/favicon-32x32.png') }}">
 {% endblock %}
 
 {% block content %}
   <div class="main">
-    <!-- navbar -->
-    <!-- mostly place holders -->
-    <ul class="nav justify-content-center fixed-bottom hero-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{ url_for('index') }}"><span>Home</span></a>
-        </li>
-        <!-- TODO: chacnge move icon when hovering over link -->
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"><span>How to play</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">GitHub</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page"><span>Contact Us</span></a>
-        </li>
-      </ul>
 
     <!-- Contacts Form -->
     <!-- TODO: implement form via form-wtf chapter 3 of the mega flak tutorial  -->
-    <div class="container contact-form">
+    <div class="container-fluid contact-form">
         <form method="post">
             <h3>Drop Us a Message</h3>
         <div class="row">

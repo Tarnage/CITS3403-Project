@@ -3,40 +3,18 @@
 {% block customScripts %}
   <!-- custom css -->
   <link rel="stylesheet" 
-        href="./static/assets/style/gameSytle.css">
+        href="{{ url_for('static', filename='assets/style/gameSytle.css') }}">
   <!-- JavaScript -->
-  <script src="./static/assets/js/gameScript.js"></script>
+  <script src="{{ url_for('static', filename='assets/js/gameScript.js') }}"></script>
   <!-- flavicon -->
   <link rel="icon" 
         type="images/x-icon" 
-        href="./static/assets/img/stock/favicon-32x32.png">
+        href="{{ url_for('static', filename='assets/img/stock/favicon-32x32.png') }}">
 {% endblock %}
 
 {% block content %}
   <div class="container" >
     <div class="game-box">
-
-      <nav class="navbar navbar-dark">
-        <div class="container-fluid">
-          <div class="col-lg-1">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" 
-                    aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="col-lg-11">
-            <div class="collapse" id="navbarToggleExternalContent">
-                <ul>
-                  <li data-bs-toggle="modal" data-bs-target="#new-game-modal"><span>New Game</span></li>
-                  <li data-bs-toggle="modal" data-bs-target="#how-to-play-modal"><span>How to Play</span></li>
-                  <li><span>About Us</span></li>
-                  <li><a style="text-decoration: none;" href="{{ url_for('stats') }}"><span>Leaderboards</span></a></li>
-                </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
     
       <div class="row">
 

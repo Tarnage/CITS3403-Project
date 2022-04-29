@@ -3,13 +3,13 @@
 {% block customScripts %}
   <!-- custom css -->
   <link rel="stylesheet" 
-        href="./static/assets/style/indexStyle.css">
+        href="{{ url_for('static', filename='assets/style/indexStyle.css') }}">
   <!-- JavaScript -->
-  <script src="./static/assets/js/script.js"></script>
+  <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
   <!-- flavicon -->
   <link rel="icon" 
         type="images/x-icon" 
-        href="./static/assets/img/stock/favicon-32x32.png">
+        href="{{ url_for('static', filename='assets/img/stock/favicon-32x32.png') }}">
 {% endblock %}
 
 {% block content %}
@@ -22,22 +22,6 @@
           <h1 class="display-4">Welcome to Anagram-City!</h1>
         </div>
       </div>  
-
-      <!-- navbar -->
-      <ul class="nav justify-content-center fixed-bottom hero-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page"><span>Home</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"><span>How to play</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"><span>GitHub</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{ url_for('contacts') }}"><span>Contact Us</span></a>
-        </li>
-      </ul>
 
       <!-- Form Section -->
       <section class="container-fluid homepage ">

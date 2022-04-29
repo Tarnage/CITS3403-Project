@@ -3,13 +3,13 @@
 {% block customScripts %}
   <!-- custom css -->
   <link rel="stylesheet" 
-        href="./static/assets/style/stats.css" />
+        href="{{ url_for('static', filename='assets/style/stats.css') }}">
   <!-- JavaScript -->
-  <script src="./static/assets/js/statScript.js"></script>
+  <script src="{{ url_for('static', filename='assets/js/statScript.js') }}"></script>
   <!-- flavicon -->
   <link rel="icon" 
         type="images/x-icon" 
-        href="./static/assets/img/stock/favicon-32x32.png" />
+        href="{{ url_for('static', filename='assets/img/stock/favicon-32x32.png') }}">
 {% endblock %}
 
 {% block content %}
