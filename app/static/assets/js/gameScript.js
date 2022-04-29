@@ -75,12 +75,14 @@ const  WORDDICT = {
 
 };
 
+
 const EMPTYSTATS = {
-    "guesses"       : 0,
-    "hintsUsed"     : 0,
-    "totalFound"    : 0,
-    "avgWordLength" : 0,
-    "streak"        : 0
+    "guesses"       : 0,    // NOT IMPLEMENTED
+    "hintsUsed"     : 0,    // NOT IMPLEMENTED
+    "totalFound"    : 0,    // NOT IMPLEMENTED
+    "avgWordLength" : 0,    // NOT IMPLEMENTED
+    "streak"        : 0,     // NOT IMPLEMENTED
+    "score"         : 0
 };
 
 // Current player State
@@ -110,23 +112,14 @@ class playerState {
 
 //----------------------------------------------------------------INIT FUNCTIONS------------------------------------------------------
 
-
-// TODO: stats tracker - percentage overall, and percentage of each catergory 
-// TODO: hints, we can look in wordDicts and randomly pick a word as a hint
-// TODO: add meaningful nav bar links
-// TODO: add loading screen
-// TODO: READ in json files
-// TODO: local storage / cookies
-
 /**
  * Initialize game or resets progress
- * TODO: randomly choose root word from a db
- * TODO: add more stats
  * @param {boolean} reset
  */
 function init(reset=false) {
     // reset stats
-    if (reset) resetStats();
+    // NOT USED
+    // if (reset) resetStats();
 
     currentPlayer = new playerState(WORDDICT, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
     currentPlayer.getGuessWindow();
@@ -183,6 +176,7 @@ function initLetters(wordDict) {
 
 /**
  * Resets stats
+ * NOT USED
  */
  function resetStats() {
     let progBar     = document.getElementsByClassName( "progress-bar" );
@@ -323,6 +317,11 @@ function enableButton() {
 }
 
 
+function setScore() {
+    $("#current-guess").setAttribute("data-text", currentPlayer.userStats["score"]);
+    console.log($("#current-guess"));
+}
+
 /**
  * Adds letters to the current guess stack
  * 
@@ -407,9 +406,14 @@ function checkGuess() {
         resetGuess();
 
         // updates progress bar and writes the words to the screen
-        updateStats( currentKey );
+        updateProgress( currentKey );
 
-        // TODO: remove for production release
+        // simple scoring system
+        currentPlayer.userStats["score"] += length;
+
+        // display updated score
+        setScore();
+
         alert( word + " is in the list" );
     } 
     // else check if we already found the word
@@ -418,26 +422,11 @@ function checkGuess() {
     } 
     // else not a word
     else {
-        // TODO: change to a nicer interface modal or window that fades 
         // alerts user if word is in pool
         alert( word + " is NOT the list" );
     }
 }
 
-/**
- * USED FOR TESTING
- * alerts iff word is in pool
- * @param {string} word 
- * @param {boolean} found 
- */
-function alert_found( word, found ) {
-
-    if ( found ) {
-        alert( word + " is in the list" );
-    } else {
-        alert( word + " is NOT the list" );
-    }
-}
 
 /**
  * Removes word from the word dictionary and 
@@ -461,12 +450,11 @@ function addToFoundWords( key, word ) {
 }
 
 /**
- * Updates stats
- * TODO: add more stats
+ * Updates Progress window 
  * 
  * @param {string} value length of the word being queried
  */
-function updateStats( value ) {
+function updateProgress( value ) {
     // Current count of words found by user ()
     let foundCount      = currentPlayer.foundWords[value].length;
     // Remainding words to find
@@ -520,28 +508,3 @@ function setStorage() {
     // rootKey     = localStorage.getItem('rootKey');
     console.log(foundWords);
 }
-
-//----------------------------------------jQUERY-------------------------------------------------
-
-
-// $(window).on("load", () => {
-
-//     // clears cookies
-//     localStorage.clear();
-
-//     init();
-//     // if (!localStorage.getItem("foundWords")) {
-//     //     populateStorage();
-//     // } else {
-
-//     //     setStorage();
-//     // }
-
-//     // adds the onclick function for all keys
-//     $( ".keys" ).click( function() {
-//         handleClick( this );
-//     });
-
-//     // add keyboard listner callback
-//     document.addEventListener( "keydown", handleKeyPress );
-// });
