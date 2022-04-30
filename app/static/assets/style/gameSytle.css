@@ -60,7 +60,7 @@ body {
 /* ===== Background ===== */
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   /* GIF Image "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/60450985394250500379570173737850728793158825866208713302522449994820259676161/"*/
   background: rgba(0, 0, 0, 0.85) url(../img/stock/neon_city.gif) no-repeat center;
   background-blend-mode: multiply;
