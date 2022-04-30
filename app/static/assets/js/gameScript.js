@@ -19,46 +19,49 @@ const DICT_KEYS = {
     9:      "root_word"
 };
 
-const EMPTYFOUNDWORDS =  {
-    "root_word" : [],
-    "eight"     : [],
-    "seven"     : [],
-    "six"       : [],
-    "five"      : [],
-    "four"      : []
-};
-
-const EMPTYSTATS = {
-    "guesses"       : 0,    // NOT IMPLEMENTED
-    "hintsUsed"     : 0,    // NOT IMPLEMENTED
-    "totalFound"    : 0,    // NOT IMPLEMENTED
-    "avgWordLength" : 0,    // NOT IMPLEMENTED
-    "streak"        : 0,    // NOT IMPLEMENTED
-    "score"         : 0
-};
-
 // Current player State
 let currentPlayer;
 
 class playerState {
-    constructor(wordDict, foundWords, usedLetters, guessStack, userStats) {
+
+    EMPTYFOUNDWORDS =  {
+        "root_word" : [],
+        "eight"     : [],
+        "seven"     : [],
+        "six"       : [],
+        "five"      : [],
+        "four"      : []
+    };
+    
+    EMPTYSTATS = {
+        "guesses"       : 0,    // NOT IMPLEMENTED
+        "hintsUsed"     : 0,    // NOT IMPLEMENTED
+        "totalFound"    : 0,    // NOT IMPLEMENTED
+        "avgWordLength" : 0,    // NOT IMPLEMENTED
+        "streak"        : 0,    // NOT IMPLEMENTED
+        "score"         : 0
+    };
+
+    constructor(wordDict, usedLetters, guessStack) {
+        // parse and stringify will create new pointers
+        // otherwise it will be pointing to the 
         // current anagaram dicitonary
-        this.wordDict = JSON.parse(JSON.stringify(wordDict));
+        this.wordDict = wordDict;
         // Holds all the words the user has guessed correctly
-        this.foundWords = JSON.parse(JSON.stringify(foundWords));
+        this.foundWords = this.EMPTYFOUNDWORDS;
         // Stack to keep track of used letters
         // Holds the location of the document children
         this.usedLetters = usedLetters;
         // Stack of current word built by player
         this.guessStack = guessStack;
+        // current user stats
+        this.userStats = this.EMPTYSTATS;
         // holds current guess div
         this.guessWindow;
+        // method to update gueswindow
         this.getGuessWindow = () => {
             this.guessWindow = document.getElementById("current-guess");
         };
-        // current user stats
-        this.userStats = JSON.parse(JSON.stringify(userStats));
-
     }
 }
 
@@ -82,7 +85,7 @@ function init(reset=false) {
     xttp.open("GET", "/anagram", false);
     xttp.send();
 
-    currentPlayer = new playerState(currentAnagram, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
+    currentPlayer = new playerState(currentAnagram, [], []);
     currentPlayer.getGuessWindow();
     currentPlayer.guessWindow.innerText = "";
 
