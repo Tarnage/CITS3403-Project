@@ -1,6 +1,22 @@
-# Anagram City!
+The readme must describe the design and development of the application, and give instructions on how to launch from local host.
 
-## Prerequisites
+* The purpose of the web application, explaining the design of the game
+the architecture of the web application.
+* Describe how to launch the web application.
+* Describe some unit tests for the web application, and how to run them.
+* Include commit logs, showing contributions and review from both contributing students
+
+^^ DELETE THIS BEFORE SUBMITTING 
+
+# Anagram City
+A daily game where users aim to create as many words of 4 letters or more as possible, using the letters once only and always including the letter in the middle of the wheel.  
+Play it here: *INSERT LINK*
+
+## Design and Development
+TO DO 
+
+
+## Requirements
 - python3
 - flask
 - venv
@@ -16,10 +32,9 @@ $ python3 -m venv venv
 
 ```
 
-2. Activate the envrionment.
+2. Activate the environment.
 
 ```python
-
 # activate envrionment for unix machines
 $ source venv/bin/activate
 
@@ -61,12 +76,13 @@ $ deactivate
 - To stop the app: ```$ ^C```
 - Deactivate envronment from step 5
 
-
-## Running Tests
-TODO
-
 ## Deployment
 TODO
+
+## Unit Tests **Not sure if this is right
+To conduct unit tests run the command:  `python -m tests.unittest`
+
+To conduct selenium tests, you need to have the necessary web driver installed in the test directory. Then start the webserver in TestingConfig, and run `python -m tests.systemtest`
 
 ## Built With
 TODO
@@ -78,19 +94,16 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 TODO
 
 ## Authors
-
-- **Tom Nguyen** -Role-
-- **Cameron Ke** -Role-
-- **Amy Burnett** -Role-
-- **Rahul Sridhar** -Role-
-
+* Tom Nguyen -role-
+* Cameron Ke -role-
+* Amy Burnett -role-
+* Rahul Sridhar -role-
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
 - Built following the [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) by **Miguel Grinberg**.
-
 - **Dr. Tim French** Unit Coordinator for CITS 3403, University of Western Australia (UWA).
+
