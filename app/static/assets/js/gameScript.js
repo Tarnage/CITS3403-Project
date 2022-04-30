@@ -86,6 +86,7 @@ function init(reset=false) {
     currentPlayer.getGuessWindow();
     currentPlayer.guessWindow.innerText = "";
 
+    hideUnusedProgBar();
     initLetters(currentPlayer.wordDict);
 
     // adds the onclick function for all keys
@@ -277,7 +278,10 @@ function enableButton() {
     top.setAttribute( "enabled", "" );
 }
 
-
+/**
+ * Simple score counter
+ * score will be added to database
+ */
 function setScore() {
     document.getElementById("current-guess").setAttribute("data-text", "Score:" + currentPlayer.userStats["score"]);    
 }
@@ -322,6 +326,21 @@ function popCurrentGuess() {
     enableButton();
 }
 
+/**
+ * In some cases eight, seven, or even six letter words dont exist for certain 
+ * anagrams. This function will hide the corrisponding progress bars
+ * NOTE* there are ALWAYS four and five letter words, if there arent thats just bad game design....
+ */
+function hideUnusedProgBar() {
+    // only check words of length 6, 7, and 8
+    for (let index = 6; index < 9; index++) {
+        let key = DICT_KEYS[index];
+        if (currentPlayer.wordDict[key].length === 0 ) {
+            let hideBar = document.getElementById( `hide-${key}` );
+            hideBar.setAttribute("hidden", "true");
+        }
+    }
+}
 
 /**
  * clears the guess window
@@ -409,10 +428,11 @@ function addToFoundWords( key, word ) {
     currentPlayer.foundWords[key].push( sliced );
 }
 
+
 /**
  * Updates Progress window 
  * 
- * @param {string} value length of the word being queried
+ * @param {string} value length (in english ie. 5 = 'five') of the word being queried
  */
 function updateProgress( value ) {
     // Current count of words found by user ()

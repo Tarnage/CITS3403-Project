@@ -7,10 +7,11 @@ Script to randomly generate anagrams from a txt file of words.
 
 '''
 
-
 VOWS        = "aeiou"
-WORDS       = os.getcwd()+'/app/anagram.txt'
+WORDS       = os.getcwd()+'/app/static/dailyPuzzles/anagram.txt'
+WRITE_LOC   = os.getcwd()+'/app/static/dailyPuzzles'
 MAX_LETTERS = 9
+
 KEYS        = { 4: "four",
                 5: "five",
                 6: "six",
@@ -129,19 +130,15 @@ def is_anagram(root, bone, word_length):
     return count == 0
 
 # writes dictrionary to json file
-def write_json():
-    filename = target_anagrams["root_word"][0]
-
-    with open(f'./anagram_db/{filename}.txt', 'w') as json_file:
+def write_json(filename):
+    with open(f'{WRITE_LOC}/{filename}.json', 'w') as json_file:
         json.dump(target_anagrams, json_file)
 
 
-def main():
+def main(filename):
 
     sort_words()
     find_target()
     find_anagrams()
-    # write_json()
-
-    return target_anagrams
+    write_json(filename)
 
