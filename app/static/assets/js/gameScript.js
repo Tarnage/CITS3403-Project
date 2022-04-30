@@ -19,46 +19,49 @@ const DICT_KEYS = {
     9:      "root_word"
 };
 
-const EMPTYFOUNDWORDS =  {
-    "root_word" : [],
-    "eight"     : [],
-    "seven"     : [],
-    "six"       : [],
-    "five"      : [],
-    "four"      : []
-};
-
-const EMPTYSTATS = {
-    "guesses"       : 0,    // NOT IMPLEMENTED
-    "hintsUsed"     : 0,    // NOT IMPLEMENTED
-    "totalFound"    : 0,    // NOT IMPLEMENTED
-    "avgWordLength" : 0,    // NOT IMPLEMENTED
-    "streak"        : 0,    // NOT IMPLEMENTED
-    "score"         : 0
-};
-
 // Current player State
 let currentPlayer;
 
 class playerState {
-    constructor(wordDict, foundWords, usedLetters, guessStack, userStats) {
+
+    EMPTYFOUNDWORDS =  {
+        "root_word" : [],
+        "eight"     : [],
+        "seven"     : [],
+        "six"       : [],
+        "five"      : [],
+        "four"      : []
+    };
+    
+    EMPTYSTATS = {
+        "guesses"       : 0,    // NOT IMPLEMENTED
+        "hintsUsed"     : 0,    // NOT IMPLEMENTED
+        "totalFound"    : 0,    // NOT IMPLEMENTED
+        "avgWordLength" : 0,    // NOT IMPLEMENTED
+        "streak"        : 0,    // NOT IMPLEMENTED
+        "score"         : 0
+    };
+
+    constructor(wordDict, usedLetters, guessStack) {
+        // parse and stringify will create new pointers
+        // otherwise it will be pointing to the 
         // current anagaram dicitonary
-        this.wordDict = JSON.parse(JSON.stringify(wordDict));
+        this.wordDict = wordDict;
         // Holds all the words the user has guessed correctly
-        this.foundWords = JSON.parse(JSON.stringify(foundWords));
+        this.foundWords = this.EMPTYFOUNDWORDS;
         // Stack to keep track of used letters
         // Holds the location of the document children
         this.usedLetters = usedLetters;
         // Stack of current word built by player
         this.guessStack = guessStack;
+        // current user stats
+        this.userStats = this.EMPTYSTATS;
         // holds current guess div
         this.guessWindow;
+        // method to update gueswindow
         this.getGuessWindow = () => {
             this.guessWindow = document.getElementById("current-guess");
         };
-        // current user stats
-        this.userStats = JSON.parse(JSON.stringify(userStats));
-
     }
 }
 
@@ -82,10 +85,11 @@ function init(reset=false) {
     xttp.open("GET", "/anagram", false);
     xttp.send();
 
-    currentPlayer = new playerState(currentAnagram, EMPTYFOUNDWORDS, [], [], EMPTYSTATS);
+    currentPlayer = new playerState(currentAnagram, [], []);
     currentPlayer.getGuessWindow();
     currentPlayer.guessWindow.innerText = "";
 
+    hideUnusedProgBar();
     initLetters(currentPlayer.wordDict);
 
     // adds the onclick function for all keys
@@ -277,7 +281,10 @@ function enableButton() {
     top.setAttribute( "enabled", "" );
 }
 
-
+/**
+ * Simple score counter
+ * score will be added to database
+ */
 function setScore() {
     document.getElementById("current-guess").setAttribute("data-text", "Score:" + currentPlayer.userStats["score"]);    
 }
@@ -322,6 +329,21 @@ function popCurrentGuess() {
     enableButton();
 }
 
+/**
+ * In some cases eight, seven, or even six letter words dont exist for certain 
+ * anagrams. This function will hide the corrisponding progress bars
+ * NOTE* there are ALWAYS four and five letter words, if there arent thats just bad game design....
+ */
+function hideUnusedProgBar() {
+    // only check words of length 6, 7, and 8
+    for (let index = 6; index < 9; index++) {
+        let key = DICT_KEYS[index];
+        if (currentPlayer.wordDict[key].length === 0 ) {
+            let hideBar = document.getElementById( `hide-${key}` );
+            hideBar.setAttribute("hidden", "true");
+        }
+    }
+}
 
 /**
  * clears the guess window
@@ -409,10 +431,11 @@ function addToFoundWords( key, word ) {
     currentPlayer.foundWords[key].push( sliced );
 }
 
+
 /**
  * Updates Progress window 
  * 
- * @param {string} value length of the word being queried
+ * @param {string} value length (in english ie. 5 = 'five') of the word being queried
  */
 function updateProgress( value ) {
     // Current count of words found by user ()
