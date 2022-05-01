@@ -42,24 +42,12 @@ target_anagrams = {
             }
 
 
-def re_init_target():
-    return {
-            "root_word": list(),
-            "root_letter": list(),
-            "nine"  : list(),
-            "eight" : list(),
-            "seven" : list(),
-            "six"   : list(),
-            "five"  : list(),
-            "four"  : list()
-            }
-
-
 def sort_words():
     # Sort text file into the words length
     with open(WORDS) as words:
         for line in words:
             line = line.lower().strip()
+            
             if len(line) == 9:
                 word_dic["nine"].append(line)
             if len(line) == 8:
