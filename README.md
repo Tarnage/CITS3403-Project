@@ -25,7 +25,7 @@ TO DO
 ## Getting Started
 Create virtual environment: 
 
-1. Create the virtual envionment. (Should be pre-installed with python distros).
+1. Create the virtual environment. (Should be pre-installed with python distros).
 ```python
 # python3
 $ python3 -m venv venv
@@ -35,10 +35,10 @@ $ python3 -m venv venv
 2. Activate the environment.
 
 ```python
-# activate envrionment for unix machines
+# activate environment for unix machines
 $ source venv/bin/activate
 
-# activate envionment for windows
+# activate environment for windows
 $ venv\Scripts\activate
 ```
 
@@ -63,7 +63,7 @@ For [windows instructions](https://www.sqlitetutorial.net/download-install-sqlit
 $ flask db init
 ```
 
-5. Deactivate envionment
+5. Deactivate environment
 ```python
 $ deactivate
 ```
@@ -74,7 +74,7 @@ $ deactivate
 - Activate environment from step 1
 - To run the app: ```$ flask run```
 - To stop the app: ```$ ^C```
-- Deactivate envronment from step 5
+- Deactivate environment from step 5
 
 ## Deployment
 TODO
