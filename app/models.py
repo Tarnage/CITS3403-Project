@@ -1,5 +1,7 @@
 from app import db
+from app import login
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
 
 class User(db.Model):
 	__tablename__ = 'users'
@@ -33,3 +35,9 @@ class Leaderboard(db.Model):
 
 	def __repr__(self):
 		return f'{self.score}'
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+class User(UserMixin, db.Model):
