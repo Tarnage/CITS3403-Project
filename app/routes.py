@@ -1,5 +1,6 @@
 import os
 from flask import render_template, flash, redirect
+from flask_login import current_user, login_user, logout_user
 from app import app
 from app import word_gen
 from datetime import date
@@ -11,7 +12,7 @@ import json
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('game'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
@@ -53,3 +54,8 @@ def dailyWord():
         f = open(PUZZLE_DIR + current_date + '.json')
         data = json.load(f)
         return data
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
