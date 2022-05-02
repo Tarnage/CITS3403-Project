@@ -1,15 +1,21 @@
 import os
-from flask import render_template
+from flask import render_template, flash, redirect
 from app import app
 from app import word_gen
 from datetime import date
+from app.forms import LoginForm
 import json
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', title='Login - Anagram-City')
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user {}, remember_me={}'.format(
+            form.username.data, form.remember_me.data))
+        return redirect('/game')
+    return render_template('index.html', title='Login - Anagram-City', form=form)
 
 
 @app.route('/contacts')
