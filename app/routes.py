@@ -96,7 +96,10 @@ def submit_score():
     score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
     last_submit = score.last_submit
     
-    if not last_submit.date() == current_date or last_submit == None:
+    if not last_submit == None:
+        last_submit = last_submit.date()
+
+    if not last_submit == current_date or last_submit == None:
         score.score = score.score + data
         score.last_submit = current_date
         db.session.commit()
