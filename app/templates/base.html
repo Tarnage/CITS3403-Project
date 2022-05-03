@@ -46,12 +46,12 @@
       <li>{{ message }}</li>
       {% endfor %}
     </ul>
-    {% endif %}
-    {% endwith %}
+  {% endif %}
+{% endwith %}
 
-  {% block content %}{% endblock %}
+{% block content %}{% endblock %} 
 
-	<!-- navbar -->
+  <!-- navbar -->
 	<ul class="nav justify-content-center fixed-bottom hero-nav">
 		<li class="nav-item">
 			<a class="nav-link" aria-current="page" href="{{ url_for('index') }}"><span>Home</span></a>
@@ -65,6 +65,12 @@
 		<li class="nav-item">
 			<a class="nav-link" aria-current="page" href="{{ url_for('contacts') }}"><span>Contact Us</span></a>
 		</li>
+    {% if current_user.is_authenticated %}
+		<li class="nav-item">
+			<a class="nav-link" aria-current="page" href="{{ url_for('logout') }}"><span>Logout</span></a>
+		</li>
+    {% endif %}
+
 	</ul>
   <!-- Modal -->
   <!-- Same modal exists in game.html -->
