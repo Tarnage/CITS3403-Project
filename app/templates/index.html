@@ -14,7 +14,7 @@
 
 {% block content %}
 
-  <div class="main">
+<div class="main">
     <div class="container">
       <!-- Header -->
       <div class="jumbotron">
@@ -50,9 +50,9 @@
                 <div class="checkbox">
                   {{ form.remember_me() }} {{ form.remember_me.label }}
                 </div><br>
-
                 {{ form.submit(class="btn btn-dark") }}
-                <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
+                
+                <button type="submit" class="btn btn-dark" formaction="{{ url_for('register') }}"><span>Create Account</span></button><br>
                 <button type="submit" class="btn btn-lg btn-info" formaction="{{ url_for('game') }}"><span>Quick Play</span></button>
               </form>
             </div>
