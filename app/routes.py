@@ -2,7 +2,7 @@ import os
 from flask import render_template, flash, redirect, url_for
 from flask_login import current_user, login_user, logout_user
 from app import app, word_gen, db
-from app.models import User
+from app.models import Leaderboard, User
 from datetime import date
 from app.forms import LoginForm, RegistrationForm
 import json
@@ -31,7 +31,12 @@ def contacts():
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
-    return render_template('game.html', title="Anagram-City", game=True)
+    score = ""
+    user = current_user.is_authenticated
+    if user:
+        userObj = User.query.filter_by(username=current_user.username).first()
+        score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
+    return render_template('game.html', title="Anagram-City", game=True, user=user, score=score)
 
 
 @app.route('/stats', methods=['GET', 'POST'])
@@ -72,6 +77,9 @@ def register():
         user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
         db.session.add(user)
+        db.session.commit()
+        user_leader = Leaderboard(user_id=user.user_id, score=0)
+        db.session.add(user_leader)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('index'))
