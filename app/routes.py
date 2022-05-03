@@ -8,7 +8,7 @@ from app.forms import LoginForm, RegistrationForm
 import json
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     if current_user.is_authenticated:
