@@ -38,7 +38,7 @@ $ python3 -m venv venv
 # activate envrionment for unix machines
 $ source venv/bin/activate
 
-# activate envionment for windows
+# activate environment for windows
 $ venv\Scripts\activate
 ```
 
