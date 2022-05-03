@@ -1,9 +1,9 @@
 import os
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 from app import app, word_gen, db
 from app.models import Leaderboard, User
-from datetime import date
+from datetime import date, datetime
 from app.forms import LoginForm, RegistrationForm
 import json
 
@@ -49,8 +49,8 @@ PUZZLE_DIR = os.getcwd()+'/app/static/dailyPuzzles/'
 def dailyWord():
     current_date = date.today().strftime("%d-%m-%Y")
 
-    test = date(2022, 4, 29).strftime("%d-%m-%Y")
-    current_date = test
+    # test = date(2022, 4, 29).strftime("%d-%m-%Y")
+    # current_date = test
 
     try:
         f = open(PUZZLE_DIR + current_date + '.json')
@@ -63,10 +63,12 @@ def dailyWord():
         data = json.load(f)
         return data
 
+
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -84,3 +86,20 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('index'))
     return render_template('register.html', title='Register - Anagram City', form=form)
+
+
+@app.route('/submitScore', methods=["GET", "POST"])
+def submit_score():
+    current_date = date.today()
+    data = int(request.data.decode("UTF-8"))
+    userObj = User.query.filter_by(username=current_user.username).first()
+    score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
+    last_submit = score.last_submit
+    
+    if not last_submit.date() == current_date or last_submit == None:
+        score.score = score.score + data
+        score.last_submit = current_date
+        db.session.commit()
+        return str(data)
+
+    return "Can only submit score once per day"

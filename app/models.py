@@ -31,6 +31,7 @@ class Leaderboard(db.Model):
 	leaderboard_id = db.Column(db.Integer, primary_key=True)
 	user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
 	score = db.Column(db.Integer, index=True)
+	last_submit = db.Column(db.DateTime)
 
 	# gets the user attached to the unique id
 	def get_user(self):
