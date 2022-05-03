@@ -1,0 +1,15 @@
+Errors found when installing requirements
+
+command: pip install flask
+error: ModuleNotFoundError: No module named 'flask_sqlalchemy'
+
+solved by command: pip install flask-sqlalchemy
+
+then did command: flask run 
+error: ModuleNotFoundError: No module named 'flask_migrate'
+solved by command: pip install flask-migrate
+
+then tried command again: flask run
+success
+Running on http://127.0.0.1:5000
+

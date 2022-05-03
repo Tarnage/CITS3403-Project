@@ -35,13 +35,23 @@
 {%if game %}
 <body onload="init()"></body>
 {% else %}
+
 <body>
 {% endif %}
 
-  {% block content %}
-  {% endblock %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
 
-	<!-- navbar -->
+{% block content %}{% endblock %} 
+
+  <!-- navbar -->
 	<ul class="nav justify-content-center fixed-bottom hero-nav">
 		<li class="nav-item">
 			<a class="nav-link" aria-current="page" href="{{ url_for('index') }}"><span>Home</span></a>
@@ -55,8 +65,13 @@
 		<li class="nav-item">
 			<a class="nav-link" aria-current="page" href="{{ url_for('contacts') }}"><span>Contact Us</span></a>
 		</li>
-	</ul>
+    {% if current_user.is_authenticated %}
+		<li class="nav-item">
+			<a class="nav-link" aria-current="page" href="{{ url_for('logout') }}"><span>Logout</span></a>
+		</li>
+    {% endif %}
 
+	</ul>
   <!-- Modal -->
   <!-- Same modal exists in game.html -->
   <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">

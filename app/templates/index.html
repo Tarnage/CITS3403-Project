@@ -14,7 +14,7 @@
 
 {% block content %}
 
-  <div class="main">
+<div class="main">
     <div class="container">
       <!-- Header -->
       <div class="jumbotron">
@@ -28,24 +28,31 @@
         <div class="row login-screen text-center align-items-center">
           <div class="loginForm">
             <div class="col">
-              <form id="loginDetails">
+              <form id="loginDetails" action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
                 <h3>Login</h3>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="uName" placeholder="Username">
+                  {{ form.username.label }}<br>
+                  {{ form.username(size=32, class="form-control", id="uName") }}<br>
+                  {% for error in form.username.errors %}
+                  <span style="color: red;">[{{ error }}]</span>
+                  {% endfor %}
                 </div><br>
 
                 <div class="form-group">
-                  <input type="password" class="form-control" id="pwd" placeholder="Password">
+                  {{ form.password.label }}<br>
+                  {{ form.password(size=32, class="form-control", id="pwd") }}<br>
+                  {% for error in form.password.errors %}
+                  <span style="color: red;">[{{ error }}]</span>
+                  {% endfor %}
                 </div><br>
                 
                 <div class="checkbox">
-                  <label><input type="checkbox">Remember Me</label>
+                  {{ form.remember_me() }} {{ form.remember_me.label }}
                 </div><br>
-                <!-- TODO implement form via form-wtf chapter 3 of the mega flak tutorial -->
-                <button type="submit" class="btn btn-dark" onclick="formSubmit()">Submit</button>
-
-                <button type="submit" class="btn btn-dark" onclick="formSubmit()">Create Account</button><br><br>
-
+                {{ form.submit(class="btn btn-dark") }}
+                
+                <button type="submit" class="btn btn-dark" formaction="{{ url_for('register') }}"><span>Create Account</span></button><br>
                 <button type="submit" class="btn btn-lg btn-info" formaction="{{ url_for('game') }}"><span>Quick Play</span></button>
               </form>
             </div>
