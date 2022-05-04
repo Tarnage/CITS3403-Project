@@ -40,6 +40,7 @@ class Leaderboard(db.Model):
 	def __repr__(self):
 		return f'{self.score}'
 
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))

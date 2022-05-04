@@ -294,14 +294,9 @@ function setScore() {
 }
 
 function submitScore() {
-    // let body = {"score": 0};
-    // body["score"] = currentPlayer.getScore();
-    // console.log(body["score"]);
     let score = currentPlayer.getScore();
     console.log(score);
     let xttp = new XMLHttpRequest();
-    
-    // xttp.setRequestHeader("Content-type", "application/x-www-form-urlencodeed");
     xttp.onload = function() {
         if (this.status == 200){
             

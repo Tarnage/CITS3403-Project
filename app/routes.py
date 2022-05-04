@@ -49,7 +49,7 @@ PUZZLE_DIR = os.getcwd()+'/app/static/dailyPuzzles/'
 def dailyWord():
     current_date = date.today().strftime("%d-%m-%Y")
 
-    # test = date(2022, 4, 29).strftime("%d-%m-%Y")
+    # test = date(2022, 4, 30).strftime("%d-%m-%Y")
     # current_date = test
 
     try:
