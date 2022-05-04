@@ -70,6 +70,6 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('You are now registered')
         return redirect(url_for('index'))
     return render_template('register.html', title='Register - Anagram City', form=form)
