@@ -1,9 +1,9 @@
 import os
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 from app import app, word_gen, db
-from app.models import User
-from datetime import date
+from app.models import Leaderboard, User
+from datetime import date, datetime
 from app.forms import LoginForm, RegistrationForm
 import json
 
@@ -31,7 +31,12 @@ def contacts():
 
 @app.route('/game', methods=['GET', 'POST'])
 def game():
-    return render_template('game.html', title="Anagram-City", game=True)
+    score = ""
+    user = current_user.is_authenticated
+    if user:
+        userObj = User.query.filter_by(username=current_user.username).first()
+        score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
+    return render_template('game.html', title="Anagram-City", game=True, user=user, score=score)
 
 
 @app.route('/stats', methods=['GET', 'POST'])
@@ -44,8 +49,8 @@ PUZZLE_DIR = os.getcwd()+'/app/static/dailyPuzzles/'
 def dailyWord():
     current_date = date.today().strftime("%d-%m-%Y")
 
-    test = date(2022, 4, 29).strftime("%d-%m-%Y")
-    current_date = test
+    # test = date(2022, 4, 30).strftime("%d-%m-%Y")
+    # current_date = test
 
     try:
         f = open(PUZZLE_DIR + current_date + '.json')
@@ -58,10 +63,12 @@ def dailyWord():
         data = json.load(f)
         return data
 
+
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     logout_user()
     return redirect(url_for('index'))
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -73,6 +80,30 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
+        user_leader = Leaderboard(user_id=user.user_id, score=0)
+        db.session.add(user_leader)
+        db.session.commit()
         flash('You are now registered')
+
         return redirect(url_for('index'))
     return render_template('register.html', title='Register - Anagram City', form=form)
+
+
+@app.route('/submitScore', methods=["GET", "POST"])
+def submit_score():
+    current_date = date.today()
+    data = int(request.data.decode("UTF-8"))
+    userObj = User.query.filter_by(username=current_user.username).first()
+    score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
+    last_submit = score.last_submit
+    
+    if not last_submit == None:
+        last_submit = last_submit.date()
+
+    if not last_submit == current_date or last_submit == None:
+        score.score = score.score + data
+        score.last_submit = current_date
+        db.session.commit()
+        return str(data)
+
+    return "Can only submit score once per day"

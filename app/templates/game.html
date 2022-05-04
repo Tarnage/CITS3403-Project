@@ -13,12 +13,17 @@
 {% endblock %}
 
 {% block content %}
-{% if current_user.is_authenticated %}
-<h4>Logged in as {{ current_user.username }}</h4>
+
+{% if user %}
+  <h4>Welcome back {{ current_user.username }} {{ score }}</h4>
+  <h4>INSERT LOG OUT HERE</h4>
+{% else %}
+  <a href="{{ url_for('register') }}">Please Register Here</a>
 {% endif %}
+
   <div class="container" >
     <div class="game-box">
-    
+      
       <div class="row">
 
         <div class="col-lg-5">
@@ -124,6 +129,15 @@
           </div>
         </div>  
       </div>
+
+      {% if user %}
+      <br>
+      <div class="row">
+        <div class="container keyboard-container">
+          <button class="btn btn-lg btn-info" onclick="submitScore()">Submit Score</button>
+        </div>
+      </div>
+      {% endif %}
 
     </div>
   </div>

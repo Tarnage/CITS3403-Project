@@ -62,6 +62,10 @@ class playerState {
         this.getGuessWindow = () => {
             this.guessWindow = document.getElementById("current-guess");
         };
+
+        this.getScore = () => {
+            return this.userStats["score"];
+        }
     }
 }
 
@@ -287,6 +291,23 @@ function enableButton() {
  */
 function setScore() {
     document.getElementById("current-guess").setAttribute("data-text", "Score:" + currentPlayer.userStats["score"]);    
+}
+
+function submitScore() {
+    let score = currentPlayer.getScore();
+    console.log(score);
+    let xttp = new XMLHttpRequest();
+    xttp.onload = function() {
+        if (this.status == 200){
+            
+            alert(`${this.response}`);
+        }
+        else {
+            alert("Something went wrong!");
+        }
+    }
+    xttp.open("POST", "submitScore", true);
+    xttp.send(score.toString());
 }
 
 /**
