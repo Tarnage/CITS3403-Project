@@ -13,7 +13,9 @@
 {% endblock %}
 
 {% block content %}
+{% if current_user.is_authenticated %}
 <h4>Logged in as {{ current_user.username }}</h4>
+{% endif %}
 
   <div class="jumbotron text-center">
     <h1>World Leaderboard</h1>
