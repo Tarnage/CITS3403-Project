@@ -11,5 +11,4 @@ solved by command: pip install flask-migrate
 
 then tried command again: flask run
 success
-Running on http://127.0.0.1:5000
 

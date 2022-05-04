@@ -83,7 +83,8 @@ def register():
         user_leader = Leaderboard(user_id=user.user_id, score=0)
         db.session.add(user_leader)
         db.session.commit()
-        flash('Congratulations, you are now a registered user!')
+        flash('You are now registered')
+
         return redirect(url_for('index'))
     return render_template('register.html', title='Register - Anagram City', form=form)
 
