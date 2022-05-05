@@ -1,3 +1,4 @@
+from curses.ascii import isdigit
 import os
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
@@ -92,7 +93,8 @@ def register():
 @app.route('/submitScore', methods=["GET", "POST"])
 def submit_score():
     current_date = date.today()
-    data = int(request.data.decode("UTF-8"))
+    data = request.args.get("score")
+
     userObj = User.query.filter_by(username=current_user.username).first()
     score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
     last_submit = score.last_submit
@@ -100,10 +102,13 @@ def submit_score():
     if not last_submit == None:
         last_submit = last_submit.date()
 
+    if not isdigit(data):
+        return "Submission is not a valid score"
+
     if not last_submit == current_date or last_submit == None:
-        score.score = score.score + data
+        score.score = score.score + int(data)
         score.last_submit = current_date
         db.session.commit()
-        return str(data)
+        return f'You submitted: {data}, Total score: {score.score}'
 
     return "Can only submit score once per day"
