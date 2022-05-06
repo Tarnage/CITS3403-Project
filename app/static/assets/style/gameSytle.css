@@ -88,7 +88,7 @@ body {
   text-align: center;
   color: rgba(39, 238, 245, 0.85);
   font-family: "Games", sans-serif;
-  animation: glow-1 1s ease-in-out infinite alternate;
+  animation: glow-2 1s ease-in-out infinite alternate;
 }
 
 /* * =============== Stats =============== * */

@@ -6,9 +6,24 @@ body {
   background-color: rgba(13, 17, 23, 1);
 }
 
+body {
+  width: 100%;
+  height: 100vh;
+  /* GIF Image "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/60450985394250500379570173737850728793158825866208713302522449994820259676161/"*/
+  background: rgba(0, 0, 0, 0.92) url(../img/stock/neon_city.gif) no-repeat center;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
 .jumbotron {
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+.jumbotron h1 {
+  color: rgba(39, 238, 245, 0.85);
+  font-family: "Games", sans-serif;
+  animation: glow-2 1s ease-in-out infinite alternate;
 }
 
 .content {
@@ -29,5 +44,8 @@ body {
 }
 
 td:hover {
-  background-color: #58a6ff;
+  background-color: rgba(88, 166, 255, 0.8);
+  font-weight: 600;
 }
+
+/* TODO: Add responsiveness to table */

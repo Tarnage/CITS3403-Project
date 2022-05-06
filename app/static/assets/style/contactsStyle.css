@@ -6,7 +6,7 @@
 @keyframes slideInFromBottom {
   0% {
     opacity: 0%;
-    transform: translateY(5%);
+    transform: translateY(-5%);
   }
 
   100% {
@@ -30,6 +30,8 @@
 /* ===== Text Styling ===== */
 /* Heading */
 h3 {
+  color: rgba(39, 238, 245, 0.85);
+  font-size: 35px;
   font-family: "Games", sans-serif;
   animation: glow-2 1s ease-in-out infinite alternate;
 }
