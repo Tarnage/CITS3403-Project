@@ -106,41 +106,38 @@ body {
 	color: rgba(39, 238, 245, 0.85);;
 }
 
-/* TODO Improve Coding of Animation */
-.stat-interface div:nth-child(2), h6:nth-child(3) {
+.stat-interface > div {
+  opacity: 0;
+}
+
+.stat-interface #hide-four {
   animation: var(--slideInPB-time) ease-out 0s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(5), h6:nth-child(6) {
+.stat-interface #hide-five {
   animation: var(--slideInPB-time) ease-out 0.1s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(8), h6:nth-child(9) {
+.stat-interface #hide-six {
   animation: var(--slideInPB-time) ease-out 0.2s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(11), h6:nth-child(12) {
+.stat-interface #hide-seven {
   animation: var(--slideInPB-time) ease-out 0.3s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(14), h6:nth-child(15) {
+.stat-interface #hide-eight {
   animation: var(--slideInPB-time) ease-out 0.4s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(17), h6:nth-child(18) {
+.stat-interface #hide-nine {
   animation: var(--slideInPB-time) ease-out 0.5s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
 /* * =============== Guess Interface =============== * */
@@ -163,6 +160,12 @@ body {
   /* Typing Animation */
 
 }
+
+/*
+.keys-submit {
+  float: left;
+}
+*/
 
 /* * =============== Keyboard =============== * */
 /* Keyboard and keys design adapted from - https://codepen.io/kulpreets/pen/MKgqqB */
