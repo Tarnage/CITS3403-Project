@@ -52,9 +52,9 @@ label {
   }
 }
 
-
 /* * =============== Navbar =============== * */
 .nav-item {
+  font-size: 10px;
   color: #58a6ff;
   transition: all 0s;
 }
@@ -81,3 +81,30 @@ label {
 
 /* * =============== Modal =============== * */
 /*TODO: ADD MODEL STYLES HERE*/
+
+
+/*TODO: Update Navbar */
+/* * ============================================================ Responsive ============================================================ * */
+/* ===== Mobile First ===== */
+/* iPads & Tablets */
+@media only screen and (min-width: 481px) {
+
+}
+
+/* Small screens & laptops */
+@media only screen and (min-width: 769px) {
+  
+}
+
+/* Desktop & large screens */
+@media only screen and (min-width: 1025px) {
+  /* Nav */
+  .nav-item {
+    font-size: 110%;
+  }
+}
+
+/* Extra large screens & Tvs */
+@media only screen and (min-width: 1201px) {
+
+}

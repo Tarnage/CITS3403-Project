@@ -43,8 +43,8 @@ body {
   color: aliceblue;
 }
 
-td:hover {
-  background-color: rgba(88, 166, 255, 0.8);
+tbody > tr:hover {
+  background-color: rgba(88, 166, 255, 0.4);
   font-weight: 600;
 }
 
