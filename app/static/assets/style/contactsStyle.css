@@ -6,7 +6,7 @@
 @keyframes slideInFromBottom {
   0% {
     opacity: 0%;
-    transform: translateY(5%);
+    transform: translateY(-5%);
   }
 
   100% {
@@ -30,6 +30,8 @@
 /* ===== Text Styling ===== */
 /* Heading */
 h3 {
+  color: rgba(39, 238, 245, 0.85);
+  font-size: 18px;
   font-family: "Games", sans-serif;
   animation: glow-2 1s ease-in-out infinite alternate;
 }
@@ -43,8 +45,7 @@ h3 {
   /* Format */
   border: 2px outset #58a6ff;
   border-radius: 20px;
-  margin-top: 5%;
-  width: 70%;
+  width: 90%;
 
   /* ===== Animation ===== */
   animation: 0.6s ease-out slideInFromBottom;
@@ -54,7 +55,6 @@ h3 {
 
 .contact-form form {
   padding: 14%;
-  margin-bottom: 5%;
 }
 
 /* Spacing */
@@ -111,11 +111,36 @@ h3 {
   right: 0;
 }
 
-/* * =============== Responsive =============== * */
-@media screen and (max-width: 600px) {
-  .contact-form {
-    margin-top: 15%;
-    width: 90%;
-    padding: 2%;
+/* * ============================================================ Responsive ============================================================ * */
+/* ===== Mobile First ===== */
+/* iPads & Tablets */
+@media only screen and (min-width: 481px) {
+
+}
+
+/* Small screens & laptops */
+@media only screen and (min-width: 769px) {
+  
+}
+
+/* Desktop & large screens */
+@media only screen and (min-width: 1025px) {
+  /* Text */
+  h3 {
+    font-size: 35px;
   }
+
+  .contact-form {
+    /* Format */
+    border: 2px outset #58a6ff;
+    border-radius: 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+  }
+}
+
+/* Extra large screens & Tvs */
+@media only screen and (min-width: 1201px) {
+
 }
