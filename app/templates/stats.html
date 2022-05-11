@@ -4,12 +4,45 @@
   <!-- custom css -->
   <link rel="stylesheet" 
         href="{{ url_for('static', filename='assets/style/stats.css') }}">
+  <link rel="stylesheet" 
+        href="{{ url_for('static', filename='assets/style/indexStyle.css') }}">
+  <link rel="stylesheet" 
+        href="{{ url_for('static', filename='assets/style/gameSytle.css') }}">
   <!-- JavaScript -->
   <script src="{{ url_for('static', filename='assets/js/statScript.js') }}"></script>
   <!-- flavicon -->
   <link rel="icon" 
         type="images/x-icon" 
         href="{{ url_for('static', filename='assets/img/stock/favicon-32x32.png') }}">
+   <!-- js script for creating the bar chart -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script>
+     window.onload = function () {
+       var ctx = document.getElementById('myChart');
+       var myChart = new Chart(ctx, {
+         type: 'bar',
+         data: {
+           labels: users,
+           datasets: [{
+             label: 'score',
+             data: scores,
+             backgroundColor: 'rgba(88, 166, 255, 1)',
+             borderColor: 'rgba(88, 166, 255, 1)',
+             borderWidth: 1
+           }]
+         },
+         options: {
+           responsive: true,
+           maintainAspectRatio: false,
+           scales: {
+             y: {
+               beginAtZero: true
+             }
+           }
+         }
+       });
+     }
+   </script>
 {% endblock %}
 
 {% block content %}
@@ -17,21 +50,38 @@
 <h4>Logged in as {{ current_user.username }}</h4>
 {% endif %}
 
-  <div class="jumbotron text-center">
-    <h1>World Leaderboard</h1>
-  </div>
+<div class="main">
+  <div class="container">
+    <div class="game-box">
+      <div class="container">
+        <!-- Header -->
+        <div class="jumbotron">
+          <div class="container c-container">
+            <h1 class="display-4">World Leaderboard</h1>
+          </div>
+        </div>
+        <!-- for showing the bar chart -->
+        <div id="chart-container" style="padding: 1.5rem 3.75rem; margin-right: auto;
+  margin-left: auto;">
+          <canvas id="myChart" height="200"></canvas>
+        </div>
 
-  <div class="container-fluid content">
 
-    <div class="form-outline mb-4">
-      <input type="search" class="form-control" id="datatable-search-input" placeholder="Search">
-      <button class="btn btn-primary" id="search-btn" type="button">Submit</button>
+        <div class="container-fluid content">
+
+          <div class="form-outline mb-4">
+            <input type="search" class="form-control" id="datatable-search-input" placeholder="Search">
+            <button class="btn btn-primary" id="search-btn" type="button">Submit</button>
+          </div>
+
+          <div id="datatable">
+
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div id="datatable">
-
-    </div>
-    
   </div>
+</div>
+
 
 {% endblock %}
