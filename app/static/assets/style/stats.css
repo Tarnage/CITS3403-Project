@@ -13,11 +13,18 @@ body {
   background: rgba(0, 0, 0, 0.92) url(../img/stock/neon_city.gif) no-repeat center;
   background-blend-mode: multiply;
   background-size: cover;
+  background-repeat: repeat-y;
 }
 
 .jumbotron {
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.jumbotron h1 {
+  color: rgba(39, 238, 245, 0.85);
+  font-family: "Games", sans-serif;
+  animation: glow-2 1s ease-in-out infinite alternate;
 }
 
 .jumbotron h1 {
