@@ -27,6 +27,12 @@ body {
   animation: glow-2 1s ease-in-out infinite alternate;
 }
 
+.jumbotron h1 {
+  color: rgba(39, 238, 245, 0.85);
+  font-family: "Games", sans-serif;
+  animation: glow-2 1s ease-in-out infinite alternate;
+}
+
 .content {
   position: relative;
   width: 938px;

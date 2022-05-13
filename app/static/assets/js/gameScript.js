@@ -306,8 +306,8 @@ function submitScore() {
             alert("Something went wrong!");
         }
     }
-    xttp.open("POST", "submitScore", true);
-    xttp.send(score.toString());
+    xttp.open("POST", "submitScore?score=" + score.toString(), true);
+    xttp.send();
 }
 
 /**

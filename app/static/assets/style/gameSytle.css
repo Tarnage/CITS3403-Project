@@ -51,9 +51,20 @@
   }
 }
 
+/* * =============== General =============== * */
 body {
   background-color: black;
   --slideInPB-time: 0.5s;
+}
+
+h3, h6, .keys, .btn-info {
+  font-family: Andalé Mono, monospace;
+}
+
+h4 {
+  font-family: Games, sans-serif;
+  font-size: 25px;
+  text-align: center;
 }
 
 /* * =============== Page Format =============== * */
@@ -76,19 +87,20 @@ body {
 .game-box {
   align-items: center;
   margin-top: 5%;
-  margin-bottom: 8%;
+  margin-bottom: -8%;
   padding: 2%;
   padding-bottom: 4%;
   border: 4px solid #58a6ff;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 /* ===== Title ===== */
 .col-lg-7 h1 {
+  margin-top: 80px;
   text-align: center;
   color: rgba(39, 238, 245, 0.85);
   font-family: "Games", sans-serif;
-  animation: glow-1 1s ease-in-out infinite alternate;
+  animation: glow-2 1s ease-in-out infinite alternate;
 }
 
 /* * =============== Stats =============== * */
@@ -98,6 +110,10 @@ body {
 }
 
 /* ===== Progress Bars ===== */
+.progress > small {
+  visibility: hidden;
+}
+
 .progress {
   color: #58a6ff;
 }
@@ -106,41 +122,38 @@ body {
 	color: rgba(39, 238, 245, 0.85);;
 }
 
-/* TODO Improve Coding of Animation */
-.stat-interface div:nth-child(2), h6:nth-child(3) {
+.stat-interface > div {
+  opacity: 0;
+}
+
+.stat-interface #hide-four {
   animation: var(--slideInPB-time) ease-out 0s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(5), h6:nth-child(6) {
+.stat-interface #hide-five {
   animation: var(--slideInPB-time) ease-out 0.1s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(8), h6:nth-child(9) {
+.stat-interface #hide-six {
   animation: var(--slideInPB-time) ease-out 0.2s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(11), h6:nth-child(12) {
+.stat-interface #hide-seven {
   animation: var(--slideInPB-time) ease-out 0.3s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(14), h6:nth-child(15) {
+.stat-interface #hide-eight {
   animation: var(--slideInPB-time) ease-out 0.4s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
-.stat-interface div:nth-child(17), h6:nth-child(18) {
+.stat-interface #hide-nine {
   animation: var(--slideInPB-time) ease-out 0.5s slideInPB;
   animation-fill-mode: forwards;
-  opacity: 0;
 }
 
 /* * =============== Guess Interface =============== * */
@@ -159,9 +172,31 @@ body {
   letter-spacing: 4px;
   text-shadow: #054669 5px 5px 10px;
   font-size: 50px;
+  min-height: 100px;
 
   /* Typing Animation */
 
+}
+
+/* * =============== Button =============== * */
+/* ===== Submit Score ===== */
+.btn-info {
+  font-size: 13px;
+  position: absolute;
+  align-content: center;
+  bottom: 2%;
+  border: none;
+  border-radius: 5px;
+  background: #58a6ff;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+/* ===== Hover ===== */
+.btn-info:hover {
+  background-color: #c3f1f7;
+  box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
+  width: 7.5%;
 }
 
 /* * =============== Keyboard =============== * */
@@ -178,19 +213,19 @@ body {
 .keyboard-container {
   align-content: center;
   max-width: fit-content;
-
 }
 
 .keys {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, .7);
+  text-shadow: 0px 0px 40px #71D4FE, 0px 0px 80px #71D4FE;
+  background: #2F3336;
   color: #71D4FE;
   padding: 12px;
-  background: #2F3336;
   border-radius: 12%;
-  text-shadow: 0px 0px 40px #71D4FE, 0px 0px 80px #71D4FE;
   text-align: center;
   text-transform: capitalize;
-  width: 75px;
+  font-size: 20px;
+  width: 40px;
   height: auto;
 }
 
@@ -200,7 +235,7 @@ body {
 
 .main-tile {
   background-color: #2F3336;
-  width: 140px;
+  width: 120px;
 }
 
 .keys[disabled] {
@@ -220,4 +255,85 @@ body {
 [contentEditable=false]:empty:not(:focus):before{
   content:attr(data-text);
   opacity: 0.5;
+}
+
+
+/* * ============================================================ Responsive ============================================================ * */
+/* ===== Mobile First ===== */
+/* iPads & Tablets */
+@media only screen and (min-width: 481px) {
+
+}
+
+/* Small screens & laptops */
+@media only screen and (min-width: 769px) {
+
+}
+
+/* Desktop & large screens */
+@media only screen and (min-width: 1025px) {
+  /* Text */
+  h4 {
+    margin-top: 4px;
+  }
+
+  .col-lg-7 h1 {
+    margin-top: 0px;
+  }
+
+  .keys {
+    font-size: 200p;
+    width: fit-content;
+    min-width: 90px;
+  }
+
+  .main-tile {
+    width: 200px;
+  }
+
+  /* Page Format */
+  .game-box {
+    margin-bottom: 8%;
+    border-radius: 20px;
+  }
+
+  /* Guess Interface */
+  .progress > small {
+    visibility: visible;
+  }
+
+  .keys {
+    font-size: 40px;
+    width: 40px;
+    height: auto;
+  }
+
+  .keys-special {
+    width: auto;
+  }
+
+  .main-tile {
+    background-color: #2F3336;
+    width: 140px;
+  }
+
+  /* Button */
+  .btn-info {
+    right: 5%;
+    bottom: 5%;
+  }
+
+  .btn-info:hover {
+    width: 7.5%;
+  }
+
+  /* Nav */
+  .nav-item {
+    font-size: 110%;
+  }
+}
+
+/* Extra large screens & Tvs */
+@media only screen and (min-width: 1201px) {
+
 }

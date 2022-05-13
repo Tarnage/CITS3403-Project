@@ -16,7 +16,6 @@
 
 {% if user %}
   <h4>Welcome back {{ current_user.username }} {{ score }}</h4>
-  <h4>INSERT LOG OUT HERE</h4>
 {% else %}
   <a href="{{ url_for('register') }}">Please Register Here</a>
 {% endif %}
@@ -133,7 +132,7 @@
       {% if user %}
       <br>
       <div class="row">
-        <div class="container keyboard-container">
+        <div class="container submit-container">
           <button class="btn btn-lg btn-info" onclick="submitScore()">Submit Score</button>
         </div>
       </div>
