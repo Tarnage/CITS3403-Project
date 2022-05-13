@@ -115,7 +115,7 @@ function searchTable(rank, data) {
     // th is the rank of current row being generated
     let th = document.createElement("th");
     th.scope = "row";
-    th.innerText = rank[i];
+    th.innerText = rank[i] + 1;
     tr_body.appendChild(th);
 
     // create and fill in the row with data
