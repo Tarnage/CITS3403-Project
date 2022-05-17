@@ -42,8 +42,20 @@ def game():
 
 @app.route('/stats', methods=['GET', 'POST'])
 def stats():
-    return render_template('stats.html', title="Leaderboards")
+    leaderboard_data = Leaderboard.query.all()
+    print(leaderboard_data)
+    user_ids = []
+    user_data = []
+    scores= []
 
+    for data in leaderboard_data:
+        if data.user_id != None:
+            user= User.query.get(data.user_id)
+            user_data.append([user.username, str(data.score)])
+    
+    print(user_data)
+
+    return render_template('stats.html', title="Leaderboards", user_data=user_data)
 
 PUZZLE_DIR = os.getcwd()+'/app/static/dailyPuzzles/'
 @app.route('/anagram', methods=['GET', 'POST'])

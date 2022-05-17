@@ -38,7 +38,7 @@ class Leaderboard(db.Model):
 		return User.query.get(self.user_id)
 
 	def __repr__(self):
-		return f'{self.score}'
+		return f'{self.user_id},{self.score}'
 
 
 @login.user_loader
