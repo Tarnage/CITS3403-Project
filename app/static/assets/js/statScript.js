@@ -207,7 +207,7 @@ $(window).on("load", () => {
           alert("Something went wrong!");
       }
   }
-  xttp.open("POST", "leaderboard", false);
+  xttp.open("GET", "leaderboard", false);
   xttp.send();
 
   document.getElementById("datatable").appendChild(createTable(data2));
