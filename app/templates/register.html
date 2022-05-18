@@ -31,35 +31,31 @@
                     {{ form.hidden_tag() }}
                     <h3>Register</h3>
                         <div class="form-group">
-                            {{ form.username.label }}<br>
-                            {{ form.username(size=32, class="form-control", id="uName") }}<br>
-                            {% for error in form.username.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
+                            {{ form.username(size=32, class="form-control", id="uName", placeholder="Username") }}
+                            {% if form.username.errors %}
+                            <span style="color: red;">Username Taken..</span>
+                            {% endif %}
                         </div><br>
 
                         <div class="form-group">
-                            {{ form.email.label }}<br>
-                            {{ form.email(size=64, class="form-control", id="email") }}<br>
-                            {% for error in form.email.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
+                            {{ form.email(size=64, class="form-control", id="email", placeholder="Email") }}
+                            {% if form.email.errors %}
+                            <span style="color: red;">Email Not Vaild</span>
+                            {% endif %}
                         </div><br>
 
                         <div class="form-group">
-                            {{ form.password.label }}<br>
-                            {{ form.password(size=32, class="form-control", id="pwd") }}<br>
-                            {% for error in form.password.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
+                            {{ form.password(size=32, class="form-control", id="pwd", placeholder="Password") }}
+                            {% if form.password.errors %}
+                            <span style="color: red;">Password Not Secure Enough</span>
+                            {% endif %}
                         </div><br>
 
                         <div class="form-group">
-                            {{ form.password2.label }}<br>
-                            {{ form.password2(size=32, class="form-control", id="pwdtwo") }}<br>
-                            {% for error in form.password2.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
+                            {{ form.password2(size=32, class="form-control", id="pwdtwo", placeholder="Re-Enter Password") }}
+                            {% if form.password2.errors %}
+                            <span style="color: red;">Password does not match</span>
+                            {% endif %}
                         </div><br>
                         {{ form.submit(class="btn btn-dark") }}
                     </form>
