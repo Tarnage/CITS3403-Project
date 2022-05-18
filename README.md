@@ -60,6 +60,8 @@ For [windows instructions](https://www.sqlitetutorial.net/download-install-sqlit
 ```python
 # build the database
 $ flask db init
+
+$ flask db migrate -m 'users'
 ```
 
 5. Deactivate environment
@@ -84,19 +86,22 @@ To conduct unit tests run the command:  `python -m tests.unittest`
 To conduct selenium tests, you need to have the necessary web driver installed in the test directory. Then start the webserver in TestingConfig, and run `python -m tests.systemtest`
 
 ## Built With
-TODO
+Windows, Linux, MacOS
+VScode
+Python3 3.6+
+Flask
 
 ## Contributing
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
-TODO
+1.0 - Submitted for grading..
 
 ## Authors
-* Tom Nguyen -role-
-* Cameron Ke -role-
-* Amy Burnett -role-
-* Rahul Sridhar -role-
+* Tom Nguyen
+* Cameron Ke
+* Amy Burnett
+* Rahul Sridhar
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
