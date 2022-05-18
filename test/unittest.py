@@ -39,7 +39,7 @@ class UserModelCase(unittest.TestCase):
         self.assertFalse(user2.check_password("False"))
         self.assertTrue(user2.check_password("SECOND_test"))
 
-    def test_is_commited(self):
+    def test_score_commited(self):
         user1 = User.query.filter_by(username="Test1").first()
         user2 = User.query.filter_by(username="Test2").first()
 
@@ -76,6 +76,29 @@ class UserModelCase(unittest.TestCase):
 
         self.assertTrue( int(lead1.score) == score1 + 199 )
         self.assertTrue( int(lead2.score) == score1 + 0 )
+
+    def test_get_id(self):
+        user1 = User.query.filter_by(username="Test1").first()
+        user2 = User.query.filter_by(username="Test2").first()
+
+        id1 = user1.get_id()
+        id2 = user2.get_id()
+
+        self.assertEqual(int(id1), 1, f"Got {id1}")
+        self.assertEqual(int(id2), 2, f"Got {id2}")
+
+
+    def test_get_user(self):
+        user1 = User.query.filter_by(username="Test1").first()
+        user2 = User.query.filter_by(username="Test2").first()
+        lead1 = Leaderboard.query.filter_by(user_id=user1.user_id).first()
+        lead2 = Leaderboard.query.filter_by(user_id=user2.user_id).first()
+
+        get1 = str(lead1.get_user())
+        get2 = str(lead2.get_user())
+
+        self.assertEqual(get1, "Test1", f"Got {get1}")
+        self.assertEqual(get2, "Test2", f"Got {get2}")
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
