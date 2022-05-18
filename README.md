@@ -49,7 +49,6 @@ pip install -r requirements.txt
 # if pip doesnt work try
 pip3 install -r requirements.txt
 ```
-**DONT DO STEP 4 UNTIL WE IMPLEMENT THE DB FUNCTIONS**
 
 4. Install and Build the database 
 ```python
@@ -79,7 +78,7 @@ $ deactivate
 ## Deployment
 TODO
 
-## Unit Tests **Not sure if this is right
+## Unit Tests
 To conduct unit tests run the command:  `python -m tests.unittest`
 
 To conduct selenium tests, you need to have the necessary web driver installed in the test directory. Then start the webserver in TestingConfig, and run `python -m tests.systemtest`
