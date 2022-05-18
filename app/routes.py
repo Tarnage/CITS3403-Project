@@ -75,7 +75,9 @@ def logout():
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('game'))
+
     form = RegistrationForm()
+
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
@@ -84,9 +86,9 @@ def register():
         user_leader = Leaderboard(user_id=user.user_id, score=0)
         db.session.add(user_leader)
         db.session.commit()
-        flash('You are now registered')
-
+        
         return redirect(url_for('index'))
+
     return render_template('register.html', title='Register - Anagram City', form=form)
 
 
