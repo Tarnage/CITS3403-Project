@@ -60,8 +60,8 @@ For [windows instructions](https://www.sqlitetutorial.net/download-install-sqlit
 ```python
 # build the database
 $ flask db init
-
-$ flask db migrate -m 'users'
+$ flask db migrate
+$ flask db upgrade
 ```
 
 5. Deactivate environment
