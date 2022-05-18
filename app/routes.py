@@ -120,7 +120,7 @@ def query_leaderboard():
 
     for data in leaderboard_data:
         if data.user_id != None:
-            user= User.query.get(data.user_id)
+            user = User.query.get(data.user_id)
             user_data[user.username] = str(data.score)
 
     return user_data
