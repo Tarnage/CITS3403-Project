@@ -107,6 +107,7 @@ body {
 /* ===== Interface ===== */
 .stat-interface {
   background-color: rgba(13, 17, 23, 1);
+  overflow-y: scroll;
 }
 
 /* ===== Progress Bars ===== */
