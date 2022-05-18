@@ -81,9 +81,9 @@ $ deactivate
 TODO
 
 ## Unit Tests
-To conduct unit tests run the command:  `python -m tests.unittest`
+To conduct unit tests run the command:  `python -m test.unittest`
 
-To conduct selenium tests, you need to have the necessary web driver installed in the test directory. Then start the webserver in TestingConfig, and run `python -m tests.systemtest`
+To conduct selenium tests, you need to have the necessary web driver installed in the test directory. Then start the webserver in TestingConfig, and run `python -m test.systemtest`
 
 ## Built With
 Windows, Linux, MacOS
