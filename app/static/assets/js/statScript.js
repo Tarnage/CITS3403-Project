@@ -3,7 +3,7 @@ var users = [];
 var scores = [];
 const data2 = {
   columns: ["Rank", "User", "Score"],
-  rows: user_data,
+  rows: [],
 };
 
 function forChart() {
@@ -192,6 +192,24 @@ function comparator(a, b) {
 }
 
 $(window).on("load", () => {
+
+  let xttp = new XMLHttpRequest();
+  xttp.onload = function() {
+      if (this.status == 200){
+          
+          let result = JSON.parse(this.response);
+          for (const key in result) {
+            let temp = [key, result[key]];
+            data2.rows.push(temp);
+          }
+      }
+      else {
+          alert("Something went wrong!");
+      }
+  }
+  xttp.open("POST", "leaderboard", false);
+  xttp.send();
+
   document.getElementById("datatable").appendChild(createTable(data2));
 
   document.getElementById("search-btn").addEventListener("click", search);

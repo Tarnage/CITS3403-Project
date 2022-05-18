@@ -42,20 +42,7 @@ def game():
 
 @app.route('/stats', methods=['GET', 'POST'])
 def stats():
-    leaderboard_data = Leaderboard.query.all()
-    print(leaderboard_data)
-    user_ids = []
-    user_data = []
-    scores= []
-
-    for data in leaderboard_data:
-        if data.user_id != None:
-            user= User.query.get(data.user_id)
-            user_data.append([user.username, str(data.score)])
-    
-    print(user_data)
-
-    return render_template('stats.html', title="Leaderboards", user_data=user_data)
+    return render_template('stats.html', title="Leaderboards")
 
 PUZZLE_DIR = os.getcwd()+'/app/static/dailyPuzzles/'
 @app.route('/anagram', methods=['GET', 'POST'])
@@ -124,3 +111,16 @@ def submit_score():
         return f'You submitted: {data}, Total score: {score.score}'
 
     return "Can only submit score once per day"
+
+
+@app.route('/leaderboard', methods=['GET', 'POST'])
+def query_leaderboard():
+    leaderboard_data = Leaderboard.query.all()
+    user_data = {}
+
+    for data in leaderboard_data:
+        if data.user_id != None:
+            user= User.query.get(data.user_id)
+            user_data[user.username] = str(data.score)
+
+    return user_data

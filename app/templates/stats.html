@@ -5,9 +5,6 @@
   <link rel="stylesheet" 
         href="{{ url_for('static', filename='assets/style/stats.css') }}">
   <!-- JavaScript -->
-  <script type="text/javascript">
-    const user_data = {{ user_data|tojson|safe }}
-  </script>
   <script src="{{ url_for('static', filename='assets/js/statScript.js') }}"></script>
   <!-- flavicon -->
   <link rel="icon" 
