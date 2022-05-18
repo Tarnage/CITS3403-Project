@@ -36,14 +36,14 @@ def game():
     user = current_user.is_authenticated
     if user:
         userObj = User.query.filter_by(username=current_user.username).first()
-        score = Leaderboard.query.filter_by(user_id=userObj.user_id).first()
+        score = userObj.get_score()
+        
     return render_template('game.html', title="Anagram-City", game=True, user=user, score=score)
 
 
 @app.route('/stats', methods=['GET', 'POST'])
 def stats():
     return render_template('stats.html', title="Leaderboards")
-
 
 PUZZLE_DIR = os.getcwd()+'/app/static/dailyPuzzles/'
 @app.route('/anagram', methods=['GET', 'POST'])
@@ -102,13 +102,26 @@ def submit_score():
     if not last_submit == None:
         last_submit = last_submit.date()
 
-    if not isdigit(data):
+    if not isdigit(data[0]):
         return "Submission is not a valid score"
 
     if not last_submit == current_date or last_submit == None:
-        score.score = score.score + int(data)
+        score.score = int(score.score) + int(data)
         score.last_submit = current_date
         db.session.commit()
         return f'You submitted: {data}, Total score: {score.score}'
 
     return "Can only submit score once per day"
+
+
+@app.route('/leaderboard', methods=['GET', 'POST'])
+def query_leaderboard():
+    leaderboard_data = Leaderboard.query.all()
+    user_data = {}
+
+    for data in leaderboard_data:
+        if data.user_id != None:
+            user = User.query.get(data.user_id)
+            user_data[user.username] = str(data.score)
+
+    return user_data
