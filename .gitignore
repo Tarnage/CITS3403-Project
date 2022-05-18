@@ -4,3 +4,4 @@ venv
 test.db
 *docs*
 *migrations*
+app.db
