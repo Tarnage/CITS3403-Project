@@ -15,6 +15,7 @@ Jinja2==3.1.2
 Mako==1.2.0
 MarkupSafe==2.1.1
 python-dotenv==0.20.0
+psycopg2-binary==2.8.6
 SQLAlchemy==1.4.36
 Werkzeug==2.1.2
 WTForms==3.0.1

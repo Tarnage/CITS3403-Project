@@ -20,7 +20,7 @@ class User(UserMixin, db.Model):
 		return check_password_hash(self.password_hash, password)
 
 	def get_score(self):
-		return Leaderboard.query.get(self.user_id).score
+		return Leaderboard.query.filter_by(user_id=self.user_id).first().score
 	
 	def __repr__(self):
 		return f'{self.username}'
@@ -36,6 +36,9 @@ class Leaderboard(db.Model):
 	# gets the user attached to the unique id
 	def get_user(self):
 		return User.query.get(self.user_id)
+
+	def get_score(self):
+		return f'{self.score}'
 
 	def __repr__(self):
 		return f'{self.user_id},{self.score}'
