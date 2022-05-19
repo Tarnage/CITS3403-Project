@@ -1,37 +1,21 @@
-/* * =============== General =============== * */
-
-h1, h2, h3, h4, h5, h6, legend {
-  color: #58a6ff;
-}
-
-label {
-  color: #c9d1d9;
-}
-
-/* ===== Font ===== */
-@font-face {
-  font-family: "Games";
-  src: url(../font/Games.ttf);
-}
-
 /* * =============== Animations =============== * */
 /* ===== Glows ===== */
 /* Sourced from w3schools Glowing Text "https://www.w3schools.com/howto/howto_css_glowing_text.asp" */
 @keyframes glow-1 {
   from {
     text-shadow: 
-    0 0 10px #90d7e7, 0 0 20px #90d7e7, 
-    0 0 30px #58a6ff, 0 0 40px #58a6ff, 
-    0 0 50px #58a6ff, 0 0 60px #58a6ff, 
-    0 0 70px #58a6ff;
+    0 0 3px #90d7e7, 0 0 5px #90d7e7, 
+    0 0 10px #58a6ff, 0 0 15px #58a6ff, 
+    0 0 20px #58a6ff, 0 0 25px #58a6ff, 
+    0 0 30px #58a6ff;
   }
 
   to {
     text-shadow: 
-    0 0 20px #90d7e7, 0 0 30px #90d7e7, 
-    0 0 40px #90d7e7, 0 0 50px #90d7e7, 
-    0 0 60px #90d7e7, 0 0 70px #90d7e7, 
-    0 0 80px #90d7e7;
+    0 0 4px #90d7e7, 0 0 6px #90d7e7, 
+    0 0 11px #90d7e7, 0 0 16px #58a6ff, 
+    0 0 21px #58a6ff, 0 0 26px #58a6ff, 
+    0 0 31px #58a6ff;
   }
 }
 @keyframes glow-2 {
@@ -50,6 +34,27 @@ label {
     0 0 10px rgba(39, 157, 245, 0.67), 0 0 12px rgba(39, 157, 245, 0.67), 
     0 0 14px rgba(39, 157, 245, 0.67);
   }
+}
+
+/* * =============== General =============== * */
+
+h1, h2, h3, h4, h5, h6, legend {
+  color: #58a6ff;
+}
+
+label {
+  color: #c9d1d9;
+}
+
+/* ===== Font ===== */
+@font-face {
+  font-family: "Games";
+  src: url(../font/Games.ttf);
+}
+
+.games-font {
+  color: rgba(39, 238, 245, 0.85);
+  font-family: "Games", sans-serif;
 }
 
 /* * =============== Navbar =============== * */
@@ -88,12 +93,10 @@ label {
 /* ===== Mobile First ===== */
 /* iPads & Tablets */
 @media only screen and (min-width: 481px) {
-
-}
-
-/* Small screens & laptops */
-@media only screen and (min-width: 769px) {
-  
+  /* Nav */
+  .nav-item {
+    font-size: 90%;
+  }
 }
 
 /* Desktop & large screens */
@@ -102,9 +105,4 @@ label {
   .nav-item {
     font-size: 110%;
   }
-}
-
-/* Extra large screens & Tvs */
-@media only screen and (min-width: 1201px) {
-
 }
