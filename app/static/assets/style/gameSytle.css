@@ -107,7 +107,6 @@ body {
 /* ===== Interface ===== */
 .stat-interface {
   background-color: rgba(13, 17, 23, 1);
-  overflow-y: scroll;
 }
 
 /* ===== Progress Bars ===== */
@@ -120,7 +119,10 @@ body {
 }
 
 .progress-words {
-	color: rgba(39, 238, 245, 0.85);;
+	color: rgba(39, 238, 245, 0.85);
+  width: inherit;
+  height: 25px;
+  overflow-y: scroll;
 }
 
 .stat-interface > div {

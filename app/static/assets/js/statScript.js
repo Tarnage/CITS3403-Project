@@ -172,7 +172,7 @@ function containsStr(array, input) {
     if (array[0].includes(input)) {
       return true;
     }
-    if (array[1].includes(input)) {
+    if (array[1] == input) {
       return true;
     }
   }
