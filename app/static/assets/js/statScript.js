@@ -3,18 +3,7 @@ var users = [];
 var scores = [];
 const data2 = {
   columns: ["Rank", "User", "Score"],
-  rows: [
-    ["Tiger Nixon", "61"],
-    ["Sonya Frost", "23"],
-    ["Jena Gaines", "0"],
-    ["Quinn Flynn", "22"],
-    ["Charde Marshall", "36"],
-    ["Haley Kennedy", "43"],
-    ["Tatyana Fitzpatrick", "19"],
-    ["Michael Silva", "66"],
-    ["Paul Byrd", "64"],
-    ["Gloria Little", "59"],
-  ],
+  rows: [],
 };
 
 function forChart() {
@@ -183,7 +172,7 @@ function containsStr(array, input) {
     if (array[0].includes(input)) {
       return true;
     }
-    if (array[1].includes(input)) {
+    if (array[1] == input) {
       return true;
     }
   }
@@ -198,11 +187,29 @@ function containsStr(array, input) {
  */
 
 function comparator(a, b) {
-  if (a[1] === b[1]) return 0;
+  if (a[1] == b[1]) return 0;
   else return a[1] > b[1] ? -1 : 1;
 }
 
 $(window).on("load", () => {
+
+  let xttp = new XMLHttpRequest();
+  xttp.onload = function() {
+      if (this.status == 200){
+          
+          let result = JSON.parse(this.response);
+          for (const key in result) {
+            let temp = [key, result[key]];
+            data2.rows.push(temp);
+          }
+      }
+      else {
+          alert("Something went wrong!");
+      }
+  }
+  xttp.open("GET", "leaderboard", false);
+  xttp.send();
+
   document.getElementById("datatable").appendChild(createTable(data2));
 
   document.getElementById("search-btn").addEventListener("click", search);
