@@ -26,37 +26,32 @@
 
       <!-- Form Section -->
       <section class="container-fluid homepage ">
-        <div class="row login-screen text-center align-items-center">
+        <div class="login-screen text-center align-items-center">
           <div class="loginForm">
-            <div class="col">
               <form id="loginDetails" action="" method="post" novalidate>
                 {{ form.hidden_tag() }}
                 <h3>Login</h3>
                 <div class="form-group">
-                  {{ form.username.label }}<br>
-                  {{ form.username(size=32, class="form-control", id="uName") }}<br>
-                  {% for error in form.username.errors %}
-                  <span style="color: red;">[{{ error }}]</span>
-                  {% endfor %}
+                  {{ form.username(size=32, class="form-control", id="uName", placeholder="Username") }}
+                  {% if form.username.errors %}
+                  <span style="color: red;">Username Required</span>
+                  {% endif %}
                 </div><br>
 
                 <div class="form-group">
-                  {{ form.password.label }}<br>
-                  {{ form.password(size=32, class="form-control", id="pwd") }}<br>
-                  {% for error in form.password.errors %}
-                  <span style="color: red;">[{{ error }}]</span>
-                  {% endfor %}
+                  {{ form.password(size=32, class="form-control", id="pwd", placeholder="Password") }}
+                  {% if form.password.errors %}
+                  <span style="color: red;">Password Required</span>
+                  {% endif %}
                 </div><br>
                 
                 <div class="checkbox">
                   {{ form.remember_me() }} {{ form.remember_me.label }}
                 </div><br>
                 {{ form.submit(class="btn btn-dark") }}
-                
-                <button type="submit" class="btn btn-dark" formaction="{{ url_for('register') }}"><span>Create Account</span></button><br>
-                <button type="submit" class="btn btn-lg btn-info" formaction="{{ url_for('game') }}"><span>Quick Play</span></button>
+                <a class="btn btn-dark" href="{{ url_for('register') }}"><span>Create Account</span></a><br>
+                <a class="btn btn-lg btn-info" href="{{ url_for('game') }}"><span>Quick Play</span></a>
               </form>
-            </div>
           </div>
         </div>
       </section>

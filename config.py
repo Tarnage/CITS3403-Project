@@ -18,4 +18,4 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
   ENV='testing'
-  SQLALCHEMY_DATABASE_URI = 'sqlite:///'+os.path.join(basedir,'tests/test.db')
+  SQLALCHEMY_DATABASE_URI = 'sqlite:///'+os.path.join(basedir,'test/test.db')

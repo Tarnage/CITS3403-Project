@@ -15,7 +15,7 @@
 {% block content %}
 
 {% if user %}
-  <h4>Welcome back {{ current_user.username }} {{ score }}</h4>
+  <h4 id="welcome">Welcome back {{ current_user.username }} {{ score }}</h4>
 {% else %}
   <a href="{{ url_for('register') }}">Please Register Here</a>
 {% endif %}
