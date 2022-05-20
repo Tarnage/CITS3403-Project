@@ -8,8 +8,6 @@ class Config(object):
 
 class ProductionConfig(Config):
   FLASK_ENV='production'
-  SECRET_KEY = os.environ.get('SECRET_KEY') or 'Anagram-City-B***'
-  SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
 
 class DevelopmentConfig(Config):
   FLASK_ENV='development'
@@ -18,3 +16,4 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
   FLASK_ENV='testing'
   SQLALCHEMY_DATABASE_URI = 'sqlite:///'+os.path.join(basedir,'test/test.db')
+  DEBUG=True

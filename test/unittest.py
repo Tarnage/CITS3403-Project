@@ -2,14 +2,12 @@ import unittest
 import os
 from app import app, db
 from app.models import User, Leaderboard
+from config import TestingConfig
 
 class UserModelCase(unittest.TestCase):
 
     def setUp(self):
-        basedir = os.path.abspath(os.path.dirname(__file__))
-        app.config['SQLALCHEMY_DATABASE_URI']=\
-            'sqlite:///'+os.path.join(basedir,'test.db')
-        self.app = app.test_client()#creates a virtual test environment
+        self.app = app.config.from_object(TestingConfig)
         
         db.create_all()
 
