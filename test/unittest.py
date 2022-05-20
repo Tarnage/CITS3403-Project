@@ -10,6 +10,7 @@ class UserModelCase(unittest.TestCase):
         app.config['SQLALCHEMY_DATABASE_URI']=\
             'sqlite:///'+os.path.join(basedir,'test.db')
         self.app = app.test_client()#creates a virtual test environment
+        
         db.create_all()
 
         user1 = User(username="Test1", email="Test1@gmail.com")
