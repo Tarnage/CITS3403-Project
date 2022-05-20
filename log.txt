@@ -1,0 +1,236 @@
+To get log 
+git log --pretty=format:"%h - %ad | %an : %s" --date=format:"%d-%m-%Y" > log.txt
+
+0d93f4a - 20-05-2022 | Tom : tests
+614e2f7 - 20-05-2022 | Tom : testing
+3996e65 - 20-05-2022 | Tom : fixed config
+63190e6 - 20-05-2022 | Tom : fixed config
+6db627e - 19-05-2022 | Tom : updated requires
+7a8c6fc - 19-05-2022 | Tom : Merge branch 'main' of https://github.com/Tarnage/CITS3403-Project into main
+0c62bfe - 19-05-2022 | Tom : updated requirements
+2445de0 - 19-05-2022 | Tom : Merge pull request #31 from Tarnage/tom-v4.0
+c1be521 - 19-05-2022 | Tom : added overflow
+aa41ede - 18-05-2022 | Tom : removed flash
+edadc87 - 18-05-2022 | Tom : added overflow
+22fcac9 - 18-05-2022 | Tom : removed flash
+4c33f6c - 18-05-2022 | Tom : fixed form always showing errors
+964e5e2 - 18-05-2022 | Tom : updated readme
+16821a9 - 18-05-2022 | Tom : added system tests
+455cdb7 - 18-05-2022 | Tom : added id for game
+eff488e - 18-05-2022 | Tom : cleaned
+ae9ff77 - 18-05-2022 | Tom : added more tests
+e42f8ee - 18-05-2022 | Tom : .
+a7fdb72 - 18-05-2022 | Tom : Merge pull request #30 from Tarnage/tom-v4.0
+5bdefae - 18-05-2022 | Tom : db
+8d39dac - 18-05-2022 | Tom : ignore db
+ac33f52 - 18-05-2022 | Tom : updated readme
+ce3e94e - 18-05-2022 | Tom : cleaned
+a1ff885 - 18-05-2022 | Tom : updated readme
+824c702 - 18-05-2022 | Tom : added unittest
+e46d50c - 18-05-2022 | Tom : tests
+b50c24a - 18-05-2022 | Tom : clean
+595c4a0 - 18-05-2022 | Tom : .
+be29665 - 18-05-2022 | Tom : replaced with ajax request
+305fede - 17-05-2022 | Prentise : Updated leaderboard to use user data instead of test data
+41fc77e - 16-05-2022 | Tom : updated ana
+a4bf188 - 13-05-2022 | Tom : changed reqs
+d48bdb5 - 13-05-2022 | Tom : Merge pull request #29 from Tarnage/rahul-stats-v2.0
+aabe4c6 - 13-05-2022 | Tom : Merge branch 'main' into rahul-stats-v2.0
+50d7081 - 13-05-2022 | Tom : added +1 so rand doesnt start from 0
+bd912b0 - 13-05-2022 | Tom : moved graph
+fcef50a - 13-05-2022 | Tom : fixed bg
+f50523c - 13-05-2022 | Tom : added Cams styles
+ffa6411 - 13-05-2022 | Tom : cleaned dom tree
+ab27998 - 13-05-2022 | Tom : removed repeated css
+e984a51 - 11-05-2022 | Prentise : Updated a few bugs and fixes in the stats leaderboard, and did some styling changes to match the theme of the game
+ae29d70 - 11-05-2022 | Tom : Merge pull request #28 from Tarnage/Cam-v5
+ef008ee - 07-05-2022 | Cameron Ke : WIP reponsive (Mobile First)
+c6d56ab - 07-05-2022 | Cameron Ke : WIP responsive
+4c0593b - 07-05-2022 | Cameron Ke : update progress bars
+5a4dbda - 06-05-2022 | Cameron Ke : Work in progress responsiveness (mobile first)
+d0b3d03 - 05-05-2022 | Tom : Merge branch 'main' of https://github.com/Tarnage/CITS3403-Project into main
+83f2bf8 - 05-05-2022 | Tom : fixed post request
+b6facc7 - 04-05-2022 | Cameron Ke : added Cameron (pip freeze)
+6d64ed5 - 04-05-2022 | Tom : Merge pull request #27 from Tarnage/tom-v5.0
+cb856d1 - 04-05-2022 | Tom : Merge branch 'main' into tom-v5.0
+80c4b6e - 04-05-2022 | Tom : Merge pull request #26 from Tarnage/amy
+bd1564b - 04-05-2022 | Tom : removed comments
+956fd61 - 04-05-2022 | amy : -
+bdf2bc3 - 04-05-2022 | amy : Changed 'logged in as' to only appear if logged in
+36b307a - 04-05-2022 | amy : Registration message added
+b3c6ebf - 03-05-2022 | Tom : Implemented Submit Score
+8e0f454 - 03-05-2022 | Tom : added score tracking and submitting
+fe28101 - 03-05-2022 | Tom : connected leaderboard to user
+4a7c6f0 - 03-05-2022 | Tom : Merge pull request #25 from Tarnage/tom-v5.0
+e9ce781 - 03-05-2022 | Tom : fixed method not allowed
+448ae4a - 03-05-2022 | Tom : Merge pull request #24 from Tarnage/tomV4.0
+a90ac9c - 03-05-2022 | Tom : Merge pull request #23 from Tarnage/amy
+fcf33a7 - 03-05-2022 | amy : Saved DB info
+64c7556 - 03-05-2022 | amy : Create Account button
+bf813fe - 03-05-2022 | amy : Added logout functionality
+71e15dd - 03-05-2022 | amy : User ID error fix
+ac68bae - 03-05-2022 | amy : Add 'GET' and 'POST' methods
+404fe43 - 02-05-2022 | amy : Added registration page/form
+1e6029e - 02-05-2022 | amy : Add logout route
+7984e56 - 02-05-2022 | amy : Update User class to add UserMixin
+c10f0bc - 02-05-2022 | amy : Update login view function logic
+9cf229e - 02-05-2022 | amy : Formatting
+9ba2c09 - 02-05-2022 | amy : flask login initialisation
+7d0d038 - 02-05-2022 | amy : Add flashed messages to base template
+17dd8a1 - 02-05-2022 | amy : Update login form template
+0608e34 - 02-05-2022 | amy : Edit routes.py to add login view function
+b8a3e3f - 02-05-2022 | amy : Added forms.py for login form
+ac7533b - 02-05-2022 | amy : Recorded errors w/ flask installation instructions
+140a27b - 01-05-2022 | Tom : added test date
+b560e4a - 01-05-2022 | Tom : removed unused function
+29a581d - 01-05-2022 | amyburnett1 : Update README.md
+64a3f23 - 30-04-2022 | amyburnett1 : Filled in Readme.md
+f81e1bb - 30-04-2022 | Tom : Merge pull request #22 from Tarnage/tomV4.0
+4befaa1 - 30-04-2022 | Tom : fixed bg
+914f223 - 30-04-2022 | Tom : updated paayer class
+e8abbc4 - 30-04-2022 | Tom : use json for puzzles and hide unused prog bars
+cf92280 - 29-04-2022 | Tom : Merge pull request #21 from Tarnage/tomV4.0
+0a7b567 - 29-04-2022 | Tom : let
+2ac6dae - 29-04-2022 | Tom : randomly generated words
+1a8c952 - 29-04-2022 | Tom : adding random words
+89c699b - 29-04-2022 | Tom : anagrams
+1f4237b - 29-04-2022 | Tom : guess window
+ea3932a - 29-04-2022 | Tom : Merge pull request #20 from Tarnage/tomV4.0
+ced01c5 - 29-04-2022 | Tom : added db
+d5d951a - 29-04-2022 | Tom : cleaned css
+ff9d6ce - 29-04-2022 | Tom : removed nav bar and renamed url_for
+c1bc320 - 29-04-2022 | Tom : added nav bar to base
+6e412d5 - 29-04-2022 | Tom : removed duplicate code
+3105f67 - 29-04-2022 | Tom : updated req and env
+31aaf1c - 28-04-2022 | Tom : added gitignore
+bb8caa4 - 27-04-2022 | Tom : moved readme
+a0ff528 - 27-04-2022 | Tom : Merge pull request #19 from Tarnage/flask-v1
+bb86808 - 27-04-2022 | Tom : spacing and TODO
+9e37e7f - 27-04-2022 | Tom : readme
+d3d434e - 27-04-2022 | Tom : updated requirements
+7ddb18a - 27-04-2022 | Tom : routes init
+dc7b9e6 - 27-04-2022 | Tom : adding routes
+113c831 - 27-04-2022 | Tom : moved files to conform with flask
+59df215 - 27-04-2022 | Tom : moved critrieon
+12514ea - 27-04-2022 | Tom : Merge pull request #18 from Tarnage/Cam-v3
+a45d941 - 22-04-2022 | Tom : Merge branch 'main' of https://github.com/Tarnage/CITS3403-Project into main
+cb498fb - 22-04-2022 | Tom : added gitignore
+a06155b - 20-04-2022 | Cameron Ke : Merge branch 'Cam-v3' of https://github.com/Tarnage/CITS3403-Project into Cam-v3
+6743218 - 20-04-2022 | Cameron Ke : small changes
+81c275d - 20-04-2022 | Cameron Ke : added progress bar animations, game background
+8bd5483 - 20-04-2022 | Tom : Merge pull request #16 from Tarnage/Cam-v3
+573c73e - 20-04-2022 | Tom : format headers
+9870529 - 14-04-2022 | Cameron Ke : sorted stylesheet
+9d8e243 - 14-04-2022 | Cameron Ke : added spans, adjusted transition, animated button.
+7a42afc - 14-04-2022 | Cameron Ke : added responsiveness
+f34f361 - 13-04-2022 | Cameron Ke : added slide in animations
+4f375e4 - 13-04-2022 | Cameron Ke : improved format of code
+139c01f - 11-04-2022 | Tom : Merge pull request #15 from Tarnage/Tom-v1.2
+fcb7c66 - 11-04-2022 | Tom : Merge branch 'main' into Tom-v1.2
+5e40026 - 11-04-2022 | Tom : Merge pull request #14 from Tarnage/amy
+3de5fe8 - 11-04-2022 | Tom : Merge pull request #13 from Tarnage/stats-leaderboard
+5a96849 - 11-04-2022 | Tom : Merge pull request #12 from Tarnage/Cam-v2
+0f8c132 - 11-04-2022 | Cameron Ke : style changes
+8121f34 - 11-04-2022 | Tom : hover
+9ff6dc3 - 11-04-2022 | amy : Changed 'how to play' into unordered list
+76811d4 - 11-04-2022 | Cameron Ke : Merge branch 'Cam-v2' of https://github.com/Tarnage/CITS3403-Project into Cam-v2
+942683a - 11-04-2022 | Tom : not using jQuery to add tests
+2ca2af4 - 07-04-2022 | Tom : Merge pull request #11 from Tarnage/addingTests
+ae0215b - 07-04-2022 | Tom : removed node_modules
+2c0c11b - 07-04-2022 | Tom : removed comments
+513ad28 - 07-04-2022 | Tom : added testing dependencies
+754cf56 - 07-04-2022 | Tom : refactored added a palyer class
+9e2060f - 07-04-2022 | Tom : added styling to game
+20e41e6 - 05-04-2022 | Tom : added glow
+90a10af - 05-04-2022 | Tom : added how to play modal
+360ec75 - 05-04-2022 | Tom : implemented leaderboard/stats
+48bf448 - 05-04-2022 | Tom : case insensitive
+7113824 - 05-04-2022 | Tom : case insesitve
+7587b97 - 04-04-2022 | Tom : spacing
+62fa739 - 04-04-2022 | Tom : comments
+5909c01 - 04-04-2022 | Tom : added resetStats check
+8ba6371 - 04-04-2022 | Tom : comments
+5ed6c26 - 04-04-2022 | Tom : changed to switch case
+ba8c532 - 04-04-2022 | Tom : Merge pull request #8 from Tarnage/Tom-v1.2
+8aa22bb - 04-04-2022 | Tom : Merge pull request #7 from Tarnage/Tom-v1.2
+025ad67 - 04-04-2022 | Tom : implemented keyboard functionality
+3a2c200 - 04-04-2022 | Tom : db schema
+4d42ce2 - 02-04-2022 | Tom : added stats and refactored
+4c301ef - 01-04-2022 | Cameron Ke : index change
+12a2ea8 - 01-04-2022 | Cameron Ke : style changes
+12dda9e - 01-04-2022 | Cameron Ke : index update
+f1ccf75 - 01-04-2022 | Cameron Ke : added font & gif
+08ae011 - 01-04-2022 | Cameron Ke : added contactsStyle.css
+f9b7d80 - 01-04-2022 | Cameron Ke : added contacts.html
+320ceac - 01-04-2022 | Tom : Merge pull request #6 from Tarnage/Tom-v1.1
+2b80f72 - 01-04-2022 | Tom : Merge branch 'main' into Tom-v1.1
+64a6385 - 01-04-2022 | Tom : fixed html
+18b689a - 01-04-2022 | Tom : Merge pull request #5 from Tarnage/Rahul
+19e30b7 - 01-04-2022 | Tom : Merge branch 'main' into Rahul
+fdb2d5e - 01-04-2022 | Tom : Merge pull request #4 from Tarnage/amy
+1fa8f81 - 01-04-2022 | Rahul Sridhar : Keeping track of scores of users
+f094fc3 - 01-04-2022 | Rahul Sridhar : Implemented password system
+06db066 - 01-04-2022 | Rahul Sridhar : Updated stats
+ab8384f - 01-04-2022 | Tarnage : changed for to for of
+ed415f0 - 01-04-2022 | Tom : implemented reset stats
+4b416e2 - 01-04-2022 | Tom : comments
+b9ff9b8 - 31-03-2022 | amy : Added how to play modal
+ea6c935 - 31-03-2022 | amy : Added comments
+22e2b31 - 31-03-2022 | amy : changed words to letters
+98bb28d - 30-03-2022 | Tom : changed click
+a6c3273 - 30-03-2022 | Tom : used jQuery to apply onclick function
+61d7df5 - 30-03-2022 | Tom : removed found var
+59dff30 - 30-03-2022 | Tom : naming
+4a40327 - 29-03-2022 | Tom : removed commented code
+71eb65f - 29-03-2022 | Tom : refactored checkGuess()
+4de9b89 - 27-03-2022 | Tom : added TODO fixed guessStack reset bug
+a3f7017 - 27-03-2022 | Tom : fixed input
+b3b88c8 - 27-03-2022 | Tom : fixed input
+588e3c0 - 27-03-2022 | Tom : COMMENTS
+00ed01a - 27-03-2022 | Tom : Merge pull request #3 from Tarnage/Tom-v1.0
+7ae7b19 - 27-03-2022 | Tom : Merge branch 'main' into Tom-v1.0
+924f988 - 27-03-2022 | Tom : implemented progress bar
+4e0ad21 - 27-03-2022 | Tom : fixed reset bug
+6ad23c9 - 27-03-2022 | Tom : google standards
+9c82bd8 - 27-03-2022 | Tom : added cursor pointer
+ddb1137 - 27-03-2022 | Tom : added style for nav
+5ebecf6 - 27-03-2022 | Tom : added todo
+56bdd61 - 27-03-2022 | Tom : added nav and new game buttons
+2784f23 - 27-03-2022 | Tom : creating variables
+7450464 - 27-03-2022 | Tom : added nav
+52628d0 - 27-03-2022 | Tom : fixed quickplay button
+7c350b2 - 27-03-2022 | Tom : renamed return to enter
+c1a7452 - 27-03-2022 | Tom : added init function
+32ed001 - 26-03-2022 | Tom : transform capitalize
+7744780 - 26-03-2022 | Tom : implemented init function
+c5853a1 - 26-03-2022 | Tom : added a class to keyboard for init func
+562c65c - 26-03-2022 | Tom : added anagrams
+b29b213 - 26-03-2022 | Tom : added feature to track user found words
+5b895eb - 26-03-2022 | Tom : added feature to track user found words
+d068abb - 25-03-2022 | Tom : added functionality
+02e4b4e - 25-03-2022 | Tom : change if to switch
+519a2da - 25-03-2022 | Tom : Merge pull request #2 from Tarnage/Tom-v1.0
+b025252 - 25-03-2022 | Tom : stats init
+8977003 - 25-03-2022 | Tom : Merge pull request #1 from Tarnage/TomsBranch
+7885ce1 - 25-03-2022 | Tom : added button functionality
+af1b428 - 24-03-2022 | Tom : added how to play modal
+07d4917 - 20-03-2022 | Tom : removed rand tag
+4a12e98 - 19-03-2022 | Tom : added todo
+baf0049 - 18-03-2022 | Tom : added game box
+f7cf269 - 18-03-2022 | Tom : init game page
+1df4743 - 18-03-2022 | Tom : added script
+2b13aea - 17-03-2022 | Tom : init login page
+a2cc9bb - 17-03-2022 | Tom : anagram solver test
+2fc5173 - 17-03-2022 | Tom : test word
+1bc9a70 - 17-03-2022 | Rahul Sridhar : Just testing
+8fa806e - 17-03-2022 | Tom : added index and css
+afea5a4 - 17-03-2022 | Tom : init
+2b9b19c - 17-03-2022 | Tom : testing branch
+b09dbc9 - 15-03-2022 | Tom : create doc folder
+4eb8f68 - 15-03-2022 | Tom : create test folder
+6de31cd - 15-03-2022 | Tom : Create asset/style
+1706780 - 15-03-2022 | Tom : Create asset/img
+2667e32 - 15-03-2022 | Tom : added asset/js
+c3ee1d1 - 14-03-2022 | Tom : init
+cf0a9b2 - 14-03-2022 | Tom : formatted readme
+49b77b6 - 14-03-2022 | Tom : Initial commit
