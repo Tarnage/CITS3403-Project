@@ -23,7 +23,7 @@ body {
   width: 100%;
   height: 100vh;
   /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(../img/stock/register-neon-city.gif), no-repeat, center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(../img/stock/register-neon-city.gif), repeat-y, center, fixed;
   background-blend-mode: multiply;
   background-size: cover;
 }
@@ -49,6 +49,16 @@ form h3 {
   margin-top: 3vh;
   padding: 5%;
   width: 50vw;
-  height: fit-content;
+  height: clamp(fit-content, 70vh, 70vh);
   font-size: 12px;
+}
+
+.form-group {
+  height: 40px;
+  margin-top: 4vh;
+  margin-bottom: 5px;
+}
+
+.btn-dark {
+  margin-top: 4vh;
 }
