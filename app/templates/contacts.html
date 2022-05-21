@@ -40,12 +40,11 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                        {{ form.message(size=10, class="form-control", id="txtMsg", placeholder="Your Message", style="width: 100%; height: 150px;) }}
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <!-- TODO: response for submitting message -->
-                  <button type="submit" class="btn btn-lg btn-info" onclick="messageSubmit()"><span>Send</span></button>
+                    {{ form.submit(class="btn btn-lg btn-info") }}
                 </div>
             </div>
         </form>
