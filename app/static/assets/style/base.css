@@ -98,13 +98,12 @@ h5 {
   font-family: "Andalé Mono", monospace;
 }
 
-/*TODO: Update Navbar */
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
 /* Other Devices */
 @media only screen and (min-width: 454px) {
   /* Nav */
   .nav-item {
-    font-size: clamp(90%, 3vh, 110%);
+    font-size: clamp(12px, 2vw, 18px);
   }
 }
