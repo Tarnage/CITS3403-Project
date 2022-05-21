@@ -5,9 +5,9 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 
 app = Flask(__name__)
-#app.config.from_object("config.ProductionConfig")
+app.config.from_object("config.ProductionConfig")
 #app.config.from_object("config.DevelopmentConfig")
-app.config.from_object("config.TestingConfig")
+#app.config.from_object("config.TestingConfig")
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)

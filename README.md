@@ -1,16 +1,5 @@
-The readme must describe the design and development of the application, and give instructions on how to launch from local host.
-
-* The purpose of the web application, explaining the design of the game
-the architecture of the web application.
-* Describe how to launch the web application.
-* Describe some unit tests for the web application, and how to run them.
-* Include commit logs, showing contributions and review from both contributing students
-
-^^ DELETE THIS BEFORE SUBMITTING 
-
 # Anagram City
 A daily game where users aim to create as many words of 4 letters or more as possible, using the letters once only and always including the letter in the middle of the wheel.  
-Play it here: *INSERT LINK*
 
 ## Requirements
 - python3
@@ -75,7 +64,6 @@ $ deactivate
 
 ## Deployment
 via localhost
-
 
 ## Running Tests
 To conduct unit tests run the command:  `python -m test.unittest`

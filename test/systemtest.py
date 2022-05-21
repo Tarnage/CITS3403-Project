@@ -1,3 +1,11 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
+
 import unittest
 import os
 import time
@@ -51,7 +59,6 @@ class SystemTest(unittest.TestCase):
         self.assertEqual(user1.username, 'Test1', msg="User exists in db" )
         user2 = User.query.get(2)
         self.assertEqual(user2.username, 'Test2', msg="User exists in db" )
-
 
     def test_register(self):
         self.driver.get('http://localhost:5000/register')

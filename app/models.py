@@ -1,4 +1,9 @@
-from email.policy import default
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
 from app import db
 from app import login
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -44,6 +49,17 @@ class Leaderboard(db.Model):
 	def __repr__(self):
 		return f'{self.user_id},{self.score}'
 
+
+class ContactUs(db.Model):
+	__contact_us__ = "contact_us"
+	user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	username = db.Column(db.String(64))
+	email = db.Column(db.String(128))
+	phone = db.Column(db.String(10))
+	msg = db.Column(db.String(512))
+
+	def __repr__(self):
+		return f'{self.username}\n{self.msg}'
 
 @login.user_loader
 def load_user(id):

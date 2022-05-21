@@ -1,11 +1,19 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
+
 from curses.ascii import isdigit
 import os
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
 from app import app, word_gen, db
-from app.models import Leaderboard, User
-from datetime import date, datetime
-from app.forms import LoginForm, RegistrationForm
+from app.models import Leaderboard, User, ContactUs
+from datetime import date
+from app.forms import ContactUsForm, LoginForm, RegistrationForm
 import json
 
 
@@ -26,7 +34,14 @@ def index():
 
 @app.route('/contacts', methods=['GET', 'POST'])
 def contacts():
-    return render_template('contacts.html', title='Contacts Page')
+
+    form = ContactUsForm()
+    if form.validate_on_submit():
+        msg = ContactUs(username=form.username.data, email=form.email.data, phone=form.phone.data, msg=form.message.data)
+        db.session.add(msg)
+        db.session.commit()
+
+    return render_template('contacts.html', title='Contacts Page', form=form)
 
 
 @app.route('/game', methods=['GET', 'POST'])

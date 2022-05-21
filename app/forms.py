@@ -1,5 +1,12 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import User
 
@@ -26,3 +33,10 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
+
+class ContactUsForm(FlaskForm):
+    username = StringField('Username')
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    phone = IntegerField("Phone")
+    message = TextAreaField("Message", validators=[DataRequired()])
+    submit = SubmitField('Submit')

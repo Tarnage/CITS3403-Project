@@ -1,4 +1,12 @@
 "use strict";
+
+/**
+ * @author Tom Nguyen   <22914578>
+ * @author Amy Burnett  <22689376>
+ * @author Cameron Ke   <23074754>
+ * @author Rahul Sridhar<23347377>
+ */
+
 var users = [];
 var scores = [];
 const data2 = {
