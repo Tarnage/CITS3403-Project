@@ -1,3 +1,10 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo

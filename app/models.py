@@ -1,3 +1,10 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
 from email.policy import default
 from app import db
 from app import login

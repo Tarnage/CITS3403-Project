@@ -1,3 +1,11 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
+
 from curses.ascii import isdigit
 import os
 from flask import render_template, flash, redirect, url_for, request
