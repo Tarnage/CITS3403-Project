@@ -19,14 +19,14 @@
 
 /* * =============== Page Format =============== * * /
 /* ===== Background Styling ===== */
-.main {
-  position: absolute;
+body {
   width: 100%;
   height: 100vh;
+
   /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(../img/stock/register-neon-city.gif), repeat-x, center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)), url(../img/stock/register-neon-city.gif), no-repeat, center;
   background-blend-mode: multiply;
-  background-size: 50% 100%;
+  background-size: cover;
 }
 
 /* ===== Text Styling ===== */
@@ -41,20 +41,15 @@ form h3 {
 }
 
 /* * =============== Form =============== * */
-.col {
-  display: grid;
-  place-content: center;
-  height: 100vh;
-}
-
 .col form {
   background-color: rgba(13, 17, 23, 0.9);
   border: 2px outset #58a6ff;
   border-radius: 20px;
 
   margin: auto;
+  margin-top: 3vh;
   padding: 5%;
   width: 50vw;
-  height: 80vh;
+  height: fit-content;
   font-size: 12px;
 }
