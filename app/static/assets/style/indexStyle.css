@@ -56,12 +56,12 @@
 
 /* * =============== Page Format =============== * * /
 /* ===== Background Styling ===== */
-.main {
-  position: absolute;
+body {
   width: 100%;
   height: 100vh;
+
   /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(../img/stock/neon-drive.gif), repeat-y, center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(../img/stock/neon-drive.gif), repeat-y, center, fixed;
   background-blend-mode: multiply;
   background-size: 100% 100%;
   animation: fadeIn 1s ease-out;
@@ -70,29 +70,35 @@
 
 /* ===== Text Styling ===== */
 .display-4 {
-  font-size: 1.5em;
-  margin-top: 12px;
   animation: glow-2 1s ease-in-out infinite alternate, 1s ease-out 0.2s titleSlideDown;
   animation-fill-mode: forwards;
   opacity: 0;
+  position: relative;
+  top: 1vh;
+  font-size: 4vh;
 }
 
 .titleGame {
-  font-size: 2em;
-  margin-top: -3%;
   animation: glow-1 1s ease-in-out infinite alternate, 1s ease-out 0.9s titleSlideDown;
   animation-fill-mode: forwards;
   opacity: 0;
+
+  position: relative;
+
+  font-size: 7vh;
 }
 
 /* "Login" */
 .col h3 {
-  font-size: 18px;
+  margin-top: -2vh;
+  font-size: 15px;
   font-family: "Games", sans-serif;
 }
 
 .form-group {
   height: 50px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 input {
@@ -100,23 +106,26 @@ input {
 }
 
 .checkbox {
-  margin-top: -10%;
-  font-size: 10px;
+  font-size: 15px;
+}
+
+.checkbox label {
+  font-size: 8px;
 }
 
 /* * =============== Form =============== * */
-form {
+#loginDetails {
   background-color: rgba(13, 17, 23, 0.9);
   border: 2px outset #58a6ff;
   border-radius: 20px;
 
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 15px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 
-  margin: 10% auto auto auto;
-  padding: 5%;
+  padding: 8vh;
+  padding-top: 2vh;
   width: 90%;
   font-size: 12px;
 }
@@ -129,7 +138,7 @@ form {
 }
 
 .btn-info {
-  padding-bottom: 8%;
+  margin-bottom: 10px;
 }
 
 /* ===== Quick Play ===== */
@@ -174,58 +183,64 @@ form {
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
 /* TODO Change height */
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 454px) {
   /* ===== Text ===== */
   /* Title */
   .display-4 {
-    font-size: 3em;
-    margin-top: 2%;
+    font-size: clamp(15px, 4vh, 20px);
+    top: clamp(1vh, 3vh, 5vh);
   }
   
   .titleGame {
-    font-size: 4em;
-    margin-top: 0.5%;
+    font-size: clamp(40px, 7vh, 100px);
     margin-bottom: 2%;
+    top: clamp(2vh, 3vh, 6vh);
   }
 
   /* Login */
   .col h3 {
-    font-size: 200%;
-    margin: -15% auto 5%;
+    font-size: clamp(16px, 3vh, 20px);
+    margin: auto;
   }
 
   /* ===== Form ===== */
-  form {
+  #loginDetails {
     border-radius: 20px;
-    margin: 2% auto auto auto;
-    width: clamp(200px, 50vw, 600px);
-    height: clamp(350px, 50vh, 500px);
+    margin: 2%, 0%, 0%;
+    top: 10vh;
+    width: clamp(250px, 50vw, 600px);
+    height: fit-content;
     font-size: 12px;
   }
 
   .form-group {
-    font-size: 120%;
-    margin-top: 5%;
+    font-size: clamp(12px, 2vh, 13px);
+    margin-top: 5vh;
   }
 
   .form-group > input {
-    height: clamp(20px, 5vh, 35px)
+    height: clamp(20px, 5vh, 35px);
   }
 
   .checkbox {
-    margin-top: 0%;
+    margin-top: 1vh;
     font-size: 110%;
+  }
+
+  .checkbox label {
+    font-size: clamp(8px, 2vh, 11px);
   }
 
   /* Button */
   .btn {
     min-height: 40px;
-    font-size: 120%;
+    font-size: clamp(11px, 2vh, 14px);
   }
 
   .btn-dark {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
   }
 }
 
+/* ===== No Clamp Backup ===== */
