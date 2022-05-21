@@ -38,5 +38,5 @@ class ContactUsForm(FlaskForm):
     username = StringField('Username')
     email = StringField('Email', validators=[DataRequired(), Email()])
     phone = IntegerField("Phone")
-    msg = TextAreaField("Message", validators=[DataRequired()])
+    message = TextAreaField("Message", validators=[DataRequired()])
     submit = SubmitField('Submit')

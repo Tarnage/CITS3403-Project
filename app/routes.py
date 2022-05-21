@@ -38,7 +38,7 @@ def contacts():
     form = ContactUsForm()
 
     if form.validate_on_submit():
-        msg = ContactUs(username=form.username.data, email=form.email.data, phone=form.phone.data, msg=form.msg.data)
+        msg = ContactUs(username=form.username.data, email=form.email.data, phone=form.phone.data, msg=form.message.data)
         db.session.add(msg)
         db.session.commit()
 
