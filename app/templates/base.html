@@ -52,26 +52,29 @@
 {% block content %}{% endblock %} 
 
   <!-- navbar -->
-	<ul class="nav justify-content-center fixed-bottom hero-nav">
-		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="{{ url_for('index') }}"><span>Home</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"><span>How to play</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="{{ url_for('stats') }}"><span>Leaderboard</span></a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="{{ url_for('contacts') }}"><span>Contact Us</span></a>
-		</li>
-    {% if current_user.is_authenticated %}
-		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="{{ url_for('logout') }}"><span>Logout</span></a>
-		</li>
-    {% endif %}
+	<div class="navbar"></div>
+    <ul class="nav justify-content-center fixed-bottom hero-nav">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{{ url_for('index') }}"><span>Home</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#how-to-play-modal"><span>How to play</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{{ url_for('stats') }}"><span>Leaderboard</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{{ url_for('contacts') }}"><span>Contact Us</span></a>
+      </li>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="{{ url_for('logout') }}"><span>Logout</span></a>
+      </li>
+      {% endif %}
 
-	</ul>
+    </ul>
+  </body>
+
   <!-- Modal -->
   <!-- Same modal exists in game.html -->
   <div class="modal fade" id="how-to-play-modal" tabindex="-1"  aria-hidden="true">
@@ -86,6 +89,7 @@
             <li>Your goal is to create as many words of 4 letters or more as possible, using each letter once only. </li>
             <li>Every word must include the main letter. </li> 
             <li>There will be one word that uses all 9 letters. </li>
+            <li>Words do not begin with vowels. </li>
           </ul>
         </div>
         <div class="modal-footer">

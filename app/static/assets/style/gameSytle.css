@@ -182,8 +182,21 @@ body {
 }
 
 /* * =============== Button =============== * */
+/* ===== Register Button ===== */
+.register-button {
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.register-button span {
+  font-size: 9px;
+  font-family: "Andalé Mono", monospace;
+}
+
 /* ===== Submit Score ===== */
-.btn-info {
+.submitscore-button {
   font-size: 13px;
   position: absolute;
   align-content: center;
@@ -195,7 +208,7 @@ body {
 }
 
 /* ===== Hover ===== */
-.btn-info:hover {
+.submitscore-button:hover {
   background-color: #c3f1f7;
   box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
   width: 7.5%;
@@ -337,12 +350,23 @@ body {
   }
 
   /* Button */
-  .btn-info {
+  .register-button {
+    margin-top: 10px;
+    position: relative;
+    left: 0%;
+    transform: translateX(50%);
+  }
+
+  .register-button span {
+    font-size: 12px;
+  }
+
+  .submitscore-button {
     right: 5%;
     bottom: 5%;
   }
 
-  .btn-info:hover {
+  .submitscore-button:hover {
     width: 7.5%;
   }
 
