@@ -133,8 +133,8 @@ h3 {
     /* Format */
     border: 2px outset #58a6ff;
     border-radius: 20px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
     width: 70%;
   }
 }

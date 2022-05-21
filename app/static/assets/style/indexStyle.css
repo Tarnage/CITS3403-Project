@@ -206,14 +206,14 @@ input {
     border-radius: 20px;
     margin: 2% 0% 0%;
     top: 10vh;
-    width: clamp(250px, 50vw, 600px);
+    width: clamp(250px, 50vw, 500px);
     height: fit-content;
     font-size: 12px;
   }
 
   .form-group {
-    font-size: clamp(12px, 2vh, 13px);
-    margin-top: 5vh;
+    margin-top: 3vh;
+    margin-bottom: 0;
   }
 
   .form-group > input {
