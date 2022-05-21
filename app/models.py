@@ -50,7 +50,7 @@ class Leaderboard(db.Model):
 		return f'{self.user_id},{self.score}'
 
 
-class ContantUs(db.Model):
+class ContactUs(db.Model):
 	__contact_us__ = "contact_us"
 	user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	username = db.Column(db.String(64))
