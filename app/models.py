@@ -52,6 +52,16 @@ class Leaderboard(db.Model):
 		return f'{self.user_id},{self.score}'
 
 
+class Leaderboard(db.Model):
+	__contact_us__ = "contact_us"
+	user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	username = db.Column(db.String(64))
+	email = db.Column(db.String(128))
+	phone = db.Column(db.Integer(10))
+
+	def __repr__(self):
+		return f'{self.username},{self.score}'
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))

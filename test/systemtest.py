@@ -60,7 +60,6 @@ class SystemTest(unittest.TestCase):
         user2 = User.query.get(2)
         self.assertEqual(user2.username, 'Test2', msg="User exists in db" )
 
-
     def test_register(self):
         self.driver.get('http://localhost:5000/register')
         self.driver.implicitly_wait(5)
