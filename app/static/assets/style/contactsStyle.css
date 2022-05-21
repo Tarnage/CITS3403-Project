@@ -113,17 +113,7 @@ h3 {
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
 /* iPads & Tablets */
-@media only screen and (min-width: 481px) {
-
-}
-
-/* Small screens & laptops */
-@media only screen and (min-width: 769px) {
-  
-}
-
-/* Desktop & large screens */
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 454px) {
   /* Text */
   h3 {
     font-size: 35px;
@@ -137,9 +127,4 @@ h3 {
     margin-bottom: 2vh;
     width: 70%;
   }
-}
-
-/* Extra large screens & Tvs */
-@media only screen and (min-width: 1201px) {
-
 }

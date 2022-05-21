@@ -48,8 +48,8 @@ form h3 {
   margin: auto;
   margin-top: 3vh;
   padding: 5%;
-  width: 50vw;
-  height: clamp(fit-content, 70vh, 70vh);
+  width: 90vw;
+  height: fit-content;
   font-size: 12px;
 }
 
@@ -61,4 +61,13 @@ form h3 {
 
 .btn-dark {
   margin-top: 4vh;
+}
+
+/* * ============================================================ Responsive ============================================================ * */
+/* ===== Mobile First ===== */
+/* TODO Change height */
+@media only screen and (min-width: 454px) {
+  .col form {
+    width: 50vw;
+  }
 }
