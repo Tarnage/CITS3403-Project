@@ -54,60 +54,48 @@
   font-family: Andalé Mono, monospace;
 } */
 
-/* ===== Font ===== */
-@font-face {
-  font-family: "Games";
-  src: url(../font/Games.ttf);
-}
-
 /* * =============== Page Format =============== * * /
 /* ===== Background Styling ===== */
-.main {
-  position: absolute;
+body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
-  background-image: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), 
-    url(../img/stock/neon-drive.gif);
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(../img/stock/neon-drive.gif);
+  background-size: 100vw 100vh;
   animation: fadeIn 1s ease-out;
   animation-fill-mode: forwards;
 }
 
 /* ===== Text Styling ===== */
 /* Title */
-.display-4, .titleGame {
-  color: rgba(39, 238, 245, 0.85);
-  font-family: "Games", sans-serif;
-}
-
 .display-4 {
-  font-size: 1.5em;
-  margin-top: 12px;
-  animation: glow-1 1s ease-in-out infinite alternate, 1s ease-out 0.2s titleSlideDown;
+  animation: glow-2 1s ease-in-out infinite alternate, 1s ease-out 0.2s titleSlideDown;
   animation-fill-mode: forwards;
   opacity: 0;
+  position: relative;
+  top: 1vh;
+  font-size: 4vh;
 }
 
 .titleGame {
-  font-size: 2em;
-  margin-top: -3%;
   animation: glow-1 1s ease-in-out infinite alternate, 1s ease-out 0.9s titleSlideDown;
   animation-fill-mode: forwards;
   opacity: 0;
+  position: relative;
+  font-size: 7vh;
 }
 
 /* "Login" */
 .col h3 {
-  font-size: 18px;
+  margin-top: -2vh;
+  font-size: 15px;
   font-family: "Games", sans-serif;
 }
 
 .form-group {
-  height: 50px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 input {
@@ -115,17 +103,24 @@ input {
 }
 
 .checkbox {
-  margin-top: -10%;
-  font-size: 10px;
+  font-size: 15px;
+}
+
+.checkbox label {
+  font-size: 8px;
 }
 
 /* * =============== Form =============== * */
-form {
+#loginDetails {
   background-color: rgba(13, 17, 23, 0.9);
   border: 2px outset #58a6ff;
   border-radius: 20px;
-  margin: 10% auto auto auto;
-  padding: 5%;
+  position: relative;
+  top: 15px; 
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8vh;
+  padding-top: 2vh;
   width: 90%;
   font-size: 12px;
 }
@@ -138,7 +133,7 @@ form {
 }
 
 .btn-info {
-  padding-bottom: 8%;
+  margin-bottom: 10px;
 }
 
 /* ===== Quick Play ===== */
@@ -149,7 +144,6 @@ form {
   border-radius: 5px;
   background: #58a6ff;
   cursor: pointer;
-  transition: all 0.5s;
 }
 
 .btn-info span {
@@ -167,6 +161,7 @@ form {
 
 /* ===== Hover ===== */
 .btn-info:hover {
+  transition: all 0.5s;
   background-color: #c3f1f7;
   box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
 }
@@ -182,75 +177,63 @@ form {
 
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
-/* iPads & Tablets */
-@media only screen and (min-width: 481px) {
-
-}
-
-/* Small screens & laptops */
-@media only screen and (min-width: 769px) {
-
-}
-
-/* Desktop & large screens */
-@media only screen and (min-width: 1025px) {
-  /* Text */
+/* TODO Change height */
+@media only screen and (min-width: 454px) {
+  /* ===== Text ===== */
+  /* Title */
   .display-4 {
-    font-size: 3em;
-    margin-top: 2%;
+    font-size: clamp(15px, 4vh, 20px);
+    top: clamp(1vh, 3vh, 5vh);
   }
   
   .titleGame {
-    font-size: 4em;
-    margin-top: 0.5%;
+    font-size: clamp(40px, 7vh, 100px);
     margin-bottom: 2%;
+    top: clamp(2vh, 3vh, 6vh);
   }
 
+  /* Login */
   .col h3 {
-    font-size: 200%;
-    margin: -15% auto 5%;
+    font-size: clamp(16px, 3vh, 20px);
+    margin: auto;
   }
 
-  /* Form */
-  form {
+  /* ===== Form ===== */
+  #loginDetails {
     border-radius: 20px;
-    margin: 4% auto auto auto;
-    width: 50%;
+    margin: 2% 0% 0%;
+    top: 10vh;
+    width: clamp(250px, 50vw, 600px);
+    height: fit-content;
     font-size: 12px;
-    padding: 6.5%;
   }
 
   .form-group {
-    font-size: 120%;
-    margin-top: 5%;
+    font-size: clamp(12px, 2vh, 13px);
+    margin-top: 5vh;
   }
 
   .form-group > input {
-    height: 70%;
+    height: clamp(20px, 5vh, 35px);
   }
 
   .checkbox {
-    margin-top: 0%;
+    margin-top: 1vh;
     font-size: 110%;
   }
 
+  .checkbox label {
+    font-size: clamp(8px, 2vh, 11px);
+  }
+
+  /* Button */
   .btn {
     min-height: 40px;
-    font-size: 120%;
+    font-size: clamp(11px, 2vh, 14px);
   }
 
   .btn-dark {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
   }
-
-  /* Nav */
-  .nav-item { 
-    font-size: 110%;
-  }
-}
-
-/* Extra large screens & Tvs */
-@media only screen and (min-width: 1201px) {
-
 }

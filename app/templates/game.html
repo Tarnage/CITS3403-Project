@@ -17,7 +17,7 @@
 {% if user %}
   <h4 id="welcome">Welcome back {{ current_user.username }} {{ score }}</h4>
 {% else %}
-  <a href="{{ url_for('register') }}">Please Register Here</a>
+<button type="submit" class="btn btn-info register-button" formaction="{{ url_for('register') }}"><span>Please Register Here</span></button><br>
 {% endif %}
 
   <div class="container" >
@@ -95,7 +95,7 @@
 
         <div class="col-lg-7">
           <div>
-            <h1>Anagram-City</h1>
+            <h1 class="games-font">Anagram-City</h1>
           </div>
           <div class="guess-interface">
             <div class="current-guess" id="current-guess" contentEditable="false" data-text=></div>
@@ -133,7 +133,7 @@
       <br>
       <div class="row">
         <div class="container submit-container">
-          <button class="btn btn-lg btn-info" onclick="submitScore()">Submit Score</button>
+          <button class="btn btn-lg btn-info submitscore-button" onclick="submitScore()">Submit Score</button>
         </div>
       </div>
       {% endif %}

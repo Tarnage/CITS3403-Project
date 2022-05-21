@@ -54,17 +54,24 @@
 /* * =============== General =============== * */
 body {
   background-color: black;
-  --slideInPB-time: 0.5s;
 }
 
-h3, h6, .keys, .btn-info {
-  font-family: Andalé Mono, monospace;
+h1 {
+  visibility: hidden;
+  height: 0px;
 }
 
 h4 {
   font-family: Games, sans-serif;
   font-size: 25px;
+}
+
+h3, h4, h6 {
   text-align: center;
+}
+
+h3, h6, .keys, .btn-info {
+  font-family: "Andalé Mono", monospace;
 }
 
 /* * =============== Page Format =============== * */
@@ -73,40 +80,39 @@ body {
   width: 100%;
   height: 100vh;
   /* GIF Image "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/60450985394250500379570173737850728793158825866208713302522449994820259676161/"*/
-  background: rgba(0, 0, 0, 0.85) url(../img/stock/neon_city.gif) no-repeat center;
+  background: rgba(0, 0, 0, 0.85) url(../img/stock/neon_city.gif) repeat-y center;
   background-blend-mode: multiply;
   background-size: cover;
 }
 
 .container {
-  background-color: rgba(13, 17, 23, 1);
   width: auto;
-  padding: 0%;
 }
 
 .game-box {
+  background-color: rgba(13, 17, 23, 1);
+  border-radius: 10px;
   align-items: center;
   margin-top: 5%;
   margin-bottom: -8%;
   padding: 2%;
-  padding-bottom: 4%;
-  border: 4px solid #58a6ff;
-  border-radius: 10px;
 }
 
 /* ===== Title ===== */
 .col-lg-7 h1 {
-  margin-top: 80px;
-  text-align: center;
-  color: rgba(39, 238, 245, 0.85);
-  font-family: "Games", sans-serif;
-  animation: glow-2 1s ease-in-out infinite alternate;
+  visibility: hidden;
+  height: 0px;
 }
 
 /* * =============== Stats =============== * */
 /* ===== Interface ===== */
 .stat-interface {
-  background-color: rgba(13, 17, 23, 1);
+  background-color: rgba(10, 14, 20, 1);
+  border-radius: 10px;
+
+  max-height: 70px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* ===== Progress Bars ===== */
@@ -121,8 +127,6 @@ body {
 .progress-words {
 	color: rgba(39, 238, 245, 0.85);
   width: inherit;
-  height: 25px;
-  overflow-y: scroll;
 }
 
 .stat-interface > div {
@@ -130,40 +134,40 @@ body {
 }
 
 .stat-interface #hide-four {
-  animation: var(--slideInPB-time) ease-out 0s slideInPB;
+  animation: 0.5s ease-out 0s slideInPB;
   animation-fill-mode: forwards;
 }
 
 .stat-interface #hide-five {
-  animation: var(--slideInPB-time) ease-out 0.1s slideInPB;
+  animation: 0.5s ease-out 0.1s slideInPB;
   animation-fill-mode: forwards;
 }
 
 .stat-interface #hide-six {
-  animation: var(--slideInPB-time) ease-out 0.2s slideInPB;
+  animation: 0.5s ease-out 0.2s slideInPB;
   animation-fill-mode: forwards;
 }
 
 .stat-interface #hide-seven {
-  animation: var(--slideInPB-time) ease-out 0.3s slideInPB;
+  animation: 0.5s ease-out 0.3s slideInPB;
   animation-fill-mode: forwards;
 }
 
 .stat-interface #hide-eight {
-  animation: var(--slideInPB-time) ease-out 0.4s slideInPB;
+  animation: 0.5s ease-out 0.4s slideInPB;
   animation-fill-mode: forwards;
 }
 
 .stat-interface #hide-nine {
-  animation: var(--slideInPB-time) ease-out 0.5s slideInPB;
+  animation: 0.5s ease-out 0.5s slideInPB;
   animation-fill-mode: forwards;
 }
 
 /* * =============== Guess Interface =============== * */
 .guess-interface {
+  max-height: 80px;
   display: grid;
   justify-content: center;
-  padding-top: 10%;
   /* align-content: center; */
 }
 
@@ -174,7 +178,7 @@ body {
   text-anchor: middle;
   letter-spacing: 4px;
   text-shadow: #054669 5px 5px 10px;
-  font-size: 50px;
+  font-size: 40px;
   min-height: 100px;
 
   /* Typing Animation */
@@ -182,13 +186,25 @@ body {
 }
 
 /* * =============== Button =============== * */
+/* ===== Register Button ===== */
+.register-button {
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.register-button span {
+  font-size: 9px;
+  font-family: "Andalé Mono", monospace;
+}
+
 /* ===== Submit Score ===== */
-.btn-info {
+.submitscore-button {
   font-size: 13px;
   position: absolute;
   align-content: center;
   bottom: 2%;
-  border: none;
   border-radius: 5px;
   background: #58a6ff;
   cursor: pointer;
@@ -196,7 +212,7 @@ body {
 }
 
 /* ===== Hover ===== */
-.btn-info:hover {
+.submitscore-button:hover {
   background-color: #c3f1f7;
   box-shadow: 0 5px 15px 	rgba(195, 241, 247, 0.2);
   width: 7.5%;
@@ -210,10 +226,12 @@ body {
   flex-direction: row;
   font-weight: bolder;
   font-size: 2em;
-  box-shadow: 0px 40px 45px rgba(0, 0, 0, .4);
+  display: inline-block;
+  margin-top: 10%;
 }
 
 .keyboard-container {
+  text-align: center;
   align-content: center;
   max-width: fit-content;
 }
@@ -239,6 +257,7 @@ body {
 .main-tile {
   background-color: #2F3336;
   width: 120px;
+  margin-bottom: -20%;
 }
 
 .keys[disabled] {
@@ -265,27 +284,24 @@ body {
 /* ===== Mobile First ===== */
 /* iPads & Tablets */
 @media only screen and (min-width: 481px) {
-
-}
-
-/* Small screens & laptops */
-@media only screen and (min-width: 769px) {
-
-}
-
-/* Desktop & large screens */
-@media only screen and (min-width: 1025px) {
   /* Text */
   h4 {
     margin-top: 4px;
   }
 
+  h3, h6 {
+    text-align: left;
+  }
+
   .col-lg-7 h1 {
-    margin-top: 0px;
+    margin-top: 5%;
+    text-align: center;
+    animation: glow-2 1s ease-in-out infinite alternate;
+    visibility: visible;
+    height: auto;
   }
 
   .keys {
-    font-size: 200p;
     width: fit-content;
     min-width: 90px;
   }
@@ -296,11 +312,25 @@ body {
 
   /* Page Format */
   .game-box {
+    background-clip: border-box;
+    border: 4px solid #58a6ff;
+    padding: 5%;
     margin-bottom: 8%;
     border-radius: 20px;
   }
 
+  /* Stat Interface */
+  .stat-interface {
+    background-color: rgba(13, 17, 23, 1);
+    max-height: none;
+    overflow-y: hidden;
+  }
+
   /* Guess Interface */
+  .current-guess {
+    font-size: 50px;
+  }
+
   .progress > small {
     visibility: visible;
   }
@@ -321,22 +351,33 @@ body {
   }
 
   /* Button */
-  .btn-info {
+  .register-button {
+    margin-top: 10px;
+    position: relative;
+    left: 0%;
+    transform: translateX(50%);
+  }
+
+  .register-button span {
+    font-size: 12px;
+  }
+
+  .submitscore-button {
     right: 5%;
     bottom: 5%;
   }
 
-  .btn-info:hover {
+  .submitscore-button:hover {
     width: 7.5%;
+  }
+
+  /* Keyboard */
+  .keyboard {
+    margin-top: 3%;
   }
 
   /* Nav */
   .nav-item {
     font-size: 110%;
   }
-}
-
-/* Extra large screens & Tvs */
-@media only screen and (min-width: 1201px) {
-
 }
