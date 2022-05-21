@@ -5,6 +5,7 @@
  * @author Rahul Sridhar<23347377>
  */
 
+
  /* * =============== Animations =============== * */
 /* ===== Slide In ===== */
 @keyframes titleSlideDown {
@@ -32,6 +33,17 @@ body {
 
 /* ===== Text Styling ===== */
 /* Title */
+.display-4 {
+  color: rgba(39, 238, 245, 0.85);
+  font-family: "Games", sans-serif;
+  animation: glow-2 1s ease-in-out infinite alternate, 1s ease-out 0.2s titleSlideDown;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  font-size: 4vh;
+
+  text-align: center;
+}
+
 form h3 {
   color: rgba(39, 238, 245, 0.85);
   font-family: "Games", sans-serif;
