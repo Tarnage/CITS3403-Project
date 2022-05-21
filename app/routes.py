@@ -102,7 +102,7 @@ def submit_score():
     if not last_submit == None:
         last_submit = last_submit.date()
 
-    if not isdigit(data):
+    if not isdigit(data[0]):
         return "Submission is not a valid score"
 
     if not last_submit == current_date or last_submit == None:
