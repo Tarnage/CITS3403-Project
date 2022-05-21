@@ -4,8 +4,6 @@
   <!-- custom css -->
   <link rel="stylesheet" 
         href="{{ url_for('static', filename='assets/style/indexStyle.css') }}">
-  <!-- JavaScript -->
-  <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
   <!-- flavicon -->
   <link rel="icon" 
         type="images/x-icon" 
@@ -19,8 +17,8 @@
       <!-- Header -->
       <div class="jumbotron">
         <div class="container c-container">
-          <h1 class="display-4">Welcome to</h1> 
-          <h1 id="title" class="titleGame">Anagram-City!</h1>
+          <h1 class="display-4 games-font">Welcome to</h1> 
+          <h1 id="title" class="titleGame games-font">Anagram-City!</h1>
         </div>
       </div>  
 
@@ -30,7 +28,7 @@
           <div class="loginForm">
               <form id="loginDetails" method="post" novalidate>
                 {{ form.hidden_tag() }}
-                <h3>Login</h3>
+                <h3 class="games-font">Login</h3>
                 <div class="form-group">
                   {{ form.username(size=32, class="form-control", id="uName", placeholder="Username") }}
                   {% if form.username.errors %}
