@@ -55,7 +55,7 @@ class ContactUs(db.Model):
 	user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	username = db.Column(db.String(64))
 	email = db.Column(db.String(128))
-	phone = db.Column(db.Integer())
+	phone = db.Column(db.String(10))
 	msg = db.Column(db.String(512))
 
 	def __repr__(self):
