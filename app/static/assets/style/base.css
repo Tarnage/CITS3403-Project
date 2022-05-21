@@ -59,7 +59,7 @@ label {
 
 /* * =============== Navbar =============== * */
 .nav-item {
-  font-size: 10px;
+  font-size: 8px;
   color: #58a6ff;
   transition: all 0s;
 }
@@ -86,23 +86,25 @@ label {
 
 /* * =============== Modal =============== * */
 /*TODO: ADD MODEL STYLES HERE*/
+h5 {
+  color: rgba(13, 17, 23, 1);
+  font-family: "Games", sans-serif;
 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.modal-content {
+  font-family: "Andalé Mono", monospace;
+}
 
 /*TODO: Update Navbar */
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
-/* iPads & Tablets */
 @media only screen and (min-width: 481px) {
   /* Nav */
   .nav-item {
-    font-size: 90%;
-  }
-}
-
-/* Desktop & large screens */
-@media only screen and (min-width: 1025px) {
-  /* Nav */
-  .nav-item {
-    font-size: 110%;
+    font-size: clamp(90%, 3vh, 110%);
   }
 }
