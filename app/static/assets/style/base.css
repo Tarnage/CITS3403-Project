@@ -101,7 +101,8 @@ h5 {
 /*TODO: Update Navbar */
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
-@media only screen and (min-width: 481px) {
+/* Other Devices */
+@media only screen and (min-width: 454px) {
   /* Nav */
   .nav-item {
     font-size: clamp(90%, 3vh, 110%);

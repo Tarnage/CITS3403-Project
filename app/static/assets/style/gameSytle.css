@@ -282,8 +282,8 @@ body {
 
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
-/* iPads & Tablets */
-@media only screen and (min-width: 481px) {
+/* Other Devices */
+@media only screen and (min-width: 454px) {
   /* Text */
   h4 {
     margin-top: 4px;

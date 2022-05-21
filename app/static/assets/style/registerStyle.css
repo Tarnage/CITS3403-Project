@@ -65,7 +65,7 @@ form h3 {
 
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
-/* TODO Change height */
+/* Other Devices */
 @media only screen and (min-width: 454px) {
   .col form {
     width: 50vw;
