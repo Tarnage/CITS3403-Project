@@ -64,6 +64,11 @@ body {
   background-size: 100% 100%;
 }
 
+.main {
+  animation: fadeIn 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
 /* ===== Text Styling ===== */
 /* Title */
 .display-4 {
