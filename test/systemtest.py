@@ -53,7 +53,7 @@ class SystemTest(unittest.TestCase):
         self.assertEqual(user2.username, 'Test2', msg="User exists in db" )
 
 
-    def test_regiter(self):
+    def test_register(self):
         self.driver.get('http://localhost:5000/register')
         self.driver.implicitly_wait(5)
         uName = self.driver.find_element(By.ID, "uName")
@@ -68,6 +68,8 @@ class SystemTest(unittest.TestCase):
         self.driver.implicitly_wait(5)
         submit = self.driver.find_element(By.ID, "submit")
         submit.click()
+        user3 = User.query.get(3)
+        self.assertEqual(user3.username, 'Test3', msg="User exists in db" )
 
     def test_login(self):
         user1 = User.query.get(1)
@@ -84,9 +86,29 @@ class SystemTest(unittest.TestCase):
         submit.click()
         time.sleep(1)
         welcome = self.driver.find_element(By.ID, "welcome")
-        self.assertCountEqual(welcome.get_attribute("innerHTML"), "Welcome back Test1 0")
+        self.assertEqual(welcome.get_attribute("innerHTML"), "Welcome back Test1 0")
 
-    # TODO:
+    
+    def test_logout(self):
+        self.driver.get("http://127.0.0.1:5000/")
+        self.driver.implicitly_wait(5)
+        uName = self.driver.find_element(By.ID, "uName")
+        uName.send_keys("Test1")
+        pass1 = self.driver.find_element(By.ID, "pwd")
+        pass1.send_keys("Test1")
+        time.sleep(1)
+        self.driver.implicitly_wait(5)
+        submit = self.driver.find_element(By.ID, "submit")
+        submit.click()
+        time.sleep(1)
+        logout = self.driver.find_element(By.ID, "logout")
+        self.assertEqual(logout.get_attribute("innerHTML"), "<span>Logout</span>")
+        logout.click()
+        time.sleep(2)
+        anagram = self.driver.find_element(By.ID, "title")
+        self.assertEqual(anagram.get_attribute("innerHTML"), "Anagram-City!")
+
+
     def test_submit_score(self):
         self.driver.get("http://127.0.0.1:5000/")
         self.driver.implicitly_wait(5)
@@ -102,4 +124,4 @@ class SystemTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    unittest.main(verbosity=2, warnings='ignore')

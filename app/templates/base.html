@@ -67,7 +67,7 @@
 		</li>
     {% if current_user.is_authenticated %}
 		<li class="nav-item">
-			<a class="nav-link" aria-current="page" href="{{ url_for('logout') }}"><span>Logout</span></a>
+			<a id="logout" class="nav-link" aria-current="page" href="{{ url_for('logout') }}"><span>Logout</span></a>
 		</li>
     {% endif %}
 

@@ -12,10 +12,6 @@ the architecture of the web application.
 A daily game where users aim to create as many words of 4 letters or more as possible, using the letters once only and always including the letter in the middle of the wheel.  
 Play it here: *INSERT LINK*
 
-## Design and Development
-TO DO 
-
-
 ## Requirements
 - python3
 - flask
@@ -78,9 +74,10 @@ $ deactivate
 - Deactivate environment from step 5
 
 ## Deployment
-TODO
+via localhost
 
-## Unit Tests
+
+## Running Tests
 To conduct unit tests run the command:  `python -m test.unittest`
 
 To conduct selenium tests, you need to have the necessary web driver installed in the test directory. Then start the webserver in TestingConfig, and run `python -m test.systemtest`
@@ -90,6 +87,7 @@ Windows, Linux, MacOS
 VScode
 Python3 3.6+
 Flask
+Github
 
 ## Contributing
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
