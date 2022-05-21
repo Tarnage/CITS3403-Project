@@ -1,7 +1,11 @@
 'use strict'
-//------------------------------------------------------------------BUG LISTS------------------------------------------------------------
-// ADD FOUND BUGS HERE
 
+/**
+ * @author Tom Nguyen   <22914578>
+ * @author Amy Burnett  <22689376>
+ * @author Cameron Ke   <23074754>
+ * @author Rahul Sridhar<23347377>
+ */
 
 //------------------------------------------------------------GLOBALS AND STATISTICS-----------------------------------------------------
 
@@ -476,39 +480,4 @@ function updateProgress( value ) {
     // set/dispaly the word found by the user
     progBar.nextElementSibling.innerText = `${percentage}% complete`;
     progWords.innerText = currentPlayer.foundWords[value].join( ", " );
-}
-
-
-//----------------------------------------Local Storage-------------------------------------------------
-
-//TODO: NOT IMPLEMENTED
-/**
- * Save to local storage / cookies
- */
-function populateStorage() {
-    console.log("CHECK");
-    localStorage.setItem( 'wordDict',       JSON.stringify( wordDict )    );
-    localStorage.setItem( 'usedLetters',    JSON.stringify( usedLetters ) );
-    localStorage.setItem( 'foundWords',     JSON.stringify( foundWords )  );
-    localStorage.setItem( 'guessStack',     JSON.stringify( guessStack )  );
-    // localStorage.setItem('guessWindow', guessWindow);
-    // localStorage.setItem('keyboard', keyboard);
-    // localStorage.setItem('rootKey', rootKey);
-
-    setStorage();
-}
-
-/**
- * Load from local storage
- */
-function setStorage() {
-    console.log("SETSTORAGE");
-    wordDict    = JSON.parse( localStorage.getItem( 'wordDict' )    );
-    usedLetters = JSON.parse( localStorage.getItem( 'usedLetters' ) );
-    foundWords  = JSON.parse( localStorage.getItem( 'foundWords' )  );
-    guessStack  = JSON.parse( localStorage.getItem( 'guessStack' )  );
-    // guessWindow = localStorage.getItem('guessWindow');
-    // keyboard    = localStorage.getItem('keyboard');
-    // rootKey     = localStorage.getItem('rootKey');
-    console.log(foundWords);
 }

@@ -15,7 +15,7 @@
 {% block content %}
 
 {% if user %}
-  <h4>Welcome back {{ current_user.username }} {{ score }}</h4>
+  <h4 id="welcome">Welcome back {{ current_user.username }} {{ score }}</h4>
 {% else %}
   <a href="{{ url_for('register') }}">Please Register Here</a>
 {% endif %}
@@ -138,24 +138,6 @@
       </div>
       {% endif %}
 
-    </div>
-  </div>
-
-  <div class="modal fade" id="new-game-modal" tabindex="-1"  aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Caution</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Your current progress will be lost
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="init(true)">Reset</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
   </div>
 

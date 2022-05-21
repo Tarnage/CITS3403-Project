@@ -1,3 +1,11 @@
+'''
+@author Tom Nguyen   <22914578>
+@author Amy Burnett  <22689376>
+@author Cameron Ke   <23074754>
+@author Rahul Sridhar<23347377>
+'''
+
+from email.policy import default
 from app import db
 from app import login
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -5,7 +13,7 @@ from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
 	__tablename__ = 'users'
-	user_id = db.Column(db.Integer, primary_key=True)
+	user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	username = db.Column(db.String(64), index=True, unique=True)
 	email = db.Column(db.String(128), index=True, unique=True)
 	password_hash = db.Column(db.String(128))
@@ -20,8 +28,8 @@ class User(UserMixin, db.Model):
 		return check_password_hash(self.password_hash, password)
 
 	def get_score(self):
-		return Leaderboard.query.get(self.user_id).score
-	
+		return Leaderboard.query.filter_by(user_id=self.user_id).first().score
+
 	def __repr__(self):
 		return f'{self.username}'
 
@@ -30,15 +38,18 @@ class Leaderboard(db.Model):
 	__tablename__ = 'leaderboard'
 	leaderboard_id = db.Column(db.Integer, primary_key=True)
 	user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-	score = db.Column(db.Integer, index=True)
+	score = db.Column(db.Integer, index=True, nullable=False, default=0)
 	last_submit = db.Column(db.DateTime)
 
 	# gets the user attached to the unique id
 	def get_user(self):
 		return User.query.get(self.user_id)
 
-	def __repr__(self):
+	def get_score(self):
 		return f'{self.score}'
+
+	def __repr__(self):
+		return f'{self.user_id},{self.score}'
 
 
 @login.user_loader

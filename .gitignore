@@ -1,3 +1,7 @@
 venv
 *__pycache__
 .DS_Store
+test.db
+*docs*
+*migrations*
+app.db
