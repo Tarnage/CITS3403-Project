@@ -5,8 +5,6 @@
 @author Rahul Sridhar<23347377>
 '''
 
-
-from curses.ascii import isdigit
 import os
 from flask import render_template, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user
@@ -118,7 +116,7 @@ def submit_score():
     if not last_submit == None:
         last_submit = last_submit.date()
 
-    if not isdigit(data[0]):
+    if not data[0].isdigit():
         return "Submission is not a valid score"
 
     if not last_submit == current_date or last_submit == None:
