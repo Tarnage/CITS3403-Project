@@ -17,7 +17,7 @@
 {% if user %}
   <h4 id="welcome">Welcome back {{ current_user.username }} {{ score }}</h4>
 {% else %}
-<button type="submit" class="btn btn-info register-button" formaction="{{ url_for('register') }}"><span>Please Register Here</span></button><br>
+  <a class="btn btn-info register-button" href="{{ url_for('register') }}"><span>Please Register Here</span></a><br>
 {% endif %}
 
   <div class="container" >
