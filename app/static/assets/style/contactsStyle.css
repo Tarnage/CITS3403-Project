@@ -5,7 +5,7 @@
  * @author Rahul Sridhar<23347377>
  */
 
- 
+ /* * =============== Animations =============== * */
 /* ===== Slide In ===== */
 @keyframes slideInFromBottom {
   0% {
@@ -21,22 +21,21 @@
 
 /* * =============== Page Format =============== * */
 /* ===== Background Styling ===== */
-.main {
-  position: absolute;
-  height: 100%;
+body {
   width: 100%;
-  /* Gif Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
-  background: rgba(0, 0, 0, 0.8) url(../img/stock/neon-drive.gif) no-repeat center;
+  height: 100vh;
+  /* GIF Image "https://www.youtube.com/watch?v=JEGoUAfnJp0"*/
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url(../img/stock/neon-drive.gif), repeat-y, center, fixed;
   background-blend-mode: multiply;
-  background-size: cover;
+  background-size: 100% 100%;
+  animation: fadeIn 1s ease-out;
+  animation-fill-mode: forwards;
 }
 
 /* ===== Text Styling ===== */
 /* Heading */
 h3 {
-  color: rgba(39, 238, 245, 0.85);
   font-size: 18px;
-  font-family: "Games", sans-serif;
   animation: glow-2 1s ease-in-out infinite alternate;
 }
 
@@ -117,18 +116,8 @@ h3 {
 
 /* * ============================================================ Responsive ============================================================ * */
 /* ===== Mobile First ===== */
-/* iPads & Tablets */
-@media only screen and (min-width: 481px) {
-
-}
-
-/* Small screens & laptops */
-@media only screen and (min-width: 769px) {
-  
-}
-
-/* Desktop & large screens */
-@media only screen and (min-width: 1025px) {
+/* Other Devices */
+@media only screen and (min-width: 454px) {
   /* Text */
   h3 {
     font-size: 35px;
@@ -138,13 +127,8 @@ h3 {
     /* Format */
     border: 2px outset #58a6ff;
     border-radius: 20px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
     width: 70%;
   }
-}
-
-/* Extra large screens & Tvs */
-@media only screen and (min-width: 1201px) {
-
 }
