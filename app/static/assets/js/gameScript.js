@@ -99,11 +99,14 @@ function init(reset=false) {
 
     hideUnusedProgBar();
     initLetters(currentPlayer.wordDict);
+    initEnterDelete();
 
     // adds the onclick function for all keys
     $( ".keys" ).click( function() {
         handleClick( this );
     });
+
+    
 
     // add keyboard listner callback
     document.addEventListener( "keydown", handleKeyPress );
@@ -141,6 +144,15 @@ function initLetters(wordDict) {
     for ( const key of keyboard ) {
         let char = shuffled.pop();
         key.innerText = char;
+        if ( key.hasAttribute("disabled") ) key.removeAttribute( "disabled" );
+        key.setAttribute("enabled", "");
+    }
+}
+
+
+function initEnterDelete() {
+    let specialKeys     = document.getElementsByClassName("keys-special");
+    for ( const key of specialKeys ) {
         if ( key.hasAttribute("disabled") ) key.removeAttribute( "disabled" );
         key.setAttribute("enabled", "");
     }
