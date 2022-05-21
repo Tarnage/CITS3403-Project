@@ -1,0 +1,1603 @@
+* commit 26ec106432f9a34a20d8622969a3fcc1686a69ae (HEAD -> main, origin/main, origin/HEAD)
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri May 20 10:44:30 2022 +0800
+| 
+|     added log
+| 
+* commit 0d93f4adfee19a91d3c40bafba2f825137a8a4ff
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri May 20 10:11:25 2022 +0800
+| 
+|     tests
+| 
+* commit 614e2f713be2a59b76597146fee035cce05b21e2
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri May 20 09:40:58 2022 +0800
+| 
+|     testing
+| 
+* commit 3996e65e4d1c6e57f70a5267d3aa5a389e39cd13
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri May 20 09:40:04 2022 +0800
+| 
+|     fixed config
+| 
+* commit 63190e63403c9841c8b66f3f293c593d10f05220
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri May 20 09:15:07 2022 +0800
+| 
+|     fixed config
+| 
+* commit 6db627ec130116ce5b1b9bf35fff84b0652f4836
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Thu May 19 16:36:23 2022 +0800
+| 
+|     updated requires
+|   
+*   commit 7a8c6fc390067bf9612a393495303602d5c55d64
+|\  Merge: 0c62bfe 2445de0
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu May 19 16:35:40 2022 +0800
+| | 
+| |     Merge branch 'main' of https://github.com/Tarnage/CITS3403-Project into main
+| |   
+| *   commit 2445de0f846271c6dd18e6d2ca07e251df0b95fd
+| |\  Merge: a7fdb72 c1be521
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Thu May 19 16:32:38 2022 +0800
+| | | 
+| | |     Merge pull request #31 from Tarnage/tom-v4.0
+| | |     
+| | |     Tom v4.0
+| | |   
+| * |   commit a7fdb72bfe9d60539b9362bd6bcbdf0dd60614a9
+| |\ \  Merge: 41fc77e 5bdefae
+| | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | Date:   Wed May 18 15:13:23 2022 +0800
+| | | | 
+| | | |     Merge pull request #30 from Tarnage/tom-v4.0
+| | | |     
+| | | |     Tom v5.0
+| | | | 
+* | | | commit 0c62bfe072e584678cab69ff2a96e70e4a5a4e74
+|/ / /  Author: Tom <1991tnguyen@gmail.com>
+| | |   Date:   Thu May 19 16:35:12 2022 +0800
+| | |   
+| | |       updated requirements
+| | |   
+| | | * commit 5aea43183aae4dc301e11c3895b05f496bcd052f (origin/tom-v4.0, tom-v4.0)
+| | |/  Author: Tom <1991tnguyen@gmail.com>
+| | |   Date:   Thu May 19 16:34:44 2022 +0800
+| | |   
+| | |       updated requires
+| | | 
+| | * commit c1be521b856ea63c7551d8ab97ba9d8db0217318
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Thu May 19 16:31:15 2022 +0800
+| | | 
+| | |     added overflow
+| | | 
+| | * commit aa41ede583884363fb1735b83ab9c8cc57beba24
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 23:21:36 2022 +0800
+| | | 
+| | |     removed flash
+| | | 
+| | * commit edadc870d42a8261bd0de2e8588733ebe6f540d1
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 23:21:28 2022 +0800
+| | | 
+| | |     added overflow
+| | | 
+| | * commit 22fcac9349956596c4608a4e1ae81fc4c03102d4
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 23:21:13 2022 +0800
+| | | 
+| | |     removed flash
+| | | 
+| | * commit 4c33f6c7a6e9fb49e3687741ce4278326ece3339
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 23:05:53 2022 +0800
+| | | 
+| | |     fixed form always showing errors
+| | | 
+| | * commit 964e5e2326dab359d74a5942ba636808898f9dca
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 17:57:56 2022 +0800
+| | | 
+| | |     updated readme
+| | | 
+| | * commit 16821a9f88701bc6ea126086f040e55eec64f876
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 17:57:25 2022 +0800
+| | | 
+| | |     added system tests
+| | | 
+| | * commit 455cdb7fb063cb1bc8b9a5798cb4cadb5df0e7b1
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 17:57:13 2022 +0800
+| | | 
+| | |     added id for game
+| | | 
+| | * commit eff488e2bc696ed10b04664dd0f3f5e9d62f75c9
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 16:00:32 2022 +0800
+| | | 
+| | |     cleaned
+| | | 
+| | * commit ae9ff77a9195b22ad7db8db202e1784f79d6b524
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed May 18 15:37:39 2022 +0800
+| | | 
+| | |     added more tests
+| | | 
+| | * commit e42f8ee211f340773fa3d356f34d31847afaeba6
+| |/  Author: Tom <1991tnguyen@gmail.com>
+| |   Date:   Wed May 18 15:16:02 2022 +0800
+| |   
+| |       .
+| | 
+| * commit 5bdefae4c8746bf5e0616f6433aba4b4a6e4fa3b
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 15:10:26 2022 +0800
+| | 
+| |     db
+| | 
+| * commit 8d39dac2764a0c5fe563ef622a8ae319cbbbf52a
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 15:10:09 2022 +0800
+| | 
+| |     ignore db
+| | 
+| * commit ac33f52270133232e972dcbc305fe38fa9c46aad
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 15:08:57 2022 +0800
+| | 
+| |     updated readme
+| | 
+| * commit ce3e94eb009e86e6aa2c936308bcccfb84b22e4c
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 15:08:45 2022 +0800
+| | 
+| |     cleaned
+| | 
+| * commit a1ff885dc568611282296f1a70d6456bf6a92e96
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 14:52:33 2022 +0800
+| | 
+| |     updated readme
+| | 
+| * commit 824c702c9d5c74b576c17b569c4ae5c0a7f65dae
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 14:44:53 2022 +0800
+| | 
+| |     added unittest
+| | 
+| * commit e46d50ccff2883559e2559ba0917025f7f9d1870
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 13:35:47 2022 +0800
+| | 
+| |     tests
+| | 
+| * commit b50c24a1231dd67fc5265b21b28735b443e004a9
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 13:20:00 2022 +0800
+| | 
+| |     clean
+| |   
+| | * commit 23f89b9c99a8e7f7a9483d11d380b3cb93083e53 (origin/rahul-stats-v2.0, rahul-stats-v2.0)
+| |/  Author: Prentise <rahulsridhar0514@gmail.com>
+| |   Date:   Thu May 19 12:04:36 2022 +0530
+| |   
+| |       fixed leaderboard order
+| | 
+| * commit 595c4a05c047a0d7f8e66d1affc46f2444a15b5c
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 12:01:21 2022 +0800
+| | 
+| |     .
+| | 
+| * commit be29665b7a20a24b9fee3f230c34248b72b88705
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed May 18 11:56:24 2022 +0800
+| | 
+| |     replaced with ajax request
+| | 
+| * commit 305fede431c71abeb8a9175bb6a1cd58cffcae6c
+|/  Author: Prentise <rahulsridhar0514@gmail.com>
+|   Date:   Tue May 17 17:15:29 2022 +0530
+|   
+|       Updated leaderboard to use user data instead of test data
+| 
+* commit 41fc77e7bda2aec1a0165db7170ed9e5473b1fd9
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Mon May 16 14:44:50 2022 +0800
+| 
+|     updated ana
+| 
+* commit a4bf188f60c6a0e415c74b897c05aee060930d65
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri May 13 09:28:01 2022 +0800
+| 
+|     changed reqs
+|   
+*   commit d48bdb5ea70a8689721d86c77df185003dc6bfed
+|\  Merge: ae29d70 aabe4c6
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Fri May 13 08:39:32 2022 +0800
+| | 
+| |     Merge pull request #29 from Tarnage/rahul-stats-v2.0
+| |     
+| |     Rahul stats v2.0
+| |   
+| *   commit aabe4c6297e2c5b676668adc31be2bd64a075771
+| |\  Merge: 50d7081 ae29d70
+| |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/|   Date:   Fri May 13 08:38:41 2022 +0800
+| |   
+| |       Merge branch 'main' into rahul-stats-v2.0
+| |   
+* |   commit ae29d70514e55fe1fb637af0d4b75a7001f1db40
+|\ \  Merge: d0b3d03 ef008ee
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Wed May 11 12:38:50 2022 +0800
+| | | 
+| | |     Merge pull request #28 from Tarnage/Cam-v5
+| | |     
+| | |     Cam v5
+| | | 
+| * | commit ef008ee10c617031dd7b617ebf9b7a14da14c8a7 (origin/Cam-v5, Cam-v5)
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Sat May 7 22:05:56 2022 +0800
+| | | 
+| | |     WIP reponsive (Mobile First)
+| | | 
+| * | commit c6d56ab600372c6cfe92b04e269a67a4b1c1cbf3
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Sat May 7 10:18:27 2022 +0800
+| | | 
+| | |     WIP responsive
+| | | 
+| * | commit 4c0593b6e213f749a40d089502475a58453a5f1a
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Sat May 7 10:18:13 2022 +0800
+| | | 
+| | |     update progress bars
+| | | 
+| * | commit 5a4dbda438aa0bcf36f90884753487feebfca7f6
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Fri May 6 18:56:14 2022 +0800
+| | | 
+| | |     Work in progress responsiveness (mobile first)
+| | | 
+* | | commit d0b3d0336110c66662ab8936f1538efe43a0bba6
+|\| | Merge: 83f2bf8 b6facc7
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Thu May 5 08:47:24 2022 +0800
+| | | 
+| | |     Merge branch 'main' of https://github.com/Tarnage/CITS3403-Project into main
+| | | 
+| * | commit b6facc79b4fbf95057deb9bd61f21120cecdcba1
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Wed May 4 18:56:06 2022 +0800
+| | | 
+| | |     added Cameron (pip freeze)
+| | | 
+* | | commit 83f2bf89011678a48e7c32b342fdb14b22cdf8e9
+|/ /  Author: Tom <1991tnguyen@gmail.com>
+| |   Date:   Thu May 5 08:47:21 2022 +0800
+| |   
+| |       fixed post request
+| | 
+| * commit 50d7081200527ca2cb5980eb2931434226c90ace
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri May 13 08:35:31 2022 +0800
+| | 
+| |     added +1 so rand doesnt start from 0
+| | 
+| * commit bd912b0d3bb710c7c9ff6b0fb1483a352b762fac
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri May 13 08:32:47 2022 +0800
+| | 
+| |     moved graph
+| | 
+| * commit fcef50a281e879371fb33fb00ad3166b8fca8e1f
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri May 13 08:32:33 2022 +0800
+| | 
+| |     fixed bg
+| | 
+| * commit f50523c5a6903a169d64ceb97f472110c47dd74c
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri May 13 08:26:52 2022 +0800
+| | 
+| |     added Cams styles
+| | 
+| * commit ffa641133b330ca504cc9a0fb8be1ea1ea2a8ee8
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri May 13 08:25:27 2022 +0800
+| | 
+| |     cleaned dom tree
+| | 
+| * commit ab279988d1af4dddc7dc928d9f294a4aaa462874
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri May 13 08:22:51 2022 +0800
+| | 
+| |     removed repeated css
+| | 
+| * commit e984a51f2daecbeeb06b202c0ee6eb32914c8ebc
+|/  Author: Prentise <rahulsridhar0514@gmail.com>
+|   Date:   Wed May 11 11:31:09 2022 +0530
+|   
+|       Updated a few bugs and fixes in the stats leaderboard, and did some styling changes to match the theme of the game
+|   
+*   commit 6d64ed51b8a6d8e79d993d46a6cd26b44c149199
+|\  Merge: 80c4b6e cb856d1
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Wed May 4 12:44:01 2022 +0800
+| | 
+| |     Merge pull request #27 from Tarnage/tom-v5.0
+| |     
+| |     Tom v5.0
+| |   
+| *   commit cb856d1ea391d692157b59293b8aaf852b7db1cd
+| |\  Merge: bd1564b 80c4b6e
+| |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/|   Date:   Wed May 4 12:43:54 2022 +0800
+| |   
+| |       Merge branch 'main' into tom-v5.0
+| |   
+* |   commit 80c4b6e50cf2771f7d2c158eedaec1f8d69cc92c
+|\ \  Merge: 4a7c6f0 956fd61
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Wed May 4 12:41:09 2022 +0800
+| | | 
+| | |     Merge pull request #26 from Tarnage/amy
+| | |     
+| | |     Amy
+| | | 
+| * | commit 956fd61b224abe79e9164b14579469e912cb5853
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Wed May 4 13:42:13 2022 +1000
+| | | 
+| | |     -
+| | | 
+| * | commit bdf2bc38b66027e80724c801cffb9e290e9ea946
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Wed May 4 13:32:52 2022 +1000
+| | | 
+| | |     Changed 'logged in as' to only appear if logged in
+| | | 
+| * | commit 36b307a4ff59818d85c619cb31847a5e4ca033dc
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Wed May 4 13:09:30 2022 +1000
+| | | 
+| | |     Registration message added
+| | |   
+* | |   commit 4a7c6f03cf75238b34174ad476748974a5915d7f
+|\ \ \  Merge: 448ae4a e9ce781
+| | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | Date:   Tue May 3 16:38:00 2022 +0800
+| | | | 
+| | | |     Merge pull request #25 from Tarnage/tom-v5.0
+| | | |     
+| | | |     fixed method not allowed
+| | | | 
+| | | * commit bd1564b1804b50b034070a0f70c1566b5e64c8c3
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Wed May 4 12:36:54 2022 +0800
+| | | | 
+| | | |     removed comments
+| | | | 
+| | | * commit b3c6ebfc4cc88b2cfbdcca257c3351ee75345461
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Tue May 3 21:26:25 2022 +0800
+| | | | 
+| | | |     Implemented Submit Score
+| | | | 
+| | | * commit 8e0f454dd4098e6270c0cecf04228932747495df
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Tue May 3 21:10:55 2022 +0800
+| | | | 
+| | | |     added score tracking and submitting
+| | | | 
+| | | * commit fe28101f36433aa2e8359a13450432f51c7a62ab
+| | |/  Author: Tom <1991tnguyen@gmail.com>
+| |/|   Date:   Tue May 3 17:34:06 2022 +0800
+| | |   
+| | |       connected leaderboard to user
+| | | 
+| * | commit e9ce781dafe9795d78508cb6b9ebcc51421b095b
+|/ /  Author: Tom <1991tnguyen@gmail.com>
+| |   Date:   Tue May 3 16:36:35 2022 +0800
+| |   
+| |       fixed method not allowed
+| |   
+* |   commit 448ae4a7ddb7a950a64965a07b9e1a8a59b88990
+|\ \  Merge: a90ac9c 140a27b
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Tue May 3 15:50:54 2022 +0800
+| | | 
+| | |     Merge pull request #24 from Tarnage/tomV4.0
+| | |     
+| | |     Tom v4.0
+| | | 
+| * | commit 140a27b97c55d08cada3da172d392cadb53f81a5
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Sun May 1 18:35:21 2022 +0800
+| | | 
+| | |     added test date
+| | | 
+| * | commit b560e4afbfa943b143ef7635c65780b2766ac83d
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Sun May 1 18:35:06 2022 +0800
+| | | 
+| | |     removed unused function
+| | |   
+* | |   commit a90ac9cdbd86756f32bff6564e37d72351231ad7
+|\ \ \  Merge: 29a581d fcf33a7
+| | |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| |/|   Date:   Tue May 3 15:50:14 2022 +0800
+| | |   
+| | |       Merge pull request #23 from Tarnage/amy
+| | |       
+| | |       Amy
+| | | 
+| * | commit fcf33a7c80e5d8cd494b0d22405be27affa06be0
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Tue May 3 15:20:46 2022 +1000
+| | | 
+| | |     Saved DB info
+| | | 
+| * | commit 64c7556885b445dd81f559b0a1f0e8dc6c1f8e6f
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Tue May 3 13:58:02 2022 +1000
+| | | 
+| | |     Create Account button
+| | | 
+| * | commit bf813fe11078ac8be3e2ccb44afab11dbb9fac76
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Tue May 3 13:49:55 2022 +1000
+| | | 
+| | |     Added logout functionality
+| | | 
+| * | commit 71e15ddee797cd0ca0f8aed07491ae875e217f26
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Tue May 3 13:23:34 2022 +1000
+| | | 
+| | |     User ID error fix
+| | | 
+| * | commit ac68bae854cdb743b7e496bb0cc9c9f82b0d9cee
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Tue May 3 13:17:51 2022 +1000
+| | | 
+| | |     Add 'GET' and 'POST' methods
+| | | 
+| * | commit 404fe430fefc0df8e7b41fdada9dd235ebf5c1b3
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 16:41:44 2022 +1000
+| | | 
+| | |     Added registration page/form
+| | | 
+| * | commit 1e6029e38ce59177048274a8f53666f1a55abd5e
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 16:11:35 2022 +1000
+| | | 
+| | |     Add logout route
+| | | 
+| * | commit 7984e5639d4039e27a1d59d305a5f8be754d6b27
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 16:11:15 2022 +1000
+| | | 
+| | |     Update User class to add UserMixin
+| | | 
+| * | commit c10f0bc37ae525170a46c346dbb0466991b56bd5
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:46:47 2022 +1000
+| | | 
+| | |     Update login view function logic
+| | | 
+| * | commit 9cf229ed6e8efeb26ed7d751bc94acd12742f3d2
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:39:56 2022 +1000
+| | | 
+| | |     Formatting
+| | | 
+| * | commit 9ba2c09f623e9b41ac83cae91b9aa24e809066e5
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:39:35 2022 +1000
+| | | 
+| | |     flask login initialisation
+| | | 
+| * | commit 7d0d03869861a1cb2c96d693bdfb03a6c6913963
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:25:47 2022 +1000
+| | | 
+| | |     Add flashed messages to base template
+| | | 
+| * | commit 17dd8a1229dc5a36d8caad3a2dc2f0d791face50
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:25:16 2022 +1000
+| | | 
+| | |     Update login form template
+| | | 
+| * | commit 0608e34a64658745353777bc1a3b74cf110948c4
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:24:54 2022 +1000
+| | | 
+| | |     Edit routes.py to add login view function
+| | | 
+| * | commit b8a3e3faee5d8a25ebf1f85deb0731281f50a6b8
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:24:06 2022 +1000
+| | | 
+| | |     Added forms.py for login form
+| | | 
+| * | commit ac7533b20a3d3d373352463ea127b96305489234
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon May 2 15:22:40 2022 +1000
+| | | 
+| | |     Recorded errors w/ flask installation instructions
+| | |   
+| | | * commit 76d76aec093d08b690006078c25c1249b3b1046f (Cam-v4)
+| | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | Date:   Mon May 2 12:43:55 2022 +0800
+| | | | 
+| | | |     quick fix register
+| | | | 
+| | | * commit 6c3edb8998692b450ce5cc551a28b478688a1cdb
+| | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | Date:   Mon May 2 11:57:31 2022 +0800
+| | | | 
+| | | |     quick syntax fix
+| | | | 
+| | | * commit 7688761879d49cabff56ed0c6eca9b49111674b7
+| | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | Date:   Mon May 2 00:21:33 2022 +0800
+| | | | 
+| | | |     register init
+| | | | 
+| | | * commit db12f196d049c6385f1a05df3de8fa157f86d813
+| |_|/  Author: Cameron Ke <Cameronke2002@gmail.com>
+|/| |   Date:   Mon May 2 00:21:20 2022 +0800
+| | |   
+| | |       progress bar fix
+| | | 
+* | | commit 29a581d496b4261b8cb8fb15d5d80a9c19c5c854
+|/ /  Author: amyburnett1 <101759491+amyburnett1@users.noreply.github.com>
+| |   Date:   Sun May 1 18:47:12 2022 +1000
+| |   
+| |       Update README.md
+| | 
+* | commit 64a3f2374991ce9380ce5590056f1b1ede086bda
+| | Author: amyburnett1 <101759491+amyburnett1@users.noreply.github.com>
+| | Date:   Sat Apr 30 17:10:51 2022 +1000
+| | 
+| |     Filled in Readme.md
+| | 
+* | commit f81e1bbed6d8aa7aa3100fca9bdb30364c52cc6e
+|\| Merge: cf92280 4befaa1
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Sat Apr 30 11:31:21 2022 +0800
+| | 
+| |     Merge pull request #22 from Tarnage/tomV4.0
+| |     
+| |     Tom v4.0
+| | 
+| * commit 4befaa12cbea372ccdf99cc9a1636db9dbd1f7ce
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Sat Apr 30 11:30:17 2022 +0800
+| | 
+| |     fixed bg
+| | 
+| * commit 914f223c7924c8498772284866a9921b710dbc9b
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Sat Apr 30 11:20:57 2022 +0800
+| | 
+| |     updated paayer class
+| | 
+| * commit e8abbc454d73b5f85097c9e8a98c985ffd218e18
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Sat Apr 30 10:57:03 2022 +0800
+| | 
+| |     use json for puzzles and hide unused prog bars
+| | 
+* | commit cf92280d88a34d0660a4bab6470fa685759f544f
+|\| Merge: ea3932a 0a7b567
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Fri Apr 29 15:34:49 2022 +0800
+| | 
+| |     Merge pull request #21 from Tarnage/tomV4.0
+| |     
+| |     Tom v4.0
+| | 
+| * commit 0a7b567aa13270cfa1bb51efc05e6990a22f1d9e
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Apr 29 15:23:24 2022 +0800
+| | 
+| |     let
+| | 
+| * commit 2ac6daec14db435ef40b4339935ef867a6e2a558
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Apr 29 15:19:55 2022 +0800
+| | 
+| |     randomly generated words
+| | 
+| * commit 1a8c952bf8846935264357d28f2dd2a846d53977
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Apr 29 14:55:06 2022 +0800
+| | 
+| |     adding random words
+| | 
+| * commit 89c699b29b361fa5b29969cbf3ce7b407595ee4d
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Apr 29 14:50:34 2022 +0800
+| | 
+| |     anagrams
+| | 
+| * commit 1f4237b7e69de39d02c085dc24a27694df84317c
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Apr 29 14:19:02 2022 +0800
+| | 
+| |     guess window
+| | 
+* | commit ea3932a64fcbb65d6ef527685dc5d0b5df86c5c1
+|\| Merge: d5d951a ced01c5
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Fri Apr 29 13:49:38 2022 +0800
+| | 
+| |     Merge pull request #20 from Tarnage/tomV4.0
+| |     
+| |     added db
+| | 
+| * commit ced01c55ec5edadac194a8d95b21a601111da9d8
+|/  Author: Tom <1991tnguyen@gmail.com>
+|   Date:   Fri Apr 29 13:48:48 2022 +0800
+|   
+|       added db
+| 
+* commit d5d951acfca605120f5b366e85638c02c31c2d04
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri Apr 29 11:21:47 2022 +0800
+| 
+|     cleaned css
+| 
+* commit ff9d6ce4e1eac27b28eed4e4c88edeefa194c6f6
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri Apr 29 11:06:53 2022 +0800
+| 
+|     removed nav bar and renamed url_for
+| 
+* commit c1bc320accad5df74c0f341727a1d006ea44cbf8
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri Apr 29 11:06:23 2022 +0800
+| 
+|     added nav bar to base
+| 
+* commit 6e412d584b6b6e2f9c10336c0f8daaa53e2433a7
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri Apr 29 11:06:06 2022 +0800
+| 
+|     removed duplicate code
+| 
+* commit 3105f672a9335332d1f3072023183e8686ef0d89
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Fri Apr 29 11:05:36 2022 +0800
+| 
+|     updated req and env
+| 
+* commit 31aaf1cc8f365f5a5ddf790bfa7e43203e76518d
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Thu Apr 28 10:35:29 2022 +0800
+| 
+|     added gitignore
+| 
+* commit bb8caa461ad463cae6d31d693d0d72fbb71f3750
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Wed Apr 27 18:23:31 2022 +0800
+| 
+|     moved readme
+|   
+*   commit a0ff5289e01df78232dc98c293c7bde6682e4325
+|\  Merge: 12514ea bb86808
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Wed Apr 27 18:20:45 2022 +0800
+| | 
+| |     Merge pull request #19 from Tarnage/flask-v1
+| |     
+| |     Flask v1
+| | 
+| * commit bb8680811e1fb18499533a58b0de10a788658c5f
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 18:20:05 2022 +0800
+| | 
+| |     spacing and TODO
+| | 
+| * commit 9e37e7f1bcbafff4c5609b57346e418a9c22de2b
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 18:10:00 2022 +0800
+| | 
+| |     readme
+| | 
+| * commit d3d434eb0483194c7c0bf94c41d51b32492406b6
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 17:56:24 2022 +0800
+| | 
+| |     updated requirements
+| | 
+| * commit 7ddb18aa4c40f68e144ee809392df955738975f4
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 17:44:01 2022 +0800
+| | 
+| |     routes init
+| | 
+| * commit dc7b9e6d97eb371d3cb6b156a48c228777b02807
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 16:59:26 2022 +0800
+| | 
+| |     adding routes
+| | 
+| * commit 113c831529ca0ea734459f23cac9712d0bde8505
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 16:19:17 2022 +0800
+| | 
+| |     moved files to conform with flask
+| | 
+| * commit 59df2150a6e8480475490b682b69a29d57cf9c18
+|/  Author: Tom <1991tnguyen@gmail.com>
+|   Date:   Wed Apr 27 15:47:04 2022 +0800
+|   
+|       moved critrieon
+|   
+*   commit 12514ea4300c101190eb9a0484eed0cedc97d204
+|\  Merge: a45d941 a06155b
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Wed Apr 27 11:36:13 2022 +0800
+| | 
+| |     Merge pull request #18 from Tarnage/Cam-v3
+| |     
+| |     Cam v3
+| |   
+| *   commit a06155be015676c0772f5810ba9f677f29b18535
+| |\  Merge: 6743218 573c73e
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Wed Apr 20 15:55:46 2022 +0800
+| | | 
+| | |     Merge branch 'Cam-v3' of https://github.com/Tarnage/CITS3403-Project into Cam-v3
+| | | 
+| * | commit 6743218dd90acac4238b0259ffab1896e5cc4828
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Wed Apr 20 15:55:40 2022 +0800
+| | | 
+| | |     small changes
+| | | 
+| * | commit 81c275d92e433b7af58776cafa11d3828568769d
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Wed Apr 20 15:55:28 2022 +0800
+| | | 
+| | |     added progress bar animations, game background
+| | |   
+* | |   commit a45d9411ef4b8db06b5bd3b3e1a16f9d3f32492d
+|\ \ \  Merge: cb498fb 8bd5483
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Fri Apr 22 14:24:53 2022 +0800
+| | | | 
+| | | |     Merge branch 'main' of https://github.com/Tarnage/CITS3403-Project into main
+| | | |   
+| * | |   commit 8bd54839d90b0ae00a4ab7e417fe7cec52869f16
+| |\ \ \  Merge: 139c01f 573c73e
+| | | |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | |/|   Date:   Wed Apr 20 15:44:45 2022 +0800
+| | | |   
+| | | |       Merge pull request #16 from Tarnage/Cam-v3
+| | | |       
+| | | |       Cam v3
+| | | | 
+| | * | commit 573c73ec3a5508647ec0ac2db8083fac5fb38f65
+| | |/  Author: Tom <1991tnguyen@gmail.com>
+| | |   Date:   Wed Apr 20 13:29:36 2022 +0800
+| | |   
+| | |       format headers
+| | | 
+| | * commit 98705294a3f418e942f937998e2aa850fd23564c
+| | | Author: Cameron Ke <23074754@student.uwa.edu.au>
+| | | Date:   Thu Apr 14 15:58:52 2022 +0800
+| | | 
+| | |     sorted stylesheet
+| | | 
+| | * commit 9d8e2431a0e94317c35ae2b13be4e3f32cf46019
+| | | Author: Cameron Ke <23074754@student.uwa.edu.au>
+| | | Date:   Thu Apr 14 15:58:11 2022 +0800
+| | | 
+| | |     added spans, adjusted transition, animated button.
+| | | 
+| | * commit 7a42afcfafe21d7521fe3f2da2991efec41b5ce4
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Thu Apr 14 00:05:21 2022 +0800
+| | | 
+| | |     added responsiveness
+| | | 
+| | * commit f34f361f50e528c8112ee56b76c252778e2e7821
+| | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | Date:   Wed Apr 13 14:31:55 2022 +0800
+| | | 
+| | |     added slide in animations
+| | | 
+| | * commit 4f375e42b3e9e5ea20a78c69c8e77ce08591e95f
+| |/  Author: Cameron Ke <Cameronke2002@gmail.com>
+| |   Date:   Wed Apr 13 12:04:51 2022 +0800
+| |   
+| |       improved format of code
+| | 
+* | commit cb498fbd4c1ffa625376a9d240789c7b8e00548b
+|/  Author: Tom <1991tnguyen@gmail.com>
+|   Date:   Fri Apr 22 14:24:46 2022 +0800
+|   
+|       added gitignore
+|   
+| * commit 055db015368b101d16e5049600d003113b1077fa (TomV3)
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 10:58:50 2022 +0800
+| | 
+| |     moved requirements
+| | 
+| * commit feb6492f1e285ec9118ab30dfe8f99080c946ac5
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 10:51:59 2022 +0800
+| | 
+| |     gitignore
+| | 
+| * commit db4402a9e0b1c84e2cee355324bf37b482971aab
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 10:50:45 2022 +0800
+| | 
+| |     gitignore
+| | 
+| * commit d144994d3c845c648123c9a0131c1b94eb9d05ca
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 27 10:45:28 2022 +0800
+| | 
+| |     venv
+| | 
+| * commit f4c541f45bf72b7ece96c7b57be4f6b3398445dc
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 20 15:43:34 2022 +0800
+| | 
+| |     refactored for flask
+| | 
+| * commit f89dcedc578710b6072d19c9f80b86a793ed8ddd
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 20 14:56:50 2022 +0800
+| | 
+| |     comments
+| | 
+| * commit 9270bef9ccfe326eaff012d1a1eccaada1e36bc2
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Wed Apr 20 14:37:46 2022 +0800
+| | 
+| |     added a xttp request for word dictionaries
+| | 
+| * commit 79885e65f03a94b4dc5c41d643f6583fe37c8bed
+|/  Author: Tom <1991tnguyen@gmail.com>
+|   Date:   Wed Apr 20 13:57:37 2022 +0800
+|   
+|       added txt
+|   
+*   commit 139c01ffe224a7871d889eae745a8f23ed2283f6
+|\  Merge: 5e40026 fcb7c66
+| | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | Date:   Mon Apr 11 13:49:55 2022 +0800
+| | 
+| |     Merge pull request #15 from Tarnage/Tom-v1.2
+| |     
+| |     Tom v1.2
+| |   
+| *   commit fcb7c66eb549291c09030ed84e23a532a9577e47
+| |\  Merge: 942683a 5e40026
+| |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/|   Date:   Mon Apr 11 13:49:47 2022 +0800
+| |   
+| |       Merge branch 'main' into Tom-v1.2
+| |   
+* |   commit 5e40026386e03ebec1ae9e3c947b4fdf3325f5aa
+|\ \  Merge: 3de5fe8 9ff6dc3
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Mon Apr 11 13:45:39 2022 +0800
+| | | 
+| | |     Merge pull request #14 from Tarnage/amy
+| | |     
+| | |     Amy
+| | | 
+| * | commit 9ff6dc39632cd242a703d0ca8ae74f51a1576b5f
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Mon Apr 11 15:20:09 2022 +1000
+| | | 
+| | |     Changed 'how to play' into unordered list
+| | | 
+| * | commit b9ff9b8719269072825f4c5dc3c09e9dae990c4f
+| | | Author: amy <22689376@student.uwa.edu.au>
+| | | Date:   Thu Mar 31 13:16:33 2022 +1100
+| | | 
+| | |     Added how to play modal
+| | |   
+* | |   commit 3de5fe8dbf49634dedc5960930beb6e79222b6b8
+|\ \ \  Merge: 5a96849 8121f34
+| | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | Date:   Mon Apr 11 13:44:57 2022 +0800
+| | | | 
+| | | |     Merge pull request #13 from Tarnage/stats-leaderboard
+| | | |     
+| | | |     Stats leaderboard
+| | | | 
+| * | | commit 8121f340380f8ae4dae3780ff7c4a5235a06f20c
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Mon Apr 11 13:29:34 2022 +0800
+| | | | 
+| | | |     hover
+| | | |   
+* | | |   commit 5a96849754852fd2fd5dfae2711ad7ed46c63fee
+|\ \ \ \  Merge: ba8c532 0f8c132
+| | | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | | Date:   Mon Apr 11 13:44:04 2022 +0800
+| | | | | 
+| | | | |     Merge pull request #12 from Tarnage/Cam-v2
+| | | | |     
+| | | | |     Cam v2
+| | | | | 
+| * | | | commit 0f8c132d685f15e7351f111e01f482daf987b457
+| | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | Date:   Mon Apr 11 13:40:59 2022 +0800
+| | | | | 
+| | | | |     style changes
+| | | | |   
+| * | | |   commit 76811d41563bfe453e828984dcfb91bb31c29ba8
+| |\ \ \ \  Merge: 4c301ef 8aa22bb
+| | | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | | Date:   Mon Apr 11 13:14:09 2022 +0800
+| | | | | | 
+| | | | | |     Merge branch 'Cam-v2' of https://github.com/Tarnage/CITS3403-Project into Cam-v2
+| | | | | |   
+| | * | | |   commit 8aa22bbce95d63ea6e804304bc0dbf6278778418
+| | |\ \ \ \  Merge: 08ae011 025ad67
+| | | | | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | | | | Date:   Mon Apr 4 09:01:46 2022 +0800
+| | | | | | | 
+| | | | | | |     Merge pull request #7 from Tarnage/Tom-v1.2
+| | | | | | |     
+| | | | | | |     Tom v1.2
+| | | | | | | 
+| * | | | | | commit 4c301ef753d140ae9fb4f8ecb7bca3776b656eb2
+| | | | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | | | Date:   Fri Apr 1 16:38:59 2022 +0800
+| | | | | | | 
+| | | | | | |     index change
+| | | | | | | 
+| * | | | | | commit 12a2ea858655208904fceb44b512a32c348a2cf6
+| | | | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | | | Date:   Fri Apr 1 16:34:01 2022 +0800
+| | | | | | | 
+| | | | | | |     style changes
+| | | | | | | 
+| * | | | | | commit 12dda9e6cf68efd55ebe4e4b926a39e7b11225c6
+| | | | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | | | Date:   Fri Apr 1 16:30:25 2022 +0800
+| | | | | | | 
+| | | | | | |     index update
+| | | | | | | 
+| * | | | | | commit f1ccf75b48676f01cc03cd01e428cafdae035c62
+| |/ / / / /  Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | |   Date:   Fri Apr 1 16:25:30 2022 +0800
+| | | | | |   
+| | | | | |       added font & gif
+| | | | | | 
+| * | | | | commit 08ae01184a2be8fc43a6932af7a546cdcacdba7d
+| | | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | | Date:   Fri Apr 1 16:21:41 2022 +0800
+| | | | | | 
+| | | | | |     added contactsStyle.css
+| | | | | | 
+| * | | | | commit f9b7d8039af68f7ae0a21a752ba8e487030eefa5
+| | | | | | Author: Cameron Ke <Cameronke2002@gmail.com>
+| | | | | | Date:   Fri Apr 1 16:20:32 2022 +0800
+| | | | | | 
+| | | | | |     added contacts.html
+| | | | | |   
+* | | | | |   commit ba8c53298dda66f0ff3981f29d693cf0dc1fb4d2
+|\ \ \ \ \ \  Merge: 320ceac 025ad67
+| |/ / / / /  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/| / / / /   Date:   Mon Apr 4 09:02:44 2022 +0800
+| |/ / / /    
+| | | | |         Merge pull request #8 from Tarnage/Tom-v1.2
+| | | | |         
+| | | | |         Tom v1.2
+| | | | | 
+| | | | * commit 942683aefc30503c9c8816e0034f1751ae656030
+| | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | Date:   Mon Apr 11 12:59:10 2022 +0800
+| | | | | 
+| | | | |     not using jQuery to add tests
+| | | | |   
+| | | | *   commit 2ca2af48c4516510250cfbfe3bbdedea71d1784f
+| | | | |\  Merge: 9e2060f ae0215b
+| | | | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | | | Date:   Thu Apr 7 10:48:23 2022 +0800
+| | | | | | 
+| | | | | |     Merge pull request #11 from Tarnage/addingTests
+| | | | | |     
+| | | | | |     Adding tests
+| | | | | | 
+| | | | | * commit ae0215bde149e7dc63e0aa6ad47dae04d5402653
+| | | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | | Date:   Thu Apr 7 10:47:26 2022 +0800
+| | | | | | 
+| | | | | |     removed node_modules
+| | | | | | 
+| | | | | * commit 2c0c11b324eabdf646591dd7c870b11043d7754b
+| | | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | | Date:   Thu Apr 7 10:35:56 2022 +0800
+| | | | | | 
+| | | | | |     removed comments
+| | | | | | 
+| | | | | * commit 513ad28802327ab846b6778c8fd948e83f0f09aa
+| | | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | | Date:   Thu Apr 7 09:46:20 2022 +0800
+| | | | | | 
+| | | | | |     added testing dependencies
+| | | | | | 
+| | | | | * commit 754cf56b54012e1f0fe9d70f58bc10e5b40fb240
+| | | | |/  Author: Tom <1991tnguyen@gmail.com>
+| | | | |   Date:   Thu Apr 7 09:24:33 2022 +0800
+| | | | |   
+| | | | |       refactored added a palyer class
+| | | | | 
+| | | | * commit 9e2060f24c1ad0491b1004b2d034f87b7f76d23a
+| | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | Date:   Thu Apr 7 08:31:38 2022 +0800
+| | | | | 
+| | | | |     added styling to game
+| | | | | 
+| | | | * commit 20e41e631687e2b24826614270ec89965d80a340
+| | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | Date:   Tue Apr 5 16:04:41 2022 +0800
+| | | | | 
+| | | | |     added glow
+| | | | | 
+| | | | * commit 90a10afc61f81bc94cb025b7bee096f7b260ac4e
+| | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | Date:   Tue Apr 5 16:04:31 2022 +0800
+| | | | | 
+| | | | |     added how to play modal
+| | | | | 
+| | | | * commit 711382497e65dc2c4e8f632de7baa713dde22fc1
+| | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | Date:   Tue Apr 5 09:03:15 2022 +0800
+| | | | | 
+| | | | |     case insesitve
+| | | | |   
+| | | | | * commit 445888689f9f7a3dae1dceac9fe2db402aa71878 (origin/stats-leaderboard, stats-leaderboard)
+| | | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | | Date:   Fri Apr 22 14:52:32 2022 +0800
+| | | | | | 
+| | | | | |     todo
+| | | | | | 
+| | | | | * commit d1e4e0c65d68d5ed1a04a02b10b1226c10ac3851
+| | | |_|/  Author: Rahul Sridhar <rahulsridhar0514@gmail.com>
+| | |/| |   Date:   Fri Apr 22 10:55:34 2022 +0800
+| | | | |   
+| | | | |       added a graph, and fixed a few bugs and some minor changes
+| | | | | 
+| | * | | commit 360ec75c5378e0f7d7841c485e5a04d040175055
+| | | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | | Date:   Tue Apr 5 11:36:47 2022 +0800
+| | | | | 
+| | | | |     implemented leaderboard/stats
+| | | | | 
+| | * | | commit 48bf448b79db3356dfa3af6c3b18cae2239fe13c
+| | | |/  Author: Tom <1991tnguyen@gmail.com>
+| | |/|   Date:   Tue Apr 5 09:03:47 2022 +0800
+| | | |   
+| | | |       case insensitive
+| | | | 
+| | * | commit 7587b97ae90031af09d207f4954e9ea6bcb66183
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Mon Apr 4 14:20:18 2022 +0800
+| | | | 
+| | | |     spacing
+| | | | 
+| | * | commit 62fa7395bd595de425c4013e4157533e05815047
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Mon Apr 4 11:41:48 2022 +0800
+| | | | 
+| | | |     comments
+| | | | 
+| | * | commit 5909c01e82b7023667b40057680db2b7f9cb5af7
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Mon Apr 4 11:40:43 2022 +0800
+| | | | 
+| | | |     added resetStats check
+| | | | 
+| | * | commit 8ba63713f90dc54c2340a1026aae13ddcf566f4a
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Mon Apr 4 11:37:07 2022 +0800
+| | | | 
+| | | |     comments
+| | | | 
+| | * | commit 5ed6c26b5a132823c820d24770cc13c9e8f0aed2
+| |/ /  Author: Tom <1991tnguyen@gmail.com>
+| | |   Date:   Mon Apr 4 11:30:14 2022 +0800
+| | |   
+| | |       changed to switch case
+| | |   
+| | | * commit f1bb035a632371d32baac05630a62f2c2b57773d (Rahul_2)
+| |_|/| Merge: 320ceac 025ad67
+|/| |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| |/|   Date:   Mon Apr 4 09:03:21 2022 +0800
+| | |   
+| | |       Merge pull request #9 from Tarnage/Tom-v1.2
+| | |       
+| | |       Tom v1.2
+| | | 
+| * | commit 025ad67641d842e3a748ef1742305bf20068db96
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Mon Apr 4 08:57:45 2022 +0800
+| | | 
+| | |     implemented keyboard functionality
+| | | 
+| * | commit 3a2c2004f3e691df3c87a4be5ee0f8cd7c774f66
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Mon Apr 4 08:56:51 2022 +0800
+| | | 
+| | |     db schema
+| | | 
+| * | commit 4d42ce20180e4ce5dcd16a9499cf0a9b4564c77d
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Sat Apr 2 09:59:26 2022 +0800
+| | | 
+| | |     added stats and refactored
+| | | 
+| * | commit ab8384fc7e354b21e2bf64c70707b5125b1ff6d2
+|/ /  Author: Tarnage <70882644+Tarnage@users.noreply.github.com>
+| |   Date:   Fri Apr 1 14:10:55 2022 +0800
+| |   
+| |       changed for to for of
+| |   
+* |   commit 320ceac40b942856707d586ef574c2070c81437f
+|\ \  Merge: 64a6385 2b80f72
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Fri Apr 1 15:47:17 2022 +0800
+| | | 
+| | |     Merge pull request #6 from Tarnage/Tom-v1.1
+| | |     
+| | |     Tom v1.1
+| | |   
+| * |   commit 2b80f7297405d5400f910744f2fbf279c3c83fbd
+| |\ \  Merge: ed415f0 64a6385
+| |/ /  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/| |   Date:   Fri Apr 1 15:47:03 2022 +0800
+| | |   
+| | |       Merge branch 'main' into Tom-v1.1
+| | | 
+* | | commit 64a6385b5e6c91a767fd8b92a9ee11f79e71f19d
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Fri Apr 1 15:43:23 2022 +0800
+| | | 
+| | |     fixed html
+| | |   
+* | |   commit 18b689ab855fdc7f48e418164f8102aea03d503a
+|\ \ \  Merge: fdb2d5e 19e30b7
+| | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | Date:   Fri Apr 1 15:38:17 2022 +0800
+| | | | 
+| | | |     Merge pull request #5 from Tarnage/Rahul
+| | | |     
+| | | |     Rahul
+| | | |   
+| * | |   commit 19e30b77f7471977eba4f0ede912c71337574d9b
+| |\ \ \  Merge: 1fa8f81 fdb2d5e
+| |/ / /  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/| | |   Date:   Fri Apr 1 15:38:03 2022 +0800
+| | | |   
+| | | |       Merge branch 'main' into Rahul
+| | | |   
+* | | |   commit fdb2d5e9354aec768d9fe349d40778604b56c293
+|\ \ \ \  Merge: b3b88c8 ea6c935
+| | |_|/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| |/| |   Date:   Fri Apr 1 15:32:54 2022 +0800
+| | | |   
+| | | |       Merge pull request #4 from Tarnage/amy
+| | | |       
+| | | |       Amy
+| | | | 
+| * | | commit ea6c935a4b0dc0e53c8acd8208dd2cd77c3b76ff
+| | | | Author: amy <22689376@student.uwa.edu.au>
+| | | | Date:   Thu Mar 31 12:17:25 2022 +1100
+| | | | 
+| | | |     Added comments
+| | | | 
+| * | | commit 22e2b31d0aac91b6748d6750fb079fcb0969af64
+|/ / /  Author: amy <22689376@student.uwa.edu.au>
+| | |   Date:   Thu Mar 31 12:17:05 2022 +1100
+| | |   
+| | |       changed words to letters
+| | | 
+* | | commit b3b88c81dde96770e6381224b3ffaf8549142a0d
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Sun Mar 27 17:24:42 2022 +0800
+| | | 
+| | |     fixed input
+| | | 
+| * | commit 1fa8f81339669fcf57674ad3b605f9c961a48592
+| | | Author: Rahul Sridhar <rahulsridhar0514@gmail.com>
+| | | Date:   Fri Apr 1 15:09:34 2022 +0800
+| | | 
+| | |     Keeping track of scores of users
+| | | 
+| * | commit f094fc3ff8f6fe9b13fff3879225f483d86e7bc0
+| | | Author: Rahul Sridhar <rahulsridhar0514@gmail.com>
+| | | Date:   Fri Apr 1 15:08:48 2022 +0800
+| | | 
+| | |     Implemented password system
+| | | 
+| * | commit 06db0668c190147269d315a72e244e91d54d1e1b
+| | | Author: Rahul Sridhar <rahulsridhar0514@gmail.com>
+| | | Date:   Fri Apr 1 15:06:01 2022 +0800
+| | | 
+| | |     Updated stats
+| | | 
+| * | commit 1bc9a7085dad36c0f857e78a92abe88a2f8ff116
+| | | Author: Rahul Sridhar <rahulsridhar0514@gmail.com>
+| | | Date:   Thu Mar 17 14:15:45 2022 +0800
+| | | 
+| | |     Just testing
+| | | 
+| | * commit ed415f0364d9d2f7e9a678763c14af06a5a80a80
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Fri Apr 1 12:47:50 2022 +0800
+| | | 
+| | |     implemented reset stats
+| | | 
+| | * commit 4b416e2e11bb1bba55e0726b9551172bf9840c0f
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Fri Apr 1 12:26:04 2022 +0800
+| | | 
+| | |     comments
+| | | 
+| | * commit 98bb28d39dfe5a8ada19aeed8718d1711afeeec2
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed Mar 30 16:45:48 2022 +0800
+| | | 
+| | |     changed click
+| | | 
+| | * commit a6c3273b4eec30ab08500cd383d5ae78a4307ce4
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed Mar 30 15:13:06 2022 +0800
+| | | 
+| | |     used jQuery to apply onclick function
+| | | 
+| | * commit 61d7df50f679fcbf602a5818058ab7a8939b344e
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed Mar 30 14:57:42 2022 +0800
+| | | 
+| | |     removed found var
+| | | 
+| | * commit 59dff30c42f35da0ae09c0e38fe3126f161fafd1
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Wed Mar 30 14:32:22 2022 +0800
+| | | 
+| | |     naming
+| | | 
+| | * commit 4a4032782c995999eb4e978412c628d152cca27c
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Tue Mar 29 17:55:15 2022 +0800
+| | | 
+| | |     removed commented code
+| | | 
+| | * commit 71eb65f1de93bb519687f402d4565b40a626906d
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Tue Mar 29 17:45:10 2022 +0800
+| | | 
+| | |     refactored checkGuess()
+| | | 
+| | * commit 4de9b8933ab7a5e0e3915fa13850f96ae8d324a2
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Sun Mar 27 17:47:37 2022 +0800
+| | | 
+| | |     added TODO fixed guessStack reset bug
+| | | 
+| | * commit a3f701734676a21388ec169820649853b95bd6d9
+| |/  Author: Tom <1991tnguyen@gmail.com>
+|/|   Date:   Sun Mar 27 17:27:36 2022 +0800
+| |   
+| |       fixed input
+| | 
+* | commit 588e3c02b5ad69f42cf4b769f2771741810583d1
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Sun Mar 27 17:18:28 2022 +0800
+| | 
+| |     COMMENTS
+| |   
+* |   commit 00ed01ade61841a193059eb8d1f7237b52ebf885
+|\ \  Merge: 562c65c 7ae7b19
+| | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | Date:   Sun Mar 27 17:16:57 2022 +0800
+| | | 
+| | |     Merge pull request #3 from Tarnage/Tom-v1.0
+| | |     
+| | |     Beta Version, working game still lots of bugs
+| | |   
+| * |   commit 7ae7b190abef723fba585bbb3d17d626f359d44b
+| |\ \  Merge: 924f988 562c65c
+| |/ /  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/| |   Date:   Sun Mar 27 17:16:14 2022 +0800
+| | |   
+| | |       Merge branch 'main' into Tom-v1.0
+| | | 
+* | | commit 562c65c7ae82f12e97bee608ac502bd6113f10c2
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Sat Mar 26 12:23:49 2022 +0800
+| | | 
+| | |     added anagrams
+| | | 
+* | | commit 02e4b4e5d8a3d7dd429cd10b9baff41a31c1af45
+| | | Author: Tom <1991tnguyen@gmail.com>
+| | | Date:   Fri Mar 25 15:50:32 2022 +0800
+| | | 
+| | |     change if to switch
+| | |   
+* | |   commit 519a2daab380ef65edb98d9c4984a270919cfd5a
+|\ \ \  Merge: 8977003 b025252
+| | | | Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| | | | Date:   Fri Mar 25 15:43:32 2022 +0800
+| | | | 
+| | | |     Merge pull request #2 from Tarnage/Tom-v1.0
+| | | |     
+| | | |     stats init
+| | | | 
+| | * | commit 924f988cbe6544d3134523cdceea1cdca9a65a88
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 16:15:40 2022 +0800
+| | | | 
+| | | |     implemented progress bar
+| | | | 
+| | * | commit 4e0ad219609dd67747f80590daab1a22fe797897
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 13:18:21 2022 +0800
+| | | | 
+| | | |     fixed reset bug
+| | | | 
+| | * | commit 6ad23c97c850a804bfe216f5adc12884d48a1759
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 11:29:34 2022 +0800
+| | | | 
+| | | |     google standards
+| | | | 
+| | * | commit 9c82bd822cfb429b0a7387f0714c0e610b17abf5
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 11:03:53 2022 +0800
+| | | | 
+| | | |     added cursor pointer
+| | | | 
+| | * | commit ddb11370ede94324be320fb4004f2c5ca728b030
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 11:03:41 2022 +0800
+| | | | 
+| | | |     added style for nav
+| | | | 
+| | * | commit 5ebecf62dd32f73c4b905295d26a75def9e1fad6
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 11:03:05 2022 +0800
+| | | | 
+| | | |     added todo
+| | | | 
+| | * | commit 56bdd618544391bc8acc5aeaff15e05b2d2f626b
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 11:02:54 2022 +0800
+| | | | 
+| | | |     added nav and new game buttons
+| | | | 
+| | * | commit 2784f23ac5dbb384d6b4aeea44610821091682c9
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 09:58:46 2022 +0800
+| | | | 
+| | | |     creating variables
+| | | | 
+| | * | commit 7450464ef54a5b32148f4eafac9a6e5be4070197
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 09:44:56 2022 +0800
+| | | | 
+| | | |     added nav
+| | | | 
+| | * | commit 52628d04b90447cc3c4db4e8b24d131a9896cc65
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 09:44:34 2022 +0800
+| | | | 
+| | | |     fixed quickplay button
+| | | | 
+| | * | commit 7c350b2de1bdc7220168248768c19cec018cb37e
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 09:30:17 2022 +0800
+| | | | 
+| | | |     renamed return to enter
+| | | | 
+| | * | commit c1a745236a302962d9cc08cae91b6ac5775c2c84
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sun Mar 27 09:29:55 2022 +0800
+| | | | 
+| | | |     added init function
+| | | | 
+| | * | commit 32ed0019d0369d7e18341f2dd909ddc7317132fe
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sat Mar 26 21:55:18 2022 +0800
+| | | | 
+| | | |     transform capitalize
+| | | | 
+| | * | commit 7744780138b7fad7b0448d6725000e8eb0364e51
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sat Mar 26 21:55:04 2022 +0800
+| | | | 
+| | | |     implemented init function
+| | | | 
+| | * | commit c5853a13d315ddfb45285b1195f584b8df70e06b
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sat Mar 26 21:54:25 2022 +0800
+| | | | 
+| | | |     added a class to keyboard for init func
+| | | | 
+| | * | commit b29b213db3c27acb20ae32afee8dad81385d3bda
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sat Mar 26 10:29:44 2022 +0800
+| | | | 
+| | | |     added feature to track user found words
+| | | | 
+| | * | commit 5b895ebb338f8e3353add38f7c9eea9cc30958b7
+| | | | Author: Tom <1991tnguyen@gmail.com>
+| | | | Date:   Sat Mar 26 10:29:01 2022 +0800
+| | | | 
+| | | |     added feature to track user found words
+| | | | 
+| | * | commit d068abb43cfec38937556db6c7d1789efb8f1e54
+| |/ /  Author: Tom <1991tnguyen@gmail.com>
+| | |   Date:   Fri Mar 25 17:37:11 2022 +0800
+| | |   
+| | |       added functionality
+| | | 
+| * | commit b0252522a5795b86dfbcf6acd7809bd9e78924e6
+|/ /  Author: Tom <1991tnguyen@gmail.com>
+| |   Date:   Fri Mar 25 15:37:48 2022 +0800
+| |   
+| |       stats init
+| |   
+* |   commit 8977003e5a87ea01d77c9efe4a36f345410f876e
+|\ \  Merge: afea5a4 7885ce1
+| |/  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+|/|   Date:   Fri Mar 25 14:55:31 2022 +0800
+| |   
+| |       Merge pull request #1 from Tarnage/TomsBranch
+| |       
+| |       Toms branch
+| | 
+| * commit 7885ce1b8a43fb0d2d6bcbd5dc46ac2636165a08
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Mar 25 12:36:55 2022 +0800
+| | 
+| |     added button functionality
+| | 
+| * commit af1b4287f614f89f1c89b8aaaeec725678095a3e
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu Mar 24 15:04:24 2022 +0800
+| | 
+| |     added how to play modal
+| | 
+| * commit 07d491708d49e7a5e2b8d39fb517f60d5f59c9a3
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Sun Mar 20 18:53:52 2022 +0800
+| | 
+| |     removed rand tag
+| | 
+| * commit 4a12e987ababbd4a3e35ba5712161d4b8a5166bb
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Sat Mar 19 10:58:09 2022 +0800
+| | 
+| |     added todo
+| | 
+| * commit baf0049f55465fdcc1d52f3f667e90d111c75340
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Mar 18 18:10:27 2022 +0800
+| | 
+| |     added game box
+| | 
+| * commit f7cf269ede40ebe3472fe114bc4721b03c2eaaf3
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Mar 18 16:57:47 2022 +0800
+| | 
+| |     init game page
+| | 
+| * commit 1df47431c6d71b45ce77f2b66d35fe33eda20d29
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Fri Mar 18 11:17:19 2022 +0800
+| | 
+| |     added script
+| | 
+| * commit 2b13aeafe92abfb884e96d8d9c676fb04f01e02e
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu Mar 17 18:10:46 2022 +0800
+| | 
+| |     init login page
+| | 
+| * commit a2cc9bb46b7fe5b39e18e83aa56410d541caaf2e
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu Mar 17 16:04:39 2022 +0800
+| | 
+| |     anagram solver test
+| | 
+| * commit 2fc5173729e480da5c402d08a6499bb0f0e41015
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu Mar 17 16:04:28 2022 +0800
+| | 
+| |     test word
+| | 
+| * commit 8fa806eb4888d486c1bd4a1993c53dcf6b07fa78
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu Mar 17 13:36:15 2022 +0800
+| | 
+| |     added index and css
+| | 
+| * commit 2b9b19c8bbc7e3dcdd05b1c07a6086ba39f0d801
+| | Author: Tom <1991tnguyen@gmail.com>
+| | Date:   Thu Mar 17 08:21:40 2022 +0800
+| | 
+| |     testing branch
+| | 
+* | commit afea5a4c22a0be775db20c801005deeec144834f
+|/  Author: Tom <1991tnguyen@gmail.com>
+|   Date:   Thu Mar 17 10:54:50 2022 +0800
+|   
+|       init
+| 
+* commit b09dbc964b26bdd33469e628debcb10b182cd74e
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Tue Mar 15 19:38:53 2022 +0800
+| 
+|     create doc folder
+| 
+* commit 4eb8f6866cd0b04bb8e1174ea63dc8bc2ea52542
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Tue Mar 15 19:38:06 2022 +0800
+| 
+|     create test folder
+| 
+* commit 6de31cd76527be45036186c747d95263d4894d12
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Tue Mar 15 19:37:39 2022 +0800
+| 
+|     Create asset/style
+| 
+* commit 1706780c7c2712c5c7fbd7d7c56ad0a3e9bdec52
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Tue Mar 15 19:36:48 2022 +0800
+| 
+|     Create asset/img
+| 
+* commit 2667e32b0fda90ab32606f98ecd98b2af6bea6f4
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Tue Mar 15 19:35:57 2022 +0800
+| 
+|     added asset/js
+| 
+* commit c3ee1d16d3cf723dd05a4a5fd3bda47526c91a04
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Mon Mar 14 16:19:40 2022 +0800
+| 
+|     init
+| 
+* commit cf0a9b2d12dd7a282074b916413561189be8a690
+| Author: Tom <70882644+Tarnage@users.noreply.github.com>
+| Date:   Mon Mar 14 16:19:06 2022 +0800
+| 
+|     formatted readme
+| 
+* commit 49b77b636ad3d85f10353bf967c16bde4e677f92
+  Author: Tom <70882644+Tarnage@users.noreply.github.com>
+  Date:   Mon Mar 14 16:01:16 2022 +0800
+  
+      Initial commit
