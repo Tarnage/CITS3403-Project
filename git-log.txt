@@ -1,4 +1,34 @@
-* commit 14585c594e4f781e60043a60a5293a97937c8dd1 (HEAD -> main, origin/main, origin/HEAD)
+* commit d1caa7d11ecf7c8f27d2250cd82e09b7e867776a (HEAD -> main, origin/main, origin/HEAD)
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Sun May 22 18:33:31 2022 +0800
+| 
+|     added tests
+| 
+* commit 099ced3282616b1d4367e5f58a845553727697ce
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Sat May 21 21:27:22 2022 +0800
+| 
+|     updated zip
+| 
+* commit 630a9807cd426b0c70c28c3a1f53fc2a69ea07bf
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Sat May 21 21:27:14 2022 +0800
+| 
+|     added comments
+| 
+* commit 67667ae16c5aef068fb93146d69334b9f932a7d4
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Sat May 21 21:27:08 2022 +0800
+| 
+|     removed curses
+| 
+* commit 56969c846b58cdb4a1548f4cfe99579201513a69
+| Author: Tom <1991tnguyen@gmail.com>
+| Date:   Sat May 21 17:22:13 2022 +0800
+| 
+|     added logs
+| 
+* commit 14585c594e4f781e60043a60a5293a97937c8dd1
 | Author: Tom <1991tnguyen@gmail.com>
 | Date:   Sat May 21 17:20:16 2022 +0800
 | 
