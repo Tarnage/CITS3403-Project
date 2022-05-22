@@ -5,11 +5,10 @@
 @author Rahul Sridhar<23347377>
 '''
 
-
 import unittest
 import os
 from app import app, db
-from app.models import User, Leaderboard
+from app.models import User, Leaderboard, ContactUs
 from config import TestingConfig
 
 class UserModelCase(unittest.TestCase):
@@ -107,6 +106,70 @@ class UserModelCase(unittest.TestCase):
         self.assertEqual(get1, "Test1", f"Got {get1}")
         self.assertEqual(get2, "Test2", f"Got {get2}")
 
+
+class ContactUsModelCase(unittest.TestCase):
+
+    def setUp(self):
+        self.mess_test1 = "Two households, both alike in dignity,\
+            In fair Verona, where we lay our scene,\
+            From ancient grudge break to new mutiny,\
+            Where civil blood makes civil hands unclean.\
+            From forth the fatal loins of these two foes"
+
+        self.mess_test2 ="A pair of star-cross'd lovers take their life;\
+            Whose misadventured piteous overthrows\
+            Do with their death bury their parents' strife.\
+            The fearful passage of their death-mark'd love,\
+            And the continuance of their parents' rage,"
+
+        self.mess_test3 = " Which, but their childrens end, nought could remove,\
+            Is now the two hours traffic of our stage;\
+            The which if you with patient ears attend,\
+            What here shall miss, our toil shall strive to mend."
+
+        self.app = app.config.from_object(TestingConfig)
+        
+        db.create_all()
+
+        msg1 = ContactUs(username="Test1", email="Test1@gmail.com", phone="1234567890", msg=self.mess_test1)
+        msg2 = ContactUs(username="Test2", email="Test2@gmail.com", phone="0123456789", msg=self.mess_test2)
+        msg3 = ContactUs(username="Test3", email="Test3@gmail.com", phone="1122334455", msg=self.mess_test3)
+        db.session.add(msg1)
+        db.session.add(msg2)
+        db.session.add(msg3)
+        db.session.commit()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    def test_commit(self):
+        msg1 = ContactUs.query.filter_by(username="Test1").first()
+        msg2 = ContactUs.query.filter_by(username="Test2").first()
+        msg3 = ContactUs.query.filter_by(username="Test3").first()
+
+        self.assertEqual(msg1.username, 'Test1', msg="User does not exists in db")
+        self.assertEqual(msg2.username, 'Test2', msg="User does not exists in db")
+        self.assertEqual(msg3.username, 'Test3', msg="User does not exists in db")
+
+    def test_msg(self):
+        msg1 = ContactUs.query.filter_by(username="Test1").first()
+        msg2 = ContactUs.query.filter_by(username="Test2").first()
+        msg3 = ContactUs.query.filter_by(username="Test3").first()
+
+        self.assertEqual(msg1.msg, self.mess_test1, msg="msg does not match")
+        self.assertEqual(msg2.msg, self.mess_test2, msg="msg does not match")
+        self.assertEqual(msg3.msg, self.mess_test3, msg="msg does not match")
+
+    def test_phone(self):
+        msg1 = ContactUs.query.filter_by(username="Test1").first()
+        msg2 = ContactUs.query.filter_by(username="Test2").first()
+        msg3 = ContactUs.query.filter_by(username="Test3").first()
+
+        self.assertEqual(msg1.phone, "1234567890", msg="phone does not match")
+        self.assertEqual(msg2.phone, "0123456789", msg="phone does not match")
+        self.assertEqual(msg3.phone, "1122334455", msg="phone does not match")
+        
 if __name__ == "__main__":
     unittest.main(verbosity=2)
 
