@@ -19,5 +19,4 @@ ENV FLASK_APP anagramCity.py
 RUN chown -R anagramCity:anagramCity ./
 USER anagramCity
 
-EXPOSE 5000
 ENTRYPOINT ["./boot.sh"]
